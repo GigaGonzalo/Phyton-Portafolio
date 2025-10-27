@@ -1,0 +1,624 @@
+🐍 ¡FUNCIONES PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN REUTILIZACIÓN Y ORGANIZACIÓN DE CÓDIGO!
+🎯 ¡FUNCIONES EN PYTHON - PODER DE REUTILIZACIÓN!
+python
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LAS FUNCIONES! ⚡
+print("🎊 ¡FUNCIONES PYTHON - REUTILIZA COMO UN GENIO! 🎊")
+print("¿Cansado de código repetitivo? ¿Aburrido de copiar y pegar?")
+print("¡LAS FUNCIONES lo solucionan TODO! 💫")
+
+🚀 ¡FUNCIONES BÁSICAS - TU PRIMERA FUNCIÓN!
+✨ DEFINIENDO FUNCIONES - ¡PODER DE ABSTRACCIÓN!
+
+
+# ¡LA FUNCIÓN MÁS SIMPLE - SIN PARÁMETROS, SIN RETORNO!
+def saludar():
+    """¡Función que saluda al usuario!"""
+    print("👋 ¡Hola! Bienvenido al mundo de las funciones")
+    print("🎉 Estás a punto de volverte más eficiente")
+
+# ¡LLAMANDO TU PRIMERA FUNCIÓN!
+print("📞 ¡LLAMANDO FUNCIÓN POR PRIMERA VEZ!")
+saludar()
+saludar()  # ¡REUTILIZACIÓN MÁGICA!
+saludar()  # ¡UNA VEZ MÁS SIN ESFUERZO!
+
+print("✅ ¡Tres saludos con una sola función!")
+
+🎯 FUNCIONES CON PARÁMETROS - ¡PERSONALIZACIÓN TOTAL!
+
+
+# ¡FUNCIONES CON PARÁMETROS - PODER DE PERSONALIZACIÓN!
+def saludar_personalizado(nombre, edad):
+    """Saluda personalmente al usuario"""
+    print(f"👋 ¡Hola {nombre}! Tienes {edad} años")
+    print(f"🎂 En 10 años tendrás {edad + 10} años")
+
+# ¡LLAMADAS CON DIFERENTES ARGUMENTOS!
+print("\n🎭 ¡SALUDOS PERSONALIZADOS! 🎭")
+saludar_personalizado("Ana", 25)
+saludar_personalizado("Carlos", 30)
+saludar_personalizado("María", 22)
+
+# ¡FUNCIONES CON PARÁMETROS OPCIONALES!
+def presentar_persona(nombre, profesion="Desarrollador", ciudad="Desconocida"):
+    """Presenta a una persona con información opcional"""
+    print(f"\n👤 INFORMACIÓN DE {nombre.upper()}:")
+    print(f"   💼 Profesión: {profesion}")
+    print(f"   🏙️ Ciudad: {ciudad}")
+
+print("\n📍 ¡PRESENTACIONES FLEXIBLES! 📍")
+presentar_persona("Laura", "Ingeniera", "Madrid")
+presentar_persona("Pedro", "Diseñador")  # ¡Ciudad por defecto!
+presentar_persona("Sofía")  # ¡Todo por defecto!
+
+🔄 ¡RETORNO DE VALORES - FUNCIONES QUE PRODUCEN RESULTADOS!
+💎 RETURN - ¡FUNCIONES QUE DEVUELVEN VALORES!
+
+
+# ¡FUNCIONES CON RETURN - PODER DE CÁLCULO!
+def calcular_area_rectangulo(largo, ancho):
+    """Calcula el área de un rectángulo"""
+    area = largo * ancho
+    return area  # ¡DEVUELVE EL RESULTADO!
+
+def calcular_iva(precio, porcentaje_iva=16):
+    """Calcula el IVA de un precio"""
+    iva = precio * (porcentaje_iva / 100)
+    total = precio + iva
+    return iva, total  # ¡DEVUELVE MÚLTIPLES VALORES!
+
+# ¡USANDO FUNCIONES CON RETORNO!
+print("📐 ¡CÁLCULOS CON FUNCIONES! 📐")
+
+area1 = calcular_area_rectangulo(10, 5)
+area2 = calcular_area_rectangulo(7, 3)
+print(f"📏 Área 1: {area1} m²")
+print(f"📏 Área 2: {area2} m²")
+
+print("\n💰 ¡CÁLCULO DE IVA! 💰")
+iva, total = calcular_iva(100)  # ¡DESEMPAQUETADO MÚGICO!
+print(f"   Precio: $100")
+print(f"   IVA (16%): ${iva:.2f}")
+print(f"   Total: ${total:.2f}")
+
+# ¡IVA CON PORCENTAJE PERSONALIZADO!
+iva_personal, total_personal = calcular_iva(200, 10)
+print(f"\n   Precio: $200")
+print(f"   IVA (10%): ${iva_personal:.2f}")
+print(f"   Total: ${total_personal:.2f}")
+
+🎪 ¡TIPOS DE PARÁMETROS - FLEXIBILIDAD TOTAL!
+📍 PARÁMETROS POSICIONALES Y NOMBRADOS
+
+
+# ¡PARÁMETROS POSICIONALES VS NOMBRADOS!
+def crear_perfil(nombre, edad, ciudad, profesion):
+    """Crea un perfil de usuario"""
+    print(f"\n📝 PERFIL CREADO:")
+    print(f"   👤 Nombre: {nombre}")
+    print(f"   🎂 Edad: {edad}")
+    print(f"   🏙️ Ciudad: {ciudad}")
+    print(f"   💼 Profesión: {profesion}")
+
+print("🎯 ¡LLAMADAS CON DIFERENTES ESTILOS! 🎯")
+
+# Parámetros posicionales (por posición)
+crear_perfil("Ana", 25, "Madrid", "Ingeniera")
+
+# Parámetros nombrados (por nombre)
+crear_perfil(
+    nombre="Carlos",
+    edad=30,
+    ciudad="Barcelona", 
+    profesion="Diseñador"
+)
+
+# Mezcla de ambos
+crear_perfil("María", 28, profesion="Doctora", ciudad="Valencia")
+
+# ¡PARÁMETROS POR DEFECTO AVANZADOS!
+def configurar_usuario(nombre, nivel="principiante", tema="claro", notificaciones=True):
+    """Configura un usuario con valores por defecto"""
+    print(f"\n⚙️ CONFIGURACIÓN DE {nombre}:")
+    print(f"   🎮 Nivel: {nivel}")
+    print(f"   🎨 Tema: {tema}")
+    print(f"   🔔 Notificaciones: {'Activadas' if notificaciones else 'Desactivadas'}")
+
+print("\n🎛️ ¡CONFIGURACIONES FLEXIBLES! 🎛️")
+configurar_usuario("Laura")
+configurar_usuario("Pedro", nivel="avanzado")
+configurar_usuario("Sofia", tema="oscuro", notificaciones=False)
+
+🌟 ARGUMENTOS ARBITRARIOS - ¡FLEXIBILIDAD INFINITA!
+
+
+# *args - ARGUMENTOS POSICIONALES ARBITRARIOS
+def sumar_numeros(*args):
+    """Suma cualquier cantidad de números"""
+    print(f"🔢 Números a sumar: {args}")
+    total = sum(args)
+    print(f"➕ Total: {total}")
+    return total
+
+print("🎪 ¡SUMA CON CANTIDAD VARIABLE! 🎪")
+sumar_numeros(1, 2, 3)
+sumar_numeros(10, 20, 30, 40, 50)
+sumar_numeros(5)  # ¡Funciona con un solo número!
+
+# **kwargs - ARGUMENTOS NOMBRADOS ARBITRARIOS
+def crear_perfil_completo(**kwargs):
+    """Crea perfil con cualquier información"""
+    print(f"\n📋 PERFIL COMPLETO:")
+    for clave, valor in kwargs.items():
+        print(f"   {clave}: {valor}")
+
+print("\n🎭 ¡PERFILES CON INFORMACIÓN VARIABLE! 🎭")
+crear_perfil_completo(
+    nombre="Ana",
+    edad=25,
+    ciudad="Madrid",
+    hobby="Programar"
+)
+
+crear_perfil_completo(
+    nombre="Carlos",
+    profesion="Ingeniero",
+    empresa="Tech Corp",
+    salario=50000,
+    experiencia="5 años"
+)
+
+# ¡COMBINACIÓN DE *args Y **kwargs!
+def funcion_universal(*args, **kwargs):
+    """Función que acepta cualquier tipo de argumentos"""
+    print(f"\n🌍 FUNCIÓN UNIVERSAL:")
+    if args:
+        print(f"   📍 Argumentos posicionales: {args}")
+    if kwargs:
+        print(f"   🏷️ Argumentos nombrados: {kwargs}")
+
+print("\n🚀 ¡FUNCIÓN UNIVERSAL EN ACCIÓN! 🚀")
+funcion_universal(1, 2, 3, nombre="Ana", edad=25)
+funcion_universal("Hola", "Mundo")
+funcion_universal(ciudad="Madrid", pais="España")
+
+🏗️ ¡FUNCIONES ANIDADAS - PODER DE ORGANIZACIÓN!
+🎭 FUNCIONES DENTRO DE FUNCIONES - ¡MODULARIDAD EXTREMA!
+
+
+def procesador_datos(datos):
+    """Función principal que contiene funciones auxiliares"""
+    
+    # ¡FUNCIONES ANIDADAS - SOLO VISIBLES DENTRO!
+    def validar_dato(dato):
+        """Valida que el dato sea numérico"""
+        return isinstance(dato, (int, float))
+    
+    def limpiar_dato(dato):
+        """Limpia y formatea el dato"""
+        if isinstance(dato, str):
+            try:
+                return float(dato)
+            except ValueError:
+                return None
+        return dato
+    
+    def calcular_estadisticas(numeros):
+        """Calcula estadísticas básicas"""
+        if not numeros:
+            return None
+        
+        return {
+            "promedio": sum(numeros) / len(numeros),
+            "maximo": max(numeros),
+            "minimo": min(numeros),
+            "total": sum(numeros)
+        }
+    
+    # ¡PROCESAMIENTO PRINCIPAL!
+    print("🔍 PROCESANDO DATOS...")
+    
+    datos_limpios = []
+    for dato in datos:
+        dato_limpio = limpiar_dato(dato)
+        if validar_dato(dato_limpio):
+            datos_limpios.append(dato_limpio)
+        else:
+            print(f"   🗑️ Dato inválido descartado: {dato}")
+    
+    estadisticas = calcular_estadisticas(datos_limpios)
+    
+    if estadisticas:
+        print("📊 ESTADÍSTICAS CALCULADAS:")
+        for clave, valor in estadisticas.items():
+            print(f"   {clave.capitalize()}: {valor:.2f}")
+    else:
+        print("❌ No hay datos válidos para analizar")
+    
+    return estadisticas
+
+# ¡USO DEL PROCESADOR!
+print("🎯 ¡PROCESADOR DE DATOS INTELIGENTE! 🎯")
+datos_mixtos = [10, "20", 30, "no_valido", 40.5, "50", "texto"]
+resultado = procesador_datos(datos_mixtos)
+
+🔄 ¡FUNCIONES COMO OBJETOS - PODER DE PRIMERA CLASE!
+🎪 FUNCIONES COMO VARIABLES - ¡PODER DE ALTO NIVEL!
+
+
+# ¡FUNCIONES SON CIUDADANOS DE PRIMERA CLASE!
+def saludar_es():
+    return "¡Hola!"
+
+def saludar_en():
+    return "Hello!"
+
+def saludar_fr():
+    return "Bonjour!"
+
+# ¡ALMACENAR FUNCIONES EN VARIABLES!
+idioma_actual = "es"
+saludador = None
+
+if idioma_actual == "es":
+    saludador = saludar_es
+elif idioma_actual == "en":
+    saludador = saludar_en
+elif idioma_actual == "fr":
+    saludador = saludar_fr
+
+print("🗣️ ¡SALUDO DINÁMICO!")
+if saludador:
+    mensaje = saludador()  # ¡LLAMAR FUNCIÓN DESDE VARIABLE!
+    print(mensaje)
+
+# ¡FUNCIONES EN LISTAS!
+operaciones = [
+    lambda x: x + 1,      # Incrementar
+    lambda x: x * 2,      # Duplicar
+    lambda x: x ** 2,     # Cuadrado
+    lambda x: x - 1       # Decrementar
+]
+
+print("\n🔢 ¡CADENA DE OPERACIONES! 🔢")
+numero = 5
+print(f"   Número inicial: {numero}")
+
+for i, operacion in enumerate(operaciones, 1):
+    numero = operacion(numero)
+    print(f"   Paso {i}: {numero}")
+
+print(f"   Resultado final: {numero}")
+
+# ¡FUNCIONES COMO PARÁMETROS!
+def aplicar_operaciones(numero, *funciones):
+    """Aplica una serie de funciones a un número"""
+    print(f"\n🔄 APLICANDO OPERACIONES A {numero}:")
+    resultado = numero
+    for funcion in funciones:
+        resultado = funcion(resultado)
+        print(f"   {funcion.__name__ if hasattr(funcion, '__name__') else 'lambda'} → {resultado}")
+    return resultado
+
+# ¡USO CON FUNCIONES PERSONALIZADAS!
+def triplicar(x):
+    return x * 3
+
+def dividir_entre_dos(x):
+    return x / 2
+
+resultado = aplicar_operaciones(
+    10,
+    lambda x: x + 5,
+    triplicar,
+    dividir_entre_dos,
+    lambda x: x ** 2
+)
+
+🎨 ¡FUNCIONES LAMBDA - PODER EXPRESIVO!
+⚡ LAMBDA - FUNCIONES ANÓNIMAS Y RÁPIDAS!
+
+
+# ¡LAMBDA - FUNCIONES EN UNA SOLA LÍNEA!
+print("⚡ ¡FUNCIONES LAMBDA - RÁPIDAS Y PODEROSAS! ⚡")
+
+# Función normal vs Lambda
+def cuadrado_normal(x):
+    return x ** 2
+
+cuadrado_lambda = lambda x: x ** 2
+
+print(f"🔢 Cuadrado normal de 5: {cuadrado_normal(5)}")
+print(f"🔢 Cuadrado lambda de 5: {cuadrado_lambda(5)}")
+
+# ¡LAMBDAS MÚLTIPLES PARÁMETROS!
+suma = lambda a, b: a + b
+multiplicar = lambda x, y, z: x * y * z
+
+print(f"\n➕ Suma lambda: {suma(10, 5)}")
+print(f"✖️ Multiplicación lambda: {multiplicar(2, 3, 4)}")
+
+# ¡LAMBDAS CON CONDICIONALES!
+clasificar_edad = lambda edad: "Mayor" if edad >= 18 else "Menor"
+calcular_descuento = lambda precio, cliente: precio * 0.9 if cliente == "VIP" else precio
+
+print(f"\n🎭 Clasificación edad 20: {clasificar_edad(20)}")
+print(f"🎭 Clasificación edad 15: {clasificar_edad(15)}")
+print(f"💰 Precio normal $100: ${calcular_descuento(100, 'normal')}")
+print(f"💰 Precio VIP $100: ${calcular_descuento(100, 'VIP')}")
+
+# ¡LAMBDAS EN ACCIONES PRÁCTICAS!
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+# Filtrar números pares
+pares = list(filter(lambda x: x % 2 == 0, numeros))
+print(f"\n🎯 Números pares: {pares}")
+
+# Elevar al cuadrado
+cuadrados = list(map(lambda x: x ** 2, numeros))
+print(f"🔢 Cuadrados: {cuadrados}")
+
+# Ordenar por último dígito
+numeros_mixtos = [23, 45, 12, 67, 89, 34]
+ordenados = sorted(numeros_mixtos, key=lambda x: x % 10)
+print(f"📊 Ordenados por último dígito: {ordenados}")
+
+💼 ¡DECORADORES - PODER DE MEJORA DE FUNCIONES!
+🎩 DECORADORES - ¡AÑADE PODERES A TUS FUNCIONES!
+
+
+# ¡DECORADORES - FUNCIONES QUE MEJORAN OTRAS FUNCIONES!
+def decorador_tiempo(funcion):
+    """Decorador que mide el tiempo de ejecución"""
+    def wrapper(*args, **kwargs):
+        import time
+        inicio = time.time()
+        resultado = funcion(*args, **kwargs)
+        fin = time.time()
+        print(f"⏱️ {funcion.__name__} tardó {fin - inicio:.4f} segundos")
+        return resultado
+    return wrapper
+
+def decorador_log(funcion):
+    """Decorador que registra llamadas a funciones"""
+    def wrapper(*args, **kwargs):
+        print(f"📝 Llamando a {funcion.__name__} con args: {args}, kwargs: {kwargs}")
+        resultado = funcion(*args, **kwargs)
+        print(f"✅ {funcion.__name__} retornó: {resultado}")
+        return resultado
+    return wrapper
+
+# ¡APLICANDO DECORADORES!
+@decorador_tiempo
+@decorador_log
+def calcular_factorial(n):
+    """Calcula el factorial de un número"""
+    if n == 0 or n == 1:
+        return 1
+    resultado = 1
+    for i in range(2, n + 1):
+        resultado *= i
+    return resultado
+
+@decorador_tiempo
+def fibonacci(n):
+    """Calcula el n-ésimo número de Fibonacci"""
+    if n <= 1:
+        return n
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+print("🎩 ¡FUNCIONES DECORADAS EN ACCIÓN! 🎩")
+print(f"🔢 Factorial de 5: {calcular_factorial(5)}")
+print(f"🔢 Fibonacci de 10: {fibonacci(10)}")
+
+# ¡DECORADOR CON ARGUMENTOS!
+def repetir(n_veces):
+    """Decorador que repite la ejecución de una función"""
+    def decorador_real(funcion):
+        def wrapper(*args, **kwargs):
+            resultados = []
+            for i in range(n_veces):
+                print(f"🔄 Ejecución {i + 1}/{n_veces}")
+                resultado = funcion(*args, **kwargs)
+                resultados.append(resultado)
+            return resultados
+        return wrapper
+    return decorador_real
+
+@repetir(3)
+def saludar_repetido(nombre):
+    return f"¡Hola {nombre}!"
+
+print("\n🔄 ¡FUNCIÓN REPETIDA! 🔄")
+resultados = saludar_repetido("Python")
+print(f"Resultados: {resultados}")
+
+🏆 ¡SISTEMA COMPLETO DEL MUNDO REAL!
+🛒 SISTEMA DE E-COMMERCE MODULAR
+
+
+class SistemaEcommerce:
+    def __init__(self):
+        self.carrito = []
+        self.inventario = {
+            "laptop": {"precio": 1000, "stock": 5},
+            "mouse": {"precio": 25, "stock": 10},
+            "teclado": {"precio": 75, "stock": 3}
+        }
+    
+    # ¡FUNCIONES DE VALIDACIÓN!
+    def validar_producto(self, producto):
+        return producto in self.inventario
+    
+    def validar_stock(self, producto, cantidad):
+        return self.inventario[producto]["stock"] >= cantidad
+    
+    # ¡FUNCIONES DE CÁLCULO!
+    def calcular_subtotal(self):
+        return sum(item["precio"] * item["cantidad"] for item in self.carrito)
+    
+    def calcular_iva(self, subtotal, porcentaje=16):
+        return subtotal * (porcentaje / 100)
+    
+    def calcular_total(self, subtotal, iva):
+        return subtotal + iva
+    
+    # ¡FUNCIONES DE OPERACIÓN!
+    def agregar_al_carrito(self, producto, cantidad=1):
+        if not self.validar_producto(producto):
+            print(f"❌ Producto '{producto}' no existe")
+            return False
+        
+        if not self.validar_stock(producto, cantidad):
+            print(f"❌ Stock insuficiente de '{producto}'")
+            return False
+        
+        precio = self.inventario[producto]["precio"]
+        self.carrito.append({
+            "producto": producto,
+            "precio": precio,
+            "cantidad": cantidad
+        })
+        
+        self.inventario[producto]["stock"] -= cantidad
+        print(f"✅ {cantidad}x '{producto}' agregado al carrito")
+        return True
+    
+    def procesar_compra(self):
+        if not self.carrito:
+            print("❌ Carrito vacío")
+            return False
+        
+        # ¡USO DE MÚLTIPLES FUNCIONES!
+        subtotal = self.calcular_subtotal()
+        iva = self.calcular_iva(subtotal)
+        total = self.calcular_total(subtotal, iva)
+        
+        # Mostrar resumen
+        self.mostrar_resumen_compra(subtotal, iva, total)
+        
+        # Confirmar compra
+        if self.confirmar_compra(total):
+            print("🎉 ¡COMPRA EXITOSA!")
+            self.carrito = []  # Vaciar carrito
+            return True
+        else:
+            print("❌ Compra cancelada")
+            return False
+    
+    # ¡FUNCIONES DE PRESENTACIÓN!
+    def mostrar_resumen_compra(self, subtotal, iva, total):
+        print("\n📋 RESUMEN DE COMPRA:")
+        for item in self.carrito:
+            print(f"   {item['cantidad']}x {item['producto']} - ${item['precio']} c/u")
+        
+        print(f"\n💰 Subtotal: ${subtotal:.2f}")
+        print(f"📊 IVA (16%): ${iva:.2f}")
+        print(f"💳 Total: ${total:.2f}")
+    
+    def confirmar_compra(self, total):
+        respuesta = input(f"\n¿Confirmar compra de ${total:.2f}? (s/n): ")
+        return respuesta.lower() == 's'
+    
+    def mostrar_inventario(self):
+        print("\n📦 INVENTARIO DISPONIBLE:")
+        for producto, info in self.inventario.items():
+            print(f"   {producto}: ${info['precio']} (Stock: {info['stock']})")
+
+# ¡SISTEMA EN ACCIÓN!
+print("🛒 ¡SISTEMA E-COMMERCE MODULAR! 🛒")
+tienda = SistemaEcommerce()
+
+tienda.mostrar_inventario()
+
+# Agregar productos al carrito
+tienda.agregar_al_carrito("laptop", 1)
+tienda.agregar_al_carrito("mouse", 2)
+tienda.agregar_al_carrito("producto_inexistente", 1)  # Error
+tienda.agregar_al_carrito("teclado", 5)  # Error de stock
+
+# Procesar compra
+tienda.procesar_compra()
+
+🎊 ¡RESUMEN FINAL DE FUNCIONES!
+
+¿QUÉ OBTIENES CON FUNCIONES EN PYTHON?
+
+    ✅ Reutilización - Escribe una vez, usa muchas
+
+    ✅ Organización - Código limpio y mantenible
+
+    ✅ Modularidad - Divide y vencerás
+
+    ✅ Testabilidad - Pruebas unitarias fáciles
+
+    ✅ Abstracción - Oculta complejidad
+
+¡TIPOS DE FUNCIONES!
+
+    🎯 Básicas - def nombre():
+
+    🔄 Con parámetros - def nombre(param1, param2):
+
+    💎 Con retorno - return valor
+
+    🎪 Lambda - funciones anónimas rápidas
+
+    🎩 Decoradas - funciones mejoradas
+
+¡PARÁMETROS AVANZADOS!
+
+    📍 Posicionales - Por posición
+
+    🏷️ Nombrados - Por nombre
+
+    ⭐ Por defecto - Valores predefinidos
+
+    🌟 *args - Argumentos arbitrarios posicionales
+
+    🌟 **kwargs - Argumentos arbitrarios nombrados
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA LAS FUNCIONES Y CONVIÉRTETE EN UN PROGRAMADOR PROFESIONAL!
+
+
+def demostrar_poder_final():
+    """¡Función final que demuestra todo tu poder!"""
+    
+    def crear_resumen(nombre, *habilidades, **metadatos):
+        """Función anidada con parámetros avanzados"""
+        print(f"\n🎊 ¡FELICIDADES {nombre.upper()}! 🎊")
+        print("🐍 Ahora dominas las FUNCIONES en Python:")
+        
+        for i, habilidad in enumerate(habilidades, 1):
+            print(f"   {i}. ✅ {habilidad}")
+        
+        if metadatos:
+            print("\n📊 METADATOS ADICIONALES:")
+            for clave, valor in metadatos.items():
+                print(f"   {clave}: {valor}")
+    
+    # Llamada con todo el poder
+    crear_resumen(
+        "Programador Python",
+        "Funciones básicas",
+        "Parámetros avanzados", 
+        "Funciones lambda",
+        "Decoradores",
+        nivel="Avanzado",
+        siguiente_paso="Programación Orientada a Objetos"
+    )
+    
+    return "🚀 ¡ÉXITO GARANTIZADO!"
+
+# ¡EJECUTA TU PODER!
+resultado = demostrar_poder_final()
+print(f"\n{resultado}")
+
+¡LAS FUNCIONES SON LOS BLOQUES DE CONSTRUCCIÓN DE PYTHON, Y AHORA CONSTRUYES CON ELLAS! 🏗️🐍

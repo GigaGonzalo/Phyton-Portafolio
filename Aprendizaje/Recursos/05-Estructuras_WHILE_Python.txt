@@ -1,0 +1,578 @@
+🐍 ¡WHILE LOOPS PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN REPETICIÓN BASADA EN CONDICIONES!
+🎯 ¡WHILE LOOPS EN PYTHON - REPITE HASTA QUE SE CUMPLA!
+
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LA REPETICIÓN CONDICIONAL! ⚡
+print("🎊 ¡WHILE LOOPS PYTHON - REPITE CON PROPÓSITO! 🎊")
+print("¿Cansado de loops con número fijo de iteraciones?")
+print("¿Necesitas repetir HASTA que algo ocurra?")
+print("¡WHILE LOOPS son tu solución! 💫")
+
+🚀 ¡WHILE BÁSICO - TU PRIMERA REPETICIÓN CONDICIONAL!
+✨ ESTRUCTURA FUNDAMENTAL - ¡PODER INFINITO CONTROLADO!
+
+
+# ¡EL WHILE MÁS SIMPLE - CONTADOR CLÁSICO!
+contador = 1
+
+print("🔢 ¡CONTANDO DEL 1 AL 5 CON WHILE! 🔢")
+while contador <= 5:
+    print(f"   🎯 Iteración número: {contador}")
+    contador += 1  # ¡IMPORTANTE: Actualizar la condición!
+
+print("✅ Conteo completado exitosamente!")
+
+# ¡CONTROL DE INTENTOS!
+intentos = 3
+print("\n🎯 ¡SISTEMA DE INTENTOS LIMITADOS! 🎯")
+while intentos > 0:
+    print(f"   🔄 Intentos restantes: {intentos}")
+    intentos -= 1
+
+print("❌ ¡Se agotaron los intentos!")
+
+🎮 ¡WHILE CON ENTRADA DE USUARIO - INTERACCIÓN DINÁMICA!
+💬 VALIDACIÓN DE DATOS - ¡ENTRADAS CORRECTAS GARANTIZADAS!
+
+
+# ¡VALIDACIÓN DE EDAD!
+print("👤 ¡SISTEMA DE VERIFICACIÓN DE EDAD! 👤")
+
+edad_valida = False
+while not edad_valida:
+    try:
+        edad = int(input("   📝 Ingresa tu edad: "))
+        
+        if edad < 0:
+            print("   ❌ ¡La edad no puede ser negativa! Intenta nuevamente.")
+        elif edad > 120:
+            print("   ❌ ¡Edad poco realista! Intenta nuevamente.") 
+        else:
+            edad_valida = True
+            print(f"   ✅ Edad válida registrada: {edad} años")
+            
+    except ValueError:
+        print("   ❌ ¡Debes ingresar un número válido!")
+
+print("🎉 ¡Verificación de edad completada!")
+
+# ¡MENÚ INTERACTIVO!
+print("\n🍽️ ¡RESTAURANTE PYTHON-O-MATIC! 🍽️")
+opcion = ""
+
+while opcion != "4":
+    print("\n📋 MENÚ PRINCIPAL:")
+    print("   1. Ver menú de comidas")
+    print("   2. Hacer pedido") 
+    print("   3. Consultar promociones")
+    print("   4. Salir")
+    
+    opcion = input("   👉 Selecciona una opción (1-4): ")
+    
+    if opcion == "1":
+        print("   🍔 Menú: Hamburguesa, Pizza, Ensalada, Pasta")
+    elif opcion == "2":
+        print("   📦 ¡Pedido realizado! Llegará en 30 minutos")
+    elif opcion == "3":
+        print("   🎁 Promoción: 2x1 en pizzas los martes")
+    elif opcion == "4":
+        print("   👋 ¡Gracias por visitarnos! Vuelve pronto")
+    else:
+        print("   ❌ Opción inválida. Por favor selecciona 1-4")
+
+print("🏁 Programa finalizado")
+
+⚡ ¡CONTROL DE FLUJO EN WHILE LOOPS!
+🛑 BREAK - ¡ESCAPE ESTRATÉGICO!
+
+
+# ¡BUSQUEDA CON BREAK - ENCUENTRA Y SAL!
+import random
+
+print("🎯 ¡JUEGO: ADIVINA EL NÚMERO SECRETO! 🎯")
+numero_secreto = random.randint(1, 10)
+intentos = 0
+
+while True:  # ¡LOOP INFINITO CONTROLADO!
+    intento = int(input("   🔢 Adivina el número (1-10): "))
+    intentos += 1
+    
+    if intento == numero_secreto:
+        print(f"   🎉 ¡CORRECTO! Adivinaste en {intentos} intentos")
+        break  # ¡SALIR INMEDIATAMENTE!
+    elif intento < numero_secreto:
+        print("   📈 El número secreto es MAYOR")
+    else:
+        print("   📉 El número secreto es MENOR")
+        
+    if intentos >= 5:
+        print(f"   💀 ¡GAME OVER! El número era: {numero_secreto}")
+        break
+
+print("🕹️ Juego terminado")
+
+# ¡SISTEMA DE ALERTA!
+print("\n🚨 ¡SISTEMA DE MONITOREO DE TEMPERATURA! 🚨")
+temperatura = 25
+
+while True:
+    print(f"   🌡️ Temperatura actual: {temperatura}°C")
+    
+    if temperatura > 35:
+        print("   🔥 ¡ALERTA! Temperatura CRÍTICA - Activando enfriamiento")
+        break
+    elif temperatura > 30:
+        print("   ⚠️ Temperatura ALTA - Monitoreando...")
+    else:
+        print("   ✅ Temperatura NORMAL")
+    
+    # Simular aumento de temperatura
+    temperatura += random.randint(1, 5)
+    
+    if temperatura >= 40:
+        print("   💥 ¡EMERGENCIA! Sistema sobrecalentado")
+        break
+
+⏭️ CONTINUE - ¡SALTOS INTELIGENTES!
+
+
+# ¡PROCESAMIENTO SELECTIVO CON CONTINUE!
+print("🔢 ¡PROCESANDO NÚMEROS (OMITIendo NEGATIVOS)! 🔢")
+
+numeros = [10, -5, 8, -3, 15, -1, 20]
+indice = 0
+
+while indice < len(numeros):
+    numero_actual = numeros[indice]
+    
+    if numero_actual < 0:
+        print(f"   ⏭️ Saltando número negativo: {numero_actual}")
+        indice += 1
+        continue  # ¡SALTAR A LA SIGUIENTE ITERACIÓN!
+    
+    # Solo procesar números positivos
+    cuadrado = numero_actual ** 2
+    print(f"   ✅ Procesando {numero_actual} → Cuadrado: {cuadrado}")
+    
+    indice += 1
+
+print("🎊 Procesamiento completado")
+
+# ¡SISTEMA DE FILTRADO!
+print("\n📧 ¡FILTRANDO CORREOS VÁLIDOS! 📧")
+correos = ["ana@python.com", "inválido", "carlos@python.com", "", "maria@python.com"]
+i = 0
+
+while i < len(correos):
+    correo = correos[i]
+    
+    if not correo or "@" not in correo:
+        print(f"   🗑️ Correo inválido descartado: '{correo}'")
+        i += 1
+        continue
+    
+    print(f"   ✅ Correo válido procesado: {correo}")
+    i += 1
+
+🎪 ELSE EN WHILE - ¡FINALIZACIÓN ELEGANTE!
+
+
+# ¡ELSE EN WHILE - CUANDO LA CONDICIÓN SE VUELVE FALSA!
+print("🔍 ¡BUSQUEDA EN LISTA CON ELSE! 🔍")
+
+busqueda = [10, 20, 30, 40, 50]
+objetivo = 35
+indice = 0
+
+while indice < len(busqueda):
+    if busqueda[indice] == objetivo:
+        print(f"   ✅ ¡ENCONTRADO! {objetivo} en posición {indice}")
+        break
+    indice += 1
+else:
+    # ¡SOLO se ejecuta si NO hubo break!
+    print(f"   ❌ {objetivo} no encontrado en la lista")
+    print("   ℹ️ Búsqueda completada sin resultados")
+
+print("🏁 Proceso de búsqueda finalizado")
+
+# ¡VERIFICACIÓN DE CONEXIÓN!
+print("\n📡 ¡SISTEMA DE VERIFICACIÓN DE CONEXIÓN! 📡")
+intentos_conexion = 0
+max_intentos = 3
+
+while intentos_conexion < max_intentos:
+    print(f"   🔄 Intento de conexión {intentos_conexion + 1}/{max_intentos}")
+    
+    # Simular conexión (50% de éxito)
+    if random.random() > 0.5:
+        print("   ✅ ¡CONEXIÓN ESTABLECIDA!")
+        break
+        
+    intentos_conexion += 1
+else:
+    print("   ❌ No se pudo establecer conexión después de todos los intentos")
+    print("   🛠️ Por favor, verifica tu conexión a internet")
+
+print("🌐 Proceso de conexión completado")
+
+💾 ¡WHILE CON BANDERAS - CONTROL AVANZADO!
+🚩 VARIABLES BANDERA - ¡CONTROL PRECISO!
+
+
+# ¡SISTEMA DE JUEGO CON MÚLTIPLES CONDICIONES!
+print("🎮 ¡JUEGO DE AVENTURA EN TEXTO! 🎮")
+
+juego_activo = True
+vida = 100
+energia = 50
+tesoro_encontrado = False
+
+while juego_activo:
+    print(f"\n❤️ Vida: {vida} | ⚡ Energía: {energia} | 💎 Tesoro: {'SÍ' if tesoro_encontrado else 'NO'}")
+    
+    accion = input("   ¿Qué quieres hacer? (caminar/buscar/descansar/salir): ").lower()
+    
+    if accion == "salir":
+        print("   👋 ¡Gracias por jugar!")
+        juego_activo = False
+        
+    elif accion == "caminar":
+        if energia >= 10:
+            print("   🚶 Caminando... Encuentras un camino misterioso")
+            energia -= 10
+            # 20% de probabilidad de encontrar tesoro
+            if random.random() < 0.2 and not tesoro_encontrado:
+                print("   💎 ¡ENCONTRASTE EL TESORO OCULTO!")
+                tesoro_encontrado = True
+        else:
+            print("   😴 Demasiado cansado para caminar")
+            
+    elif accion == "buscar":
+        if energia >= 5:
+            print("   🔍 Buscando... Encuentras hierbas medicinales")
+            vida = min(100, vida + 20)
+            energia -= 5
+            print("   🌿 +20 de vida")
+        else:
+            print("   😫 Sin energía para buscar")
+            
+    elif accion == "descansar":
+        print("   😴 Descansando... Recuperas energía")
+        energia = min(100, energia + 30)
+        print("   ⚡ +30 de energía")
+        
+    else:
+        print("   ❌ Acción no reconocida")
+    
+    # Condiciones de fin de juego
+    if vida <= 0:
+        print("   💀 ¡HAS MUERTO! Fin del juego")
+        juego_activo = False
+    elif tesoro_encontrado and energia >= 80:
+        print("   🏆 ¡VICTORIA! Encontraste el tesoro y tienes energía para escapar")
+        juego_activo = False
+
+print("🎊 ¡Juego terminado!")
+
+🔄 ¡WHILE VS FOR - CUÁNDO USAR CADA UNO!
+📊 COMPARACIÓN PRÁCTICA - ¡ELIGE SABIAMENTE!
+
+
+# ¡MISMA TAREA CON FOR Y WHILE!
+print("🔄 ¡COMPARACIÓN: FOR vs WHILE! 🔄")
+
+# CON FOR - Cuando sabes CUÁNTAS iteraciones necesitas
+print("🎯 CON FOR (iteraciones conocidas):")
+for i in range(1, 6):
+    print(f"   Iteración {i}")
+
+# CON WHILE - Cuando NO sabes cuántas iteraciones necesitas
+print("\n🎯 CON WHILE (condición desconocida):")
+contador = 1
+while contador <= 5:
+    print(f"   Iteración {contador}")
+    contador += 1
+
+# ¡EJEMPLO DONDE WHILE ES MEJOR!
+print("\n🎲 ¡SIMULACIÓN DE LANZAMIENTO DE DADO! 🎲")
+print("   (Repetir hasta sacar un 6)")
+
+# CON WHILE (ideal - no sabemos cuántos intentos)
+intentos = 0
+while True:
+    lanzamiento = random.randint(1, 6)
+    intentos += 1
+    print(f"   Lanzamiento {intentos}: {lanzamiento}")
+    
+    if lanzamiento == 6:
+        print(f"   🎉 ¡SACASTE UN 6! después de {intentos} intentos")
+        break
+
+# ¡CON FOR (menos ideal - podríamos necesitar muchos intentos)
+print("\n⚠️ CON FOR (límite artificial):")
+for i in range(1, 101):  # Máximo 100 intentos
+    lanzamiento = random.randint(1, 6)
+    print(f"   Lanzamiento {i}: {lanzamiento}")
+    
+    if lanzamiento == 6:
+        print(f"   🎉 ¡SACASTE UN 6! después de {i} intentos")
+        break
+else:
+    print("   ❌ No sacaste un 6 en 100 intentos")
+
+💻 ¡EJEMPLOS DEL MUNDO REAL!
+🏦 CAJERO AUTOMÁTICO SIMULADO
+
+
+class CajeroAutomatico:
+    def __init__(self):
+        self.saldo = 1000
+        self.sesion_activa = True
+        
+    def iniciar_sesion(self):
+        print("🏦 ¡BIENVENIDO AL CAJERO PYTHON-O-MATIC! 🏦")
+        
+        while self.sesion_activa:
+            print(f"\n💳 Saldo actual: ${self.saldo}")
+            print("📋 OPCIONES:")
+            print("   1. Retirar dinero")
+            print("   2. Depositar dinero") 
+            print("   3. Consultar saldo")
+            print("   4. Salir")
+            
+            opcion = input("   👉 Selecciona una opción (1-4): ")
+            
+            if opcion == "1":
+                self.retirar_dinero()
+            elif opcion == "2":
+                self.depositar_dinero()
+            elif opcion == "3":
+                self.consultar_saldo()
+            elif opcion == "4":
+                self.salir()
+            else:
+                print("   ❌ Opción inválida. Por favor selecciona 1-4")
+    
+    def retirar_dinero(self):
+        print("\n💰 RETIRO DE DINERO")
+        
+        while True:
+            try:
+                monto = float(input("   💵 Ingresa el monto a retirar: $"))
+                
+                if monto <= 0:
+                    print("   ❌ El monto debe ser positivo")
+                    continue
+                    
+                if monto > self.saldo:
+                    print("   ❌ Fondos insuficientes")
+                    print(f"   💳 Saldo disponible: ${self.saldo}")
+                    break
+                    
+                self.saldo -= monto
+                print(f"   ✅ Retiro exitoso: ${monto}")
+                print(f"   💰 Nuevo saldo: ${self.saldo}")
+                break
+                
+            except ValueError:
+                print("   ❌ Ingresa un monto válido")
+    
+    def depositar_dinero(self):
+        print("\n📥 DEPÓSITO DE DINERO")
+        
+        while True:
+            try:
+                monto = float(input("   💵 Ingresa el monto a depositar: $"))
+                
+                if monto <= 0:
+                    print("   ❌ El monto debe ser positivo")
+                    continue
+                    
+                self.saldo += monto
+                print(f"   ✅ Depósito exitoso: ${monto}")
+                print(f"   💰 Nuevo saldo: ${self.saldo}")
+                break
+                
+            except ValueError:
+                print("   ❌ Ingresa un monto válido")
+    
+    def consultar_saldo(self):
+        print(f"\n📊 CONSULTA DE SALDO")
+        print(f"   💰 Saldo actual: ${self.saldo}")
+    
+    def salir(self):
+        print("\n👋 ¡Gracias por usar el Cajero Python-o-Matic!")
+        print("   💝 ¡Vuelve pronto!")
+        self.sesion_activa = False
+
+# ¡USAR EL CAJERO!
+# cajero = CajeroAutomatico()
+# cajero.iniciar_sesion()
+
+🎯 SISTEMA DE QUIZ INTERACTIVO
+
+
+def quiz_interactivo():
+    print("🧠 ¡QUIZ PYTHON-O-MATIC! 🧠")
+    print("Responde las preguntas correctamente. ¡Buena suerte!\n")
+    
+    preguntas = [
+        {
+            "pregunta": "¿Qué significa 'HTML'?",
+            "opciones": ["A) Hyper Text Markup Language", "B) High Tech Modern Language", "C) Hyper Transfer Markup Language"],
+            "respuesta": "A"
+        },
+        {
+            "pregunta": "¿Python es un lenguaje...?",
+            "opciones": ["A) Compilado", "B) Interpretado", "C) De máquina"],
+            "respuesta": "B"
+        },
+        {
+            "pregunta": "¿Qué comando se usa para instalar paquetes en Python?",
+            "opciones": ["A) npm install", "B) pip install", "C) python get"],
+            "respuesta": "B"
+        }
+    ]
+    
+    puntaje = 0
+    pregunta_actual = 0
+    
+    while pregunta_actual < len(preguntas):
+        pregunta = preguntas[pregunta_actual]
+        
+        print(f"📝 Pregunta {pregunta_actual + 1}: {pregunta['pregunta']}")
+        for opcion in pregunta['opciones']:
+            print(f"   {opcion}")
+        
+        while True:
+            respuesta = input("\n   👉 Tu respuesta (A/B/C): ").upper()
+            
+            if respuesta in ['A', 'B', 'C']:
+                break
+            else:
+                print("   ❌ Por favor ingresa A, B o C")
+        
+        if respuesta == pregunta['respuesta']:
+            print("   ✅ ¡CORRECTO! +10 puntos")
+            puntaje += 10
+        else:
+            print(f"   ❌ INCORRECTO. La respuesta correcta es: {pregunta['respuesta']}")
+        
+        pregunta_actual += 1
+        print(f"   📊 Puntaje actual: {puntaje}\n")
+    
+    print("🎊 ¡QUIZ COMPLETADO! 🎊")
+    print(f"🏆 PUNTAJE FINAL: {puntaje}/{len(preguntas) * 10}")
+    
+    if puntaje == len(preguntas) * 10:
+        print("⭐ ¡PERFECTO! Eres un genio de la programación")
+    elif puntaje >= len(preguntas) * 7:
+        print("👍 ¡MUY BIEN! Tienes buenos conocimientos")
+    else:
+        print("💪 Sigue practicando, lo lograrás")
+
+# ¡JUGAR EL QUIZ!
+# quiz_interactivo()
+
+⚠️ ¡PELIGROS Y BUENAS PRÁCTICAS!
+🚨 EVITANDO LOOPS INFINITOS - ¡CONTROL TOTAL!
+
+
+# ¡CÓDIGO PELIGROSO - LOOP INFINITO!
+"""
+contador = 1
+while contador <= 5:
+    print(f"Iteración: {contador}")
+    # ¡OLVIDÉ INCREMENTAR contador! → LOOP INFINITO
+"""
+
+# ¡CÓDIGO SEGURO - SIEMPRE ACTUALIZAR LA CONDICIÓN!
+print("🛡️ ¡CÓDIGO SEGURO CON WHILE! 🛡️")
+
+contador = 1
+max_iteraciones = 5
+iteraciones_realizadas = 0
+
+while contador <= max_iteraciones and iteraciones_realizadas < 100:  # ¡LÍMITE DE SEGURIDAD!
+    print(f"   ✅ Iteración {contador} (realizadas: {iteraciones_realizadas})")
+    contador += 1
+    iteraciones_realizadas += 1
+
+if iteraciones_realizadas >= 100:
+    print("   ⚠️ Se alcanzó el límite de seguridad")
+
+print("🎯 Proceso completado con seguridad")
+
+# ¡PATRÓN DE SALIDA DE EMERGENCIA!
+print("\n🚨 SISTEMA CON SALIDA DE EMERGENCIA")
+ejecucion = True
+contador_emergencia = 0
+
+while ejecucion:
+    contador_emergencia += 1
+    print(f"   🔄 Ejecutando ciclo {contador_emergencia}")
+    
+    # Condición normal de salida
+    if contador_emergencia >= 5:
+        print("   ✅ Salida normal - Proceso completado")
+        ejecucion = False
+    
+    # Salida de emergencia
+    if contador_emergencia >= 10:
+        print("   🚨 ¡SALIDA DE EMERGENCIA ACTIVADA!")
+        print("   ⚠️ Demasiadas iteraciones - Forzando salida")
+        break
+
+print("🏁 Sistema finalizado")
+
+🎊 ¡RESUMEN FINAL DE WHILE LOOPS!
+
+¿QUÉ OBTIENES CON WHILE LOOPS EN PYTHON?
+
+    ✅ Repetición condicional basada en estados
+
+    ✅ Interacción dinámica con usuarios
+
+    ✅ Procesamiento hasta cumplir condiciones
+
+    ✅ Validación robusta de entradas
+
+    ✅ Simulación de procesos del mundo real
+
+¡ESTRUCTURAS CLAVE!
+
+    🎯 while condición: - Loop básico
+
+    🔄 while True: - Loop infinito controlado
+
+    🚩 Variables bandera - Control complejo
+
+    🛑 break - Salida inmediata
+
+    ⏭️ continue - Salto a siguiente iteración
+
+¡CUÁNDO USAR WHILE vs FOR!
+
+    🔄 FOR - Cuando sabes CUÁNTAS iteraciones
+
+    🎯 WHILE - Cuando sabes CUÁNDO parar
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA WHILE LOOPS Y CREA PROGRAMAS QUE PIENSAN!
+python
+
+# ¡TU PODER FINAL CON WHILE LOOPS!
+habilidades = ["repetición condicional", "validación de datos", "interacción dinámica", "simulación de procesos"]
+
+print("🎉 ¡FELICIDADES! Ahora dominas:")
+i = 0
+while i < len(habilidades):
+    print(f"   {i+1}. 🐍 {habilidades[i].upper()} con WHILE LOOPS")
+    i += 1
+
+print("\n🚀 ¡Eres un MAESTRO DE LA REPETICIÓN INTELIGENTE!")
+
+¡WHILE LOOPS SON EL LATIDO CONSTANTE DE PYTHON, Y AHORA LATEN PARA TI! 💓🐍

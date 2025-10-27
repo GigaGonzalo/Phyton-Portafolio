@@ -1,0 +1,598 @@
+🐍 ¡TRY-EXCEPT PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN MANEJO DE ERRORES ELEGANTE!
+🎯 ¡TRY-EXCEPT EN PYTHON - DOMINA LOS ERRORES COMO UN JEFE!
+
+
+# ⚡ ¡BIENVENIDO AL MUNDO DEL MANEJO DE ERRORES! ⚡
+print("🎊 ¡TRY-EXCEPT PYTHON - ERRORES BAJO CONTROL! 🎊")
+print("¿Cansado de programas que se cierran inesperadamente?")
+print("¿Frustrado con errores que arruinan tu experiencia?")
+print("¡TRY-EXCEPT protege tu código! 💫")
+
+🚀 ¡TRY-EXCEPT BÁSICO - TU PRIMERA DEFENSA!
+✨ ESTRUCTURA FUNDAMENTAL - ¡ATRAPA ERRORES EN SECUESTRO!
+
+
+# ¡EL TRY-EXCEPT MÁS SIMPLE - PROTECCIÓN INSTANTÁNEA!
+print("🛡️ ¡PROTEGIENDO OPERACIONES PELIGROSAS! 🛡️")
+
+try:
+    # Código que PODRÍA fallar
+    numero = int(input("🔢 Ingresa un número: "))
+    resultado = 10 / numero
+    print(f"✅ Resultado: 10 / {numero} = {resultado}")
+    
+except:
+    # ¡Qué hacer SI falla!
+    print("❌ ¡UPS! Algo salió mal. Pero el programa sigue funcionando!")
+
+print("🎉 ¡El programa continúa sin problemas!")
+
+🎯 ¡EXCEPCIONES ESPECÍFICAS - DIAGNÓSTICO PRECISO!
+🔍 CAPTURANDO ERRORES ESPECÍFICOS - ¡TRATAMIENTO DIRIGIDO!
+
+
+# ¡CAPTURA ERRORES ESPECÍFICOS - MÁXIMO CONTROL!
+print("🎯 ¡MANEJANDO ERRORES ESPECÍFICOS! 🎯")
+
+try:
+    numero = int(input("🔢 Ingresa un número: "))
+    resultado = 10 / numero
+    print(f"✅ División exitosa: {resultado}")
+    
+except ValueError:
+    # ¡Error cuando la conversión a número falla!
+    print("❌ ¡ERROR! Debes ingresar un número válido")
+    
+except ZeroDivisionError:
+    # ¡Error cuando divides entre cero!
+    print("❌ ¡ERROR! No puedes dividir entre cero")
+    
+except Exception as e:
+    # ¡Captura CUALQUIER otro error!
+    print(f"⚠️ Error inesperado: {type(e).__name__} - {e}")
+
+print("🚀 Programa continúa imparable!")
+
+📊 ¡EXCEPCIONES COMUNES - CONOCE A TUS ENEMIGOS!
+🎪 LA GALERÍA DE ERRORES - ¡IDENTIFÍCALOS TODOS!
+
+
+def demostrar_excepciones_comunes():
+    print("🎭 ¡GALERÍA DE EXCEPCIONES COMUNES! 🎭")
+    
+    # 1. ValueError - Conversión inválida
+    try:
+        numero = int("no_soy_un_numero")
+    except ValueError as e:
+        print(f"🔢 ValueError: {e}")
+    
+    # 2. ZeroDivisionError - División por cero
+    try:
+        resultado = 10 / 0
+    except ZeroDivisionError as e:
+        print(f"➗ ZeroDivisionError: {e}")
+    
+    # 3. IndexError - Índice fuera de rango
+    try:
+        lista = [1, 2, 3]
+        elemento = lista[10]
+    except IndexError as e:
+        print(f"📋 IndexError: {e}")
+    
+    # 4. KeyError - Clave no encontrada en diccionario
+    try:
+        diccionario = {"a": 1, "b": 2}
+        valor = diccionario["z"]
+    except KeyError as e:
+        print(f"🗝️ KeyError: La clave {e} no existe")
+    
+    # 5. TypeError - Operación en tipo incorrecto
+    try:
+        resultado = "texto" + 5
+    except TypeError as e:
+        print(f"📝 TypeError: {e}")
+    
+    # 6. FileNotFoundError - Archivo no encontrado
+    try:
+        with open("archivo_inexistente.txt", "r") as f:
+            contenido = f.read()
+    except FileNotFoundError as e:
+        print(f"📁 FileNotFoundError: {e}")
+    
+    # 7. AttributeError - Atributo no existente
+    try:
+        numero = 10
+        numero.upper()
+    except AttributeError as e:
+        print(f"🔧 AttributeError: {e}")
+
+# ¡EJECUTA LA DEMOSTRACIÓN!
+demostrar_excepciones_comunes()
+
+⚡ ¡ELSE Y FINALLY - PODER ADICIONAL!
+🎪 ELSE EN TRY-EXCEPT - ¡ÉXITO GARANTIZADO!
+
+
+# ¡ELSE - CUANDO TODO SALE BIEN!
+print("🎉 ¡TRY-EXCEPT-ELSE - ÉXITO CELEBRADO! 🎉")
+
+try:
+    numero = int(input("🔢 Ingresa un número: "))
+    resultado = 100 / numero
+    
+except ValueError:
+    print("❌ ¡Eso no es un número válido!")
+    
+except ZeroDivisionError:
+    print("❌ ¡No puedes dividir entre cero!")
+    
+else:
+    # ¡SOLO se ejecuta si NO hubo excepciones!
+    print(f"✅ ¡OPERACIÓN EXITOSA! Resultado: {resultado}")
+    print("🎊 ¡Todo salió perfectamente bien!")
+
+print("🏁 Continuamos con el programa")
+
+# ¡FINALLY - SIEMPRE SE EJECUTA!
+print("\n🔄 ¡TRY-EXCEPT-FINALLY - LIMPIEZA GARANTIZADA! 🔄")
+
+try:
+    print("🔓 Abriendo recurso...")
+    archivo = open("datos.txt", "w")
+    archivo.write("Datos importantes")
+    numero = int(input("🔢 Ingresa un número: "))
+    resultado = 10 / numero
+    print(f"✅ Resultado: {resultado}")
+    
+except (ValueError, ZeroDivisionError) as e:
+    print(f"❌ Error en operación: {e}")
+    
+finally:
+    # ¡SIEMPRE se ejecuta, haya error o no!
+    print("🧹 Cerrando recurso...")
+    try:
+        archivo.close()
+        print("🔒 Recurso cerrado correctamente")
+    except:
+        print("⚠️ El recurso no estaba abierto")
+
+print("🚀 Programa continúa imparable")
+
+💼 ¡PATRONES PRÁCTICOS - USOS DEL MUNDO REAL!
+🛒 VALIDACIÓN DE ENTRADAS DE USUARIO
+
+
+def obtener_entrada_segura():
+    print("👤 ¡SISTEMA DE REGISTRO SEGURO! 👤")
+    
+    while True:
+        try:
+            edad = int(input("📅 Ingresa tu edad: "))
+            
+            if edad < 0:
+                print("❌ La edad no puede ser negativa")
+                continue
+            elif edad > 120:
+                print("❌ Edad poco realista")
+                continue
+                
+            # Si llegamos aquí, la edad es válida
+            return edad
+            
+        except ValueError:
+            print("❌ ¡Debes ingresar un número entero!")
+        except KeyboardInterrupt:
+            print("\n👋 Registro cancelado por el usuario")
+            return None
+
+def obtener_email_seguro():
+    print("\n📧 ¡VALIDACIÓN DE EMAIL! 📧")
+    
+    while True:
+        try:
+            email = input("Ingresa tu email: ")
+            
+            if "@" not in email or "." not in email:
+                raise ValueError("Formato de email inválido")
+                
+            if len(email) < 5:
+                raise ValueError("Email demasiado corto")
+                
+            print(f"✅ Email válido: {email}")
+            return email
+            
+        except ValueError as e:
+            print(f"❌ Error: {e}")
+            print("💡 Ejemplo válido: usuario@dominio.com")
+
+# ¡USO DEL SISTEMA SEGURO!
+# edad = obtener_entrada_segura()
+# if edad is not None:
+#     print(f"🎉 Edad registrada: {edad}")
+
+# email = obtener_email_seguro()
+
+💾 MANEJO SEGURO DE ARCHIVOS
+
+
+def manejo_archivos_seguro():
+    print("📁 ¡SISTEMA DE ARCHIVOS A PRUEBA DE ERRORES! 📁")
+    
+    # Intentar leer un archivo
+    try:
+        with open("configuracion.txt", "r") as archivo:
+            contenido = archivo.read()
+            print("✅ Archivo leído correctamente")
+            return contenido
+            
+    except FileNotFoundError:
+        print("⚠️ Archivo no encontrado. Creando uno nuevo...")
+        
+        try:
+            with open("configuracion.txt", "w") as archivo:
+                archivo.write("configuracion_inicial=1\n")
+                archivo.write("idioma=es\n")
+            print("✅ Archivo de configuración creado")
+            return "configuracion_inicial=1\nidioma=es\n"
+            
+        except PermissionError:
+            print("❌ Sin permisos para crear archivo")
+            return None
+            
+    except PermissionError:
+        print("❌ Sin permisos para leer el archivo")
+        return None
+        
+    except Exception as e:
+        print(f"❌ Error inesperado: {e}")
+        return None
+
+def procesar_datos_numericos():
+    print("\n🔢 ¡PROCESAMIENTO SEGURO DE DATOS NUMÉRICOS! 🔢")
+    
+    datos = ["10", "20", "treinta", "40", "0", "50"]
+    resultados = []
+    
+    for dato in datos:
+        try:
+            numero = float(dato)
+            resultado = 100 / numero if numero != 0 else "Indefinido"
+            resultados.append(resultado)
+            print(f"✅ {dato} → {resultado}")
+            
+        except ValueError:
+            print(f"❌ '{dato}' no es un número válido - Omitiendo")
+            resultados.append("Error conversión")
+            
+        except ZeroDivisionError:
+            print(f"⚠️ División por cero con '{dato}' - Asignando 'Infinito'")
+            resultados.append("Infinito")
+    
+    return resultados
+
+# ¡EJECUTAR SISTEMAS SEGUROS!
+# contenido = manejo_archivos_seguro()
+# resultados = procesar_datos_numericos()
+# print(f"📊 Resultados: {resultados}")
+
+🎨 ¡EXCEPCIONES PERSONALIZADAS - ERRORES A TU MEDIDA!
+⚡ CREANDO TUS PROPIOS ERRORES - ¡PODER TOTAL!
+
+
+# ¡EXCEPCIONES PERSONALIZADAS - ERRORES ESPECÍFICOS!
+class SaldoInsuficienteError(Exception):
+    """Excepción personalizada para saldo insuficiente"""
+    def __init__(self, saldo_actual, monto_solicitado):
+        self.saldo_actual = saldo_actual
+        self.monto_solicitado = monto_solicitado
+        super().__init__(f"Saldo insuficiente: ${saldo_actual}. Se requieren: ${monto_solicitado}")
+
+class EdadInvalidaError(Exception):
+    """Excepción personalizada para edad inválida"""
+    pass
+
+class CuentaBancaria:
+    def __init__(self, saldo_inicial=0):
+        self.saldo = saldo_inicial
+    
+    def retirar(self, monto):
+        try:
+            if monto <= 0:
+                raise ValueError("El monto debe ser positivo")
+            
+            if monto > self.saldo:
+                raise SaldoInsuficienteError(self.saldo, monto)
+            
+            self.saldo -= monto
+            print(f"✅ Retiro exitoso: ${monto}. Saldo restante: ${self.saldo}")
+            
+        except SaldoInsuficienteError as e:
+            print(f"❌ {e}")
+        except ValueError as e:
+            print(f"❌ Error de valor: {e}")
+    
+    def depositar(self, monto):
+        try:
+            if monto <= 0:
+                raise ValueError("El monto de depósito debe ser positivo")
+            
+            self.saldo += monto
+            print(f"💰 Depósito exitoso: ${monto}. Nuevo saldo: ${self.saldo}")
+            
+        except ValueError as e:
+            print(f"❌ Error en depósito: {e}")
+
+def validar_edad_personalizada(edad):
+    try:
+        if edad < 0:
+            raise EdadInvalidaError("La edad no puede ser negativa")
+        if edad > 120:
+            raise EdadInvalidaError("Edad poco realista")
+        if edad < 18:
+            raise EdadInvalidaError("Debes ser mayor de edad")
+        
+        print(f"✅ Edad válida: {edad} años")
+        
+    except EdadInvalidaError as e:
+        print(f"❌ Error de validación: {e}")
+
+# ¡USO DE EXCEPCIONES PERSONALIZADAS!
+print("🏦 ¡SISTEMA BANCARIO CON ERRORES PERSONALIZADOS! 🏦")
+cuenta = CuentaBancaria(1000)
+cuenta.depositar(500)
+cuenta.retirar(2000)  # ¡Provocará SaldoInsuficienteError!
+
+print("\n👤 ¡VALIDACIÓN DE EDAD PERSONALIZADA! 👤")
+validar_edad_personalizada(25)
+validar_edad_personalizada(150)  # ¡Provocará EdadInvalidaError!
+validar_edad_personalizada(15)   # ¡Provocará EdadInvalidaError!
+
+🔄 ¡PATRONES AVANZADOS - MANEJO ELEGANTE!
+🎯 MANEJO DE MÚLTIPLES EXCEPCIONES
+
+
+def procesador_universal(datos):
+    print("🔄 ¡PROCESADOR UNIVERSAL A PRUEBA DE ERRORES! 🔄")
+    
+    for i, dato in enumerate(datos, 1):
+        try:
+            print(f"\n📦 Procesando elemento {i}: '{dato}'")
+            
+            # Intentar múltiples operaciones peligrosas
+            if isinstance(dato, str):
+                numero = float(dato)
+                resultado = 100 / numero
+                print(f"✅ Conversión y división exitosa: {resultado}")
+                
+            elif isinstance(dato, (list, dict)):
+                elemento = dato[0] if isinstance(dato, list) else dato["clave"]
+                print(f"✅ Acceso a estructura: {elemento}")
+                
+            else:
+                raise TypeError(f"Tipo no soportado: {type(dato)}")
+                
+        except (ValueError, ZeroDivisionError) as e:
+            print(f"❌ Error matemático: {e}")
+            
+        except (IndexError, KeyError) as e:
+            print(f"❌ Error de acceso: {e}")
+            
+        except TypeError as e:
+            print(f"❌ Error de tipo: {e}")
+            
+        except Exception as e:
+            print(f"⚠️ Error inesperado: {type(e).__name__} - {e}")
+            
+        else:
+            print("🎉 ¡Procesamiento completado sin errores!")
+            
+        finally:
+            print("🧹 Limpieza de recursos completada")
+
+# ¡DATOS DE PRUEBA CON VARIOS ERRORES!
+datos_prueba = ["10", "0", "texto", [1, 2], {"clave": "valor"}, None, "5"]
+procesador_universal(datos_prueba)
+
+🏗️ CONTEXTO SEGURO CON WITH Y TRY
+
+
+class GestorRecurso:
+    """Administrador de recursos con manejo seguro de errores"""
+    
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.abierto = False
+    
+    def __enter__(self):
+        print(f"🔓 Abriendo recurso: {self.nombre}")
+        self.abierto = True
+        return self
+    
+    def __exit__(self, exc_type, exc_val, exc_tb):
+        print(f"🔒 Cerrando recurso: {self.nombre}")
+        self.abierto = False
+        
+        if exc_type is not None:
+            print(f"⚠️ Error durante uso: {exc_type.__name__} - {exc_val}")
+            # Retornar True para suprimir la excepción
+            return True
+        
+        return False
+    
+    def operacion_riesgosa(self):
+        if not self.abierto:
+            raise RuntimeError("Recurso no abierto")
+        
+        # Simular operación que podría fallar
+        if self.nombre == "peligroso":
+            raise ValueError("¡Operación peligrosa falló!")
+        
+        print(f"✅ Operación exitosa en {self.nombre}")
+
+def demostrar_contexto_seguro():
+    print("🏗️ ¡MANEJO DE CONTEXTO SEGURO! 🏗️")
+    
+    # Uso seguro con with
+    with GestorRecurso("seguro") as recurso:
+        recurso.operacion_riesgosa()
+    
+    print("\n⚠️ Manejo de error en contexto:")
+    with GestorRecurso("peligroso") as recurso:
+        recurso.operacion_riesgosa()  # Esto generará un error
+    
+    print("🎯 El programa continúa gracias al manejo seguro")
+
+# ¡EJECUTAR DEMOSTRACIÓN!
+demostrar_contexto_seguro()
+
+💻 ¡SISTEMA COMPLETO DEL MUNDO REAL!
+🛒 CARRITO DE COMPRAS A PRUEBA DE ERRORES
+
+
+class CarritoComprasSeguro:
+    def __init__(self):
+        self.productos = []
+        self.saldo = 1000
+    
+    def agregar_producto(self, nombre, precio, cantidad=1):
+        try:
+            if not nombre or not isinstance(nombre, str):
+                raise ValueError("Nombre de producto inválido")
+            
+            if precio <= 0:
+                raise ValueError("El precio debe ser positivo")
+            
+            if cantidad <= 0:
+                raise ValueError("La cantidad debe ser positiva")
+            
+            producto = {
+                "nombre": nombre,
+                "precio": float(precio),
+                "cantidad": int(cantidad)
+            }
+            
+            self.productos.append(producto)
+            print(f"✅ '{nombre}' agregado al carrito")
+            
+        except (ValueError, TypeError) as e:
+            print(f"❌ Error al agregar producto: {e}")
+    
+    def procesar_compra(self):
+        print("\n💰 ¡PROCESANDO COMPRA! 💰")
+        
+        try:
+            if not self.productos:
+                raise ValueError("El carrito está vacío")
+            
+            total = sum(p["precio"] * p["cantidad"] for p in self.productos)
+            print(f"📊 Total de la compra: ${total:.2f}")
+            
+            if total > self.saldo:
+                raise SaldoInsuficienteError(self.saldo, total)
+            
+            # Simular procesamiento de pago
+            self.saldo -= total
+            print("✅ ¡Pago procesado exitosamente!")
+            print(f"💳 Saldo restante: ${self.saldo:.2f}")
+            
+            self.productos = []  # Vaciar carrito
+            
+        except ValueError as e:
+            print(f"❌ Error en compra: {e}")
+        except SaldoInsuficienteError as e:
+            print(f"❌ {e}")
+        except Exception as e:
+            print(f"⚠️ Error inesperado: {e}")
+        finally:
+            print("🛒 Proceso de compra finalizado")
+    
+    def mostrar_carrito(self):
+        print("\n🛒 CONTENIDO DEL CARRITO:")
+        if not self.productos:
+            print("   El carrito está vacío")
+            return
+        
+        for i, producto in enumerate(self.productos, 1):
+            print(f"   {i}. {producto['nombre']} - ${producto['precio']} x {producto['cantidad']}")
+
+# ¡SISTEMA EN ACCIÓN!
+print("🛒 ¡CARRITO DE COMPRAS A PRUEBA DE ERRORES! 🛒")
+carrito = CarritoComprasSeguro()
+
+# Agregar productos (algunos con errores)
+carrito.agregar_producto("Laptop", 1000)
+carrito.agregar_producto("Mouse", 25.50, 2)
+carrito.agregar_producto("", 50)  # Error: nombre inválido
+carrito.agregar_producto("Teclado", -10)  # Error: precio negativo
+carrito.agregar_producto("Monitor", 300, "dos")  # Error: cantidad inválida
+
+carrito.mostrar_carrito()
+carrito.procesar_compra()
+
+🎊 ¡RESUMEN FINAL DE TRY-EXCEPT!
+
+¿QUÉ OBTIENES CON TRY-EXCEPT EN PYTHON?
+
+    ✅ Estabilidad - Programas que no se caen
+
+    ✅ Robustez - Manejo elegante de errores
+
+    ✅ Experiencia de usuario - Mensajes claros
+
+    ✅ Debugging fácil - Identificación precisa de problemas
+
+    ✅ Código profesional - Aplicaciones listas para producción
+
+¡BLOQUES CLAVE!
+
+    🎯 try - Código que podría fallar
+
+    🛡️ except - Manejo de errores específicos
+
+    🎉 else - Ejecución cuando no hay errores
+
+    🧹 finally - Limpieza que siempre se ejecuta
+
+¡EXCEPCIONES COMUNES!
+
+    🔢 ValueError - Valor inapropiado
+
+    ➗ ZeroDivisionError - División por cero
+
+    📋 IndexError - Índice fuera de rango
+
+    🗝️ KeyError - Clave no encontrada
+
+    📝 TypeError - Tipo incorrecto
+
+    📁 FileNotFoundError - Archivo no existe
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA TRY-EXCEPT Y CREA CÓDIGO INDESTRUCTIBLE!
+
+
+# ¡TU PODER FINAL CON TRY-EXCEPT!
+def demostrar_poder_final():
+    try:
+        print("🎊 ¡FELICIDADES! Ahora eres un:")
+        print("🐍 MAESTRO DEL MANEJO DE ERRORES EN PYTHON")
+        print("💪 Tu código será robusto y profesional")
+        
+        # Simular éxito total
+        resultado = "ÉXITO ABSOLUTO"
+        
+    except Exception as e:
+        print(f"❌ Algo salió mal: {e}")
+        
+    else:
+        print(f"✅ {resultado} - Todo funcionó perfectamente")
+        
+    finally:
+        print("🚀 ¡Estás listo para crear aplicaciones del mundo real!")
+
+# ¡EJECUTA TU PODER!
+demostrar_poder_final()
+
+¡TRY-EXCEPT ES EL SISTEMA INMUNE DE PYTHON, Y AHORA PROTEGE TU CÓDIGO! 🛡️🐍

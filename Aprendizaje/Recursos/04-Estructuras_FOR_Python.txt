@@ -1,0 +1,500 @@
+🐍 ¡FOR LOOPS PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN REPETICIÓN INTELIGENTE DE TAREAS!
+🎯 ¡FOR LOOPS EN PYTHON - AUTOMATIZA COMO NUNCA!
+
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LA REPETICIÓN! ⚡
+print("🎊 ¡FOR LOOPS PYTHON - REPITE SIN FATIGA! 🎊")
+print("¿Cansado de código repetitivo? ¿Aburrido de tareas monótonas?")
+print("¡FOR LOOPS lo automatizan TODO! 💫")
+
+🚀 ¡FOR BÁSICO - TU PRIMERA AUTOMATIZACIÓN!
+✨ RECORRIENDO LISTAS - ¡EL PODER DE ITERAR!
+
+
+# ¡LA ESTRUCTURA MÁS FUNDAMENTAL!
+frutas = ["manzana", "banana", "naranja", "uva", "kiwi"]
+
+print("🍎 ¡RECORRIENDO LISTA DE FRUTAS! 🍎")
+for fruta in frutas:
+    print(f"   🍊 Fruta: {fruta}")
+
+print("✅ ¡Lista completa procesada!")
+
+# ¡CON NUMERACIÓN AUTOMÁTICA!
+print("\n📋 ¡FRUTAS NUMERADAS! 📋")
+for i, fruta in enumerate(frutas):
+    print(f"   {i+1}. {fruta.capitalize()}")
+
+# ¡CON OPERACIONES DENTRO DEL LOOP!
+precios = [10, 15, 20, 25, 30]
+total = 0
+
+print("\n💰 ¡CALCULANDO TOTAL DE COMPRA! 💰")
+for i, (fruta, precio) in enumerate(zip(frutas, precios), 1):
+    print(f"   {i}. {fruta}: ${precio}")
+    total += precio
+
+print(f"💵 TOTAL A PAGAR: ${total}")
+
+🔢 ¡FOR CON RANGE() - CONTROL NUMÉRICO PRECISO!
+🎯 GENERANDO SECUENCIAS - ¡PODER MATEMÁTICO!
+
+
+# ¡RANGE() - TU MEJOR ALIADO NUMÉRICO!
+print("🔢 ¡CONTANDO CON RANGE()! 🔢")
+
+# Range con un parámetro (0 a n-1)
+print("➡️ Contando del 0 al 4:")
+for i in range(5):
+    print(f"   Número: {i}")
+
+# Range con dos parámetros (inicio, fin)
+print("\n➡️ Contando del 5 al 9:")
+for i in range(5, 10):
+    print(f"   Número: {i}")
+
+# Range con tres parámetros (inicio, fin, paso)
+print("\n➡️ Contando de 2 en 2:")
+for i in range(0, 10, 2):
+    print(f"   Número: {i}")
+
+# ¡CONTEO REGRESIVO!
+print("\n⏰ ¡CUENTA REGRESIVA! ⏰")
+for i in range(10, 0, -1):
+    print(f"   🚀 {i}...")
+print("   🎉 ¡DESPEGUE!")
+
+# ¡TABLAS DE MULTIPLICAR!
+numero = 5
+print(f"\n✨ ¡TABLA DEL {numero}! ✨")
+for i in range(1, 11):
+    resultado = numero * i
+    print(f"   {numero} x {i} = {resultado}")
+
+📊 ¡FOR CON DICCIONARIOS - ITERACIÓN INTELIGENTE!
+🗂️ RECORRIENDO CLAVES Y VALORES - ¡DATOS ORGANIZADOS!
+
+
+# ¡DICCIONARIOS - INFORMACIÓN ESTRUCTURADA!
+estudiante = {
+    "nombre": "Ana García",
+    "edad": 20,
+    "carrera": "Ingeniería",
+    "promedio": 8.5,
+    "activo": True
+}
+
+print("👨‍🎓 ¡RECORRIENDO INFORMACIÓN DEL ESTUDIANTE! 👨‍🎓")
+
+# Iterando solo por CLAVES
+print("🔑 CLAVES del diccionario:")
+for clave in estudiante.keys():
+    print(f"   - {clave}")
+
+# Iterando solo por VALORES  
+print("\n📊 VALORES del diccionario:")
+for valor in estudiante.values():
+    print(f"   - {valor}")
+
+# Iterando por CLAVE y VALOR simultáneamente
+print("\n🎯 ITEMS (clave-valor):")
+for clave, valor in estudiante.items():
+    print(f"   {clave}: {valor}")
+
+# ¡DICCIONARIO MÚLTIPLE!
+estudiantes = {
+    "Ana": {"edad": 20, "carrera": "Ingeniería", "nota": 85},
+    "Carlos": {"edad": 22, "carrera": "Medicina", "nota": 92},
+    "María": {"edad": 19, "carrera": "Derecho", "nota": 78}
+}
+
+print("\n🏫 ¡SISTEMA DE ESTUDIANTES! 🏫")
+for nombre, info in estudiantes.items():
+    print(f"👤 {nombre}:")
+    for clave, valor in info.items():
+        print(f"   📍 {clave}: {valor}")
+    print()  # Línea en blanco
+
+🎭 ¡FOR CON STRINGS - CARÁCTER POR CARÁCTER!
+✂️ ANALIZANDO TEXTO - ¡PODER LINGÜÍSTICO!
+
+
+# ¡RECORRIENDO CADA CARÁCTER!
+texto = "Python"
+print("🔤 ¡ANALIZANDO CADA LETRA! 🔤")
+
+for letra in texto:
+    print(f"   Letra: '{letra}' - Código ASCII: {ord(letra)}")
+
+# ¡CONTADOR DE VOCALES!
+frase = "Python es increíble"
+vocales = "aeiouáéíóú"
+contador_vocales = 0
+
+print(f"\n🎵 ¡CONTANDO VOCALES EN: '{frase}'! 🎵")
+for letra in frase.lower():
+    if letra in vocales:
+        contador_vocales += 1
+        print(f"   ✅ Vocal encontrada: '{letra}'")
+
+print(f"🎊 TOTAL DE VOCALES: {contador_vocales}")
+
+# ¡INVERSIÓN DE TEXTO!
+texto_original = "Python"
+texto_invertido = ""
+
+print(f"\n🔄 ¡INVIRTIENDO: '{texto_original}'! 🔄")
+for letra in texto_original:
+    texto_invertido = letra + texto_invertido
+    print(f"   Progreso: '{texto_invertido}'")
+
+print(f"🎯 TEXTO INVERTIDO: '{texto_invertido}'")
+
+⚡ ¡CONTROL DE FLUJO EN FOR LOOPS!
+🛑 BREAK - ¡DETENCIÓN INTELIGENTE!
+
+
+# ¡BREAK - CUANDO ENCUENTRES LO QUE BUSCAS!
+numeros = [1, 3, 5, 8, 10, 13, 15, 18, 20]
+
+print("🔍 ¡BUSCANDO EL PRIMER NÚMERO PAR! 🔍")
+for numero in numeros:
+    print(f"   Probando número: {numero}")
+    
+    if numero % 2 == 0:  # Si es par
+        print(f"   ✅ ¡ENCONTRADO! Primer número par: {numero}")
+        break  # ¡DETENER EL LOOP INMEDIATAMENTE!
+
+print("🚦 Búsqueda finalizada")
+
+# ¡BUSQUEDA EN LISTA DE USUARIOS!
+usuarios = ["ana", "carlos", "maria", "admin", "juan"]
+
+print("\n👨‍💼 ¡BUSCANDO ADMINISTRADOR! 👨‍💼")
+for usuario in usuarios:
+    print(f"   Verificando usuario: {usuario}")
+    
+    if usuario == "admin":
+        print("   ⚡ ¡ADMINISTRADOR ENCONTRADO!")
+        print("   🔓 Acceso total concedido")
+        break
+else:
+    print("   ❌ No se encontró administrador")
+
+print("🔐 Sistema de autenticación completado")
+
+⏭️ CONTINUE - ¡SALTOS ESTRATÉGICOS!
+
+
+# ¡CONTINUE - OMITE ELEMENTOS ESPECÍFICOS!
+numeros = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+print("🎯 ¡PROCESANDO SOLO NÚMEROS IMPARES! 🎯")
+for numero in numeros:
+    if numero % 2 == 0:  # Si es par
+        continue  # ¡SALTAR ESTA ITERACIÓN!
+    
+    # Solo se ejecuta para números impares
+    cuadrado = numero ** 2
+    print(f"   Número impar: {numero} → Cuadrado: {cuadrado}")
+
+print("✅ Procesamiento completado")
+
+# ¡FILTRADO DE DATOS!
+productos = [
+    {"nombre": "Laptop", "precio": 1000, "stock": 5},
+    {"nombre": "Mouse", "precio": 25, "stock": 0},
+    {"nombre": "Teclado", "precio": 75, "stock": 3},
+    {"nombre": "Monitor", "precio": 300, "stock": 0},
+    {"nombre": "USB", "precio": 15, "stock": 10}
+]
+
+print("\n🛒 ¡PRODUCTOS DISPONIBLES (con stock)! 🛒")
+for producto in productos:
+    if producto["stock"] == 0:
+        continue  # Saltar productos sin stock
+    
+    print(f"   ✅ {producto['nombre']} - ${producto['precio']} (Stock: {producto['stock']})")
+
+🎪 ELSE EN FOR LOOPS - ¡FINALIZACIÓN ELEGANTE!
+
+
+# ¡ELSE EN FOR - CUANDO NO HAY BREAK!
+numeros = [1, 3, 5, 7, 9]
+
+print("🔎 ¡BUSCANDO NÚMERO PAR EN LISTA DE IMPARES! 🔎")
+for numero in numeros:
+    if numero % 2 == 0:
+        print(f"   ¡NÚMERO PAR ENCONTRADO: {numero}!")
+        break
+else:
+    # ¡SOLO se ejecuta si NO hubo break!
+    print("   ❌ No se encontraron números pares en la lista")
+    print("   ℹ️ Todos los números son impares")
+
+print("🏁 Búsqueda finalizada")
+
+# ¡VERIFICACIÓN DE LISTA VACÍA!
+lista_vacia = []
+
+print("\n📭 ¡PROCESANDO LISTA VACÍA! 📭")
+for elemento in lista_vacia:
+    print(f"   Procesando: {elemento}")
+else:
+    print("   ⚠️ La lista está vacía - No hay elementos para procesar")
+
+🔄 ¡FOR LOOPS ANIDADOS - PODER MULTIDIMENSIONAL!
+🏗️ MATRICES Y TABLAS - ¡ORGANIZACIÓN COMPLEJA!
+
+
+# ¡TABLA DE MULTIPLICACIÓN COMPLETA!
+print("🧮 ¡TABLA DE MULTIPLICACIÓN COMPLETA! 🧮")
+
+# Encabezado
+print("    ", end="")
+for i in range(1, 6):
+    print(f"{i:4}", end="")
+print("\n   " + "-" * 20)
+
+# Filas
+for i in range(1, 6):
+    print(f"{i:2} |", end="")
+    for j in range(1, 6):
+        print(f"{i*j:4}", end="")
+    print()
+
+print("✅ Tabla generada exitosamente")
+
+# ¡MATRIZ BIDIMENSIONAL!
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+print("\n📊 ¡RECORRIENDO MATRIZ BIDIMENSIONAL! 📊")
+for i, fila in enumerate(matriz):
+    for j, valor in enumerate(fila):
+        print(f"   matriz[{i}][{j}] = {valor}")
+
+# ¡SUMA DE MATRICES!
+print("\n➕ ¡SUMA DE ELEMENTOS DE MATRIZ! ➕")
+suma_total = 0
+for fila in matriz:
+    for elemento in fila:
+        suma_total += elemento
+        print(f"   +{elemento} = {suma_total}")
+
+print(f"🎯 SUMA TOTAL: {suma_total}")
+
+🎨 ¡COMPRENSIÓN DE LISTAS - FOR EN UNA LÍNEA!
+⚡ LIST COMPREHENSION - ¡CÓDIGO CONCISO Y PODEROSO!
+
+
+# ¡CONVERSIÓN TRADICIONAL vs COMPRENSIÓN!
+numeros = [1, 2, 3, 4, 5]
+
+print("🔄 ¡CUADRADOS DE NÚMEROS! 🔄")
+
+# Método tradicional
+cuadrados_tradicional = []
+for numero in numeros:
+    cuadrados_tradicional.append(numero ** 2)
+print(f"   Tradicional: {cuadrados_tradicional}")
+
+# Método con comprensión de listas (¡UNA LÍNEA!)
+cuadrados_comprension = [numero ** 2 for numero in numeros]
+print(f"   Comprensión: {cuadrados_comprension}")
+
+# ¡FILTRADO CON COMPRENSIÓN!
+pares_comprension = [x for x in range(10) if x % 2 == 0]
+print(f"\n🎯 Números pares del 0 al 9: {pares_comprension}")
+
+# ¡TRANSFORMACIÓN DE TEXTO!
+palabras = ["python", "es", "increíble"]
+mayusculas = [palabra.upper() for palabra in palabras]
+print(f"🔤 Palabras en mayúsculas: {mayusculas}")
+
+# ¡COMPRENSIÓN CON CONDICIONAL COMPLEJA!
+numeros_complejos = [x for x in range(20) if x % 2 == 0 if x % 3 == 0]
+print(f"🎭 Números divisibles por 2 Y 3: {numeros_complejos}")
+
+💼 ¡EJEMPLOS DEL MUNDO REAL!
+🛒 SISTEMA DE INVENTARIO AUTOMATIZADO
+
+
+class SistemaInventario:
+    def __init__(self):
+        self.productos = [
+            {"id": 1, "nombre": "Laptop", "precio": 1000, "stock": 5, "categoria": "electrónica"},
+            {"id": 2, "nombre": "Mouse", "precio": 25, "stock": 0, "categoria": "electrónica"},
+            {"id": 3, "nombre": "Silla", "precio": 150, "stock": 3, "categoria": "muebles"},
+            {"id": 4, "nombre": "Mesa", "precio": 300, "stock": 2, "categoria": "muebles"},
+            {"id": 5, "nombre": "Monitor", "precio": 200, "stock": 0, "categoria": "electrónica"}
+        ]
+    
+    def mostrar_inventario(self):
+        print("📦 ¡INVENTARIO COMPLETO! 📦")
+        for producto in self.productos:
+            estado = "✅ DISPONIBLE" if producto["stock"] > 0 else "❌ AGOTADO"
+            print(f"   {producto['id']}. {producto['nombre']} - ${producto['precio']} - Stock: {producto['stock']} - {estado}")
+    
+    def productos_agotados(self):
+        print("\n⚠️ ¡PRODUCTOS AGOTADOS! ⚠️")
+        agotados = [p for p in self.productos if p["stock"] == 0]
+        
+        if not agotados:
+            print("   🎉 ¡Todos los productos tienen stock!")
+            return
+        
+        for producto in agotados:
+            print(f"   ❌ {producto['nombre']} - ${producto['precio']}")
+    
+    def total_valor_inventario(self):
+        print("\n💰 ¡VALOR TOTAL DEL INVENTARIO! 💰")
+        valor_total = 0
+        
+        for producto in self.productos:
+            valor_producto = producto["precio"] * producto["stock"]
+            valor_total += valor_producto
+            print(f"   {producto['nombre']}: ${valor_producto}")
+        
+        print(f"🎯 VALOR TOTAL: ${valor_total}")
+
+# ¡USO DEL SISTEMA!
+inventario = SistemaInventario()
+inventario.mostrar_inventario()
+inventario.productos_agotados()
+inventario.total_valor_inventario()
+
+📊 ANALIZADOR DE TEXTO AVANZADO
+
+
+def analizador_texto(texto):
+    print("🔍 ¡ANALIZADOR DE TEXTO AVANZADO! 🔍")
+    print(f"📝 Texto analizado: '{texto}'")
+    
+    # Contadores
+    stats = {
+        "caracteres": 0,
+        "palabras": 0,
+        "oraciones": 0,
+        "vocales": 0,
+        "consonantes": 0
+    }
+    
+    vocales = "aeiouáéíóú"
+    consonantes = "bcdfghjklmnñpqrstvwxyz"
+    
+    # Análisis carácter por carácter
+    for i, caracter in enumerate(texto.lower()):
+        stats["caracteres"] += 1
+        
+        if caracter in vocales:
+            stats["vocales"] += 1
+        elif caracter in consonantes:
+            stats["consonantes"] += 1
+        
+        # Detectar fin de oración
+        if caracter in ".!?":
+            stats["oraciones"] += 1
+    
+    # Contar palabras (simplificado)
+    stats["palabras"] = len(texto.split())
+    
+    # Mostrar resultados
+    print("\n📊 ESTADÍSTICAS:")
+    for clave, valor in stats.items():
+        print(f"   {clave.capitalize()}: {valor}")
+    
+    # Análisis de frecuencia de letras
+    print("\n🎵 FRECUENCIA DE LETRAS:")
+    frecuencia = {}
+    for letra in texto.lower():
+        if letra.isalpha():
+            frecuencia[letra] = frecuencia.get(letra, 0) + 1
+    
+    for letra, count in sorted(frecuencia.items()):
+        print(f"   '{letra}': {count} veces")
+
+# ¡ANALIZAR TEXTO!
+texto_ejemplo = "Python es increíble! Con for loops podemos analizar texto fácilmente. ¿No es genial?"
+analizador_texto(texto_ejemplo)
+
+🎪 ¡PATRONES CREATIVOS CON FOR LOOPS!
+🔺 PATRONES CON CARACTERES - ¡ARTE ASCII!
+
+
+# ¡TRIÁNGULO CRECIENTE!
+print("🔺 ¡TRIÁNGULO CON ASTERISCOS! 🔺")
+altura = 5
+
+for i in range(1, altura + 1):
+    print(" " * (altura - i) + "*" * (2 * i - 1))
+
+print("\n🎄 ¡ÁRBOL DE NAVIDAD! 🎄")
+for i in range(1, 6):
+    print(" " * (6 - i) + "🎄" * i)
+
+# ¡TABLA DE PITÁGORAS MEJORADA!
+print("\n🧮 ¡TABLA DE PITÁGORAS COLORIDA! 🧮")
+for i in range(1, 11):
+    for j in range(1, 11):
+        producto = i * j
+        # Colores diferentes para pares e impares
+        if producto % 2 == 0:
+            print(f"🟦{producto:3}", end=" ")
+        else:
+            print(f"🟨{producto:3}", end=" ")
+    print()
+
+🎊 ¡RESUMEN FINAL DE FOR LOOPS!
+
+¿QUÉ OBTIENES CON FOR LOOPS EN PYTHON?
+
+    ✅ Automatización de tareas repetitivas
+
+    ✅ Procesamiento de colecciones de datos
+
+    ✅ Iteración sobre secuencias y estructuras
+
+    ✅ Transformación de datos eficientemente
+
+    ✅ Búsqueda y filtrado inteligente
+
+¡ESTRUCTURAS CLAVE!
+
+    🎯 for elemento in secuencia - Iteración básica
+
+    🔢 range() - Secuencias numéricas
+
+    🗂️ items() - Diccionarios (clave-valor)
+
+    🔄 enumerate() - Con índice automático
+
+    ⚡ Comprensión de listas - For en una línea
+
+¡CONTROL DE FLUJO!
+
+    🛑 break - Salir del loop inmediatamente
+
+    ⏭️ continue - Saltar a la siguiente iteración
+
+    🎪 else - Ejecutar cuando no hay break
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA FOR LOOPS Y AUTOMATIZA TU CÓDIGO COMO UN PROFESIONAL!
+
+
+# ¡TU PODER FINAL CON FOR LOOPS!
+habilidades = ["automatización", "procesamiento", "iteración", "transformación", "búsqueda"]
+
+print("🎉 ¡FELICIDADES! Ahora dominas:")
+for i, habilidad in enumerate(habilidades, 1):
+    print(f"   {i}. 🐍 {habilidad.upper()} con FOR LOOPS")
+
+print("\n🚀 ¡Eres un MAESTRO DE LA REPETICIÓN INTELIGENTE!")
+
+¡FOR LOOPS SON LOS BRAZOS ROBÓTICOS DE PYTHON, Y AHORA TRABAJAN PARA TI! 🤖🐍

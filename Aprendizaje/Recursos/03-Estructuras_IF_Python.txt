@@ -1,0 +1,490 @@
+🐍 ¡IF-ELSE PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN TOMA DE DECISIONES INTELIGENTES!
+🎯 ¡IF-ELSE EN PYTHON - TOMA EL CONTROL DE TU CÓDIGO!
+
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LAS DECISIONES! ⚡
+print("🎊 ¡IF-ELSE PYTHON - DECIDE COMO UN JEFE! 🎊")
+print("¿Cansado de código lineal? ¿Aburrido de programas sin inteligencia?")
+print("¡IF-ELSE lo cambia TODO! 💫")
+
+🚀 ¡IF BÁSICO - TU PRIMERA DECISIÓN!
+✨ IF SIMPLE - ¡EL COMIENZO DE TODO!
+
+
+# ¡LA ESTRUCTURA MÁS FUNDAMENTAL!
+edad = 20
+
+print("🔍 ¡EVALUANDO EDAD PARA VOTAR! 🔍")
+if edad >= 18:
+    print("✅ ¡FELICIDADES! Puedes votar en las elecciones 🗳️")
+    print("¡Ejerce tu derecho democrático!")
+
+print("--- Continuamos con el programa ---")
+
+# ¡CON VARIABLES DINÁMICAS!
+temperatura = 25
+if temperatura > 30:
+    print("🌡️ ¡Hace calor! Prende el aire acondicionado")
+
+if temperatura < 15:
+    print("🥶 ¡Hace frío! Enciende la calefacción")
+
+🎭 ¡IF-ELSE - DECISIONES BINARIAS!
+🔄 EL PODER DE ELEGIR - ¡DOS CAMINOS POSIBLES!
+
+
+# ¡EL CLÁSICO QUE CAMBIA TODO!
+edad = 16
+
+print("🎯 ¡SISTEMA DE VERIFICACIÓN DE EDAD! 🎯")
+if edad >= 18:
+    print("✅ ACCESO PERMITIDO: Eres mayor de edad")
+    print("🎉 ¡Bienvenido al contenido para adultos!")
+else:
+    print("❌ ACCESO DENEGADO: Eres menor de edad")
+    print("👶 Este contenido es solo para mayores de 18 años")
+
+print("🔒 Sistema de seguridad activado")
+
+# ¡EJEMPLO DEL MUNDO REAL!
+saldo = 150
+compra = 200
+
+if saldo >= compra:
+    print("💰 ¡Compra exitosa! Procesando pago...")
+    saldo -= compra
+    print(f"💳 Saldo restante: ${saldo}")
+else:
+    print("❌ ¡Fondos insuficientes!")
+    print(f"💸 Necesitas ${compra - saldo} más para completar la compra")
+
+🌈 ¡IF-ELIF-ELSE - MÚLTIPLES CAMINOS!
+🛣️ ELECCIONES MÚLTIPLES - ¡TODO UN MENÚ DE OPCIONES!
+
+
+# ¡DECISIONES COMPLEJAS CON MÚLTIPLES OPCIONES!
+calificacion = 85
+
+print("📊 ¡SISTEMA DE EVALUACIÓN ACADÉMICA! 📊")
+if calificacion >= 90:
+    print("🏆 CALIFICACIÓN: A - ¡EXCELENTE!")
+    print("⭐ Eres un estudiante excepcional")
+elif calificacion >= 80:
+    print("✅ CALIFICACIÓN: B - ¡MUY BUENO!")
+    print("👍 Buen trabajo, sigue así")
+elif calificacion >= 70:
+    print("⚠️ CALIFICACIÓN: C - ¡APROBADO!")
+    print("📚 Podría mejorar, pero está bien")
+elif calificacion >= 60:
+    print("🔶 CALIFICACIÓN: D - ¡APENAS!")
+    print("📖 Necesitas estudiar más")
+else:
+    print("❌ CALIFICACIÓN: F - ¡REPROBADO!")
+    print("🎯 Debes repetir el curso")
+
+print("🎓 Evaluación completada")
+
+# ¡SISTEMA DE DESCUENTOS INTELIGENTE!
+monto_compra = 350
+
+print("\n🛒 ¡SISTEMA DE DESCUENTOS AUTOMÁTICO! 🛒")
+if monto_compra >= 500:
+    descuento = 0.25
+    categoria = "PLATINO"
+elif monto_compra >= 300:
+    descuento = 0.15  
+    categoria = "ORO"
+elif monto_compra >= 100:
+    descuento = 0.10
+    categoria = "PLATA"
+else:
+    descuento = 0.05
+    categoria = "BRONCE"
+
+total = monto_compra * (1 - descuento)
+print(f"🎁 Categoría: {categoria} - Descuento: {descuento*100}%")
+print(f"💰 Total original: ${monto_compra}")
+print(f"💸 Total con descuento: ${total:.2f}")
+
+🔍 ¡CONDICIONES COMPLEJAS - OPERADORES LÓGICOS!
+🧠 AND, OR, NOT - ¡COMBINA CONDICIONES!
+
+
+# ¡CONDICIONES MÚLTIPLES CON AND!
+edad = 25
+tiene_licencia = True
+tiene_seguro = True
+
+print("🚗 ¡VERIFICACIÓN PARA CONDUCIR! 🚗")
+if edad >= 18 and tiene_licencia and tiene_seguro:
+    print("✅ ¡TODO EN ORDEN! Puedes conducir legalmente")
+    print("🚦 ¡Que tengas un buen viaje!")
+else:
+    print("❌ ¡NO PUEDES CONDUCIR! Faltan requisitos:")
+    if edad < 18:
+        print("   👶 Eres menor de edad")
+    if not tiene_licencia:
+        print("   📄 No tienes licencia de conducir")  
+    if not tiene_seguro:
+        print("   🛡️ No tienes seguro del auto")
+
+# ¡CONDICIONES CON OR - ALTERNATIVAS!
+dia = "sábado"
+es_festivo = False
+
+print("\n🎉 ¡VERIFICACIÓN DE FIN DE SEMANA! 🎉")
+if dia == "sábado" or dia == "domingo" or es_festivo:
+    print("✅ ¡ES FIN DE SEMANA! Descansa y diviértete")
+    print("🎮 Tiempo de recreación")
+else:
+    print("📅 ¡ES DÍA LABORAL! A trabajar")
+
+# ¡COMBINANDO AND Y OR!
+usuario = "admin"
+password = "1234"
+es_empleado = True
+
+print("\n🔐 ¡SISTEMA DE AUTENTICACIÓN! 🔐")
+if (usuario == "admin" and password == "1234") or es_empleado:
+    print("✅ ACCESO CONCEDIDO: Bienvenido al sistema")
+    print("⚙️ Cargando panel de control...")
+else:
+    print("❌ ACCESO DENEGADO: Credenciales incorrectas")
+
+🎪 ¡IF ANIDADOS - DECISIONES DENTRO DE DECISIONES!
+🏗️ ESTRUCTURAS COMPLEJAS - ¡ORGANIZACIÓN JERÁRQUICA!
+
+
+# ¡DECISIONES EN CAPAS COMO CEBOLLA!
+pais = "México"
+edad = 20
+tiene_identificacion = True
+
+print("🌎 ¡SISTEMA DE VERIFICACIÓN INTERNACIONAL! 🌎")
+if pais == "México":
+    print("🇲🇽 Detectado ciudadano mexicano")
+    
+    if edad >= 18:
+        print("   ✅ Mayor de edad mexicano")
+        
+        if tiene_identificacion:
+            print("      🆔 Identificación verificada")
+            print("      🎉 ¡ACCESO TOTAL CONCEDIDO!")
+        else:
+            print("      ❌ Identificación requerida")
+            print("      📄 Presenta tu INE o pasaporte")
+    else:
+        print("   ❌ Menor de edad - Acceso restringido")
+        print("   👨‍👩‍👧‍👦 Se requiere supervisión adulta")
+        
+else:
+    print("🌍 Extranjero detectado")
+    print("🛂 Proceso de verificación internacional requerido")
+
+# ¡SISTEMA DE CLASIFICACIÓN AVANZADO!
+puntuacion = 85
+completado = True
+tiempo = 120  # segundos
+
+print("\n🎮 ¡SISTEMA DE CLASIFICACIÓN DE JUEGO! 🎮")
+if completado:
+    print("✅ Nivel completado")
+    
+    if puntuacion >= 90:
+        print("   🏅 RANGO: ORO - ¡PERFECTO!")
+        
+        if tiempo < 100:
+            print("      ⚡ ¡RÉCORD DE VELOCIDAD!")
+        else:
+            print("      🐢 Buen tiempo, pero puedes mejorar")
+            
+    elif puntuacion >= 70:
+        print("   🥈 RANGO: PLATA - ¡MUY BIEN!")
+        
+    else:
+        print("   🥉 RANGO: BRONCE - ¡BIEN HECHO!")
+        
+else:
+    print("❌ Nivel no completado")
+    print("🔄 Inténtalo de nuevo")
+
+💼 ¡IF CON OPERADORES DE PERTENENCIA!
+🎯 IN Y NOT IN - ¡BUSCA EN COLECCIONES!
+
+
+# ¡BUSQUEDA EN LISTAS!
+frutas = ["manzana", "banana", "naranja", "uva"]
+fruta_buscada = "banana"
+
+print("🍎 ¡SISTEMA DE INVENTARIO DE FRUTAS! 🍎")
+if fruta_buscada in frutas:
+    print(f"✅ ¡SÍ TENEMOS {fruta_buscada.upper()}!")
+    print("🛒 Disponible para compra inmediata")
+else:
+    print(f"❌ No tenemos {fruta_buscada} en stock")
+    print("📦 Próximo reabastecimiento: lunes")
+
+# ¡VERIFICACIÓN EN DICCIONARIOS!
+usuario = {
+    "nombre": "Ana",
+    "email": "ana@python.com", 
+    "activo": True,
+    "rol": "admin"
+}
+
+print("\n👤 ¡VERIFICACIÓN DE PERMISOS DE USUARIO! 👤")
+if "rol" in usuario and usuario["rol"] == "admin":
+    print("✅ USUARIO ADMINISTRADOR DETECTADO")
+    print("⚙️ Acceso completo al sistema concedido")
+    
+    if usuario.get("activo", False):
+        print("🟢 Cuenta activa - Sesión iniciada")
+    else:
+        print("🔴 Cuenta inactiva - Contactar soporte")
+else:
+    print("👤 Usuario normal - Permisos estándar")
+
+# ¡BÚSQUEDA EN TEXTOS!
+mensaje = "Python es el mejor lenguaje de programación"
+palabra_clave = "Python"
+
+print("\n🔍 ¡ANALIZADOR DE CONTENIDO! 🔍")
+if palabra_clave in mensaje:
+    print(f"✅ '{palabra_clave}' detectado en el mensaje")
+    print("🎯 Contenido relevante encontrado")
+    
+    if "mejor" in mensaje and "lenguaje" in mensaje:
+        print("🌟 ¡MENSAJE POSITIVO SOBRE LENGUAJES!")
+else:
+    print("📭 Palabra clave no encontrada")
+
+🎨 ¡IF EN UNA SOLA LÍNEA - OPERADOR TERNARIO!
+⚡ CONDICIONAL TERNARIO - ¡RÁPIDO Y EFICIENTE!
+
+
+# ¡IF-ELSE EN UNA SOLA LÍNEA!
+edad = 20
+estatus = "Mayor de edad" if edad >= 18 else "Menor de edad"
+print(f"🎂 Edad: {edad} - {estatus}")
+
+# ¡MÚLTIPLES USOS PRÁCTICOS!
+puntuacion = 85
+resultado = "Aprobado" if puntuacion >= 70 else "Reprobado"
+print(f"📝 Puntuación: {puntuacion} - {resultado}")
+
+# ¡ASIGNACIÓN CONDICIONAL!
+saldo = 100
+retiro = 150
+mensaje = "Retiro exitoso" if saldo >= retiro else "Fondos insuficientes"
+print(f"💰 {mensaje}")
+
+# ¡OPERACIONES MATEMÁTICAS CONDICIONALES!
+numero = 10
+valor_absoluto = numero if numero >= 0 else -numero
+print(f"🔢 Valor absoluto de {numero} es {valor_absoluto}")
+
+# ¡CONDICIONES MÁS COMPLEJAS!
+calificacion = 92
+categoria = "Excelente" if calificacion >= 90 else "Bueno" if calificacion >= 70 else "Necesita mejorar"
+print(f"🏆 Calificación: {calificacion} - Categoría: {categoria}")
+
+🔧 ¡IF CON COMPARACIONES AVANZADAS!
+📊 COMPARACIONES MÚLTIPLES - ¡LÍMITES Y RANGOS!
+
+
+# ¡VERIFICACIÓN DE RANGOS!
+temperatura = 22
+
+print("🌡️ ¡SISTEMA DE CONTROL DE TEMPERATURA! 🌡️")
+if 20 <= temperatura <= 25:
+    print("✅ TEMPERATURA ÓPTIMA")
+    print("🏠 Ambiente perfectamente confortable")
+elif temperatura < 20:
+    print("❄️ TEMPERATURA BAJA")
+    print("🔥 Activando calefacción...")
+else:
+    print("☀️ TEMPERATURA ALTA") 
+    print("❄️ Activando aire acondicionado...")
+
+# ¡COMPARACIONES CON STRINGS!
+nombre = "Python"
+version = "3.9"
+
+print("\n🐍 ¡VERIFICACIÓN DE VERSIÓN DE PYTHON! 🐍")
+if nombre == "Python" and (version.startswith("3.8") or version.startswith("3.9")):
+    print("✅ VERSIÓN COMPATIBLE DETECTADA")
+    print("🚀 Todas las características disponibles")
+elif nombre == "Python" and version.startswith("2."):
+    print("⚠️ VERSIÓN ANTIGUA DETECTADA")
+    print("🔄 Considera actualizar a Python 3")
+else:
+    print("❌ LENGUAJE NO RECONOCIDO")
+    print("🔧 Configuración requerida")
+
+# ¡COMPARACIONES CON LISTAS!
+numeros = [1, 2, 3, 4, 5]
+
+print("\n📊 ¡ANÁLISIS DE LISTA NUMÉRICA! 📊")
+if len(numeros) > 0 and max(numeros) > 10:
+    print("📈 Lista con valores altos detectados")
+elif len(numeros) == 0:
+    print("📭 Lista vacía - Sin datos para analizar")
+else:
+    print("📋 Lista normal - Valores dentro del rango esperado")
+
+💻 ¡EJEMPLOS DEL MUNDO REAL!
+🛒 SISTEMA DE E-COMMERCE COMPLETO
+
+
+class SistemaTienda:
+    def __init__(self):
+        self.inventario = {"laptop": 5, "mouse": 10, "teclado": 3}
+        self.descuentos = {"VIP": 0.20, "PREMIUM": 0.15, "BASIC": 0.05}
+    
+    def procesar_compra(self, producto, cantidad, tipo_cliente, saldo_cliente):
+        print(f"\n🛒 PROCESANDO COMPRA: {cantidad}x {producto}")
+        print(f"👤 Tipo de cliente: {tipo_cliente}")
+        
+        # Verificar producto en inventario
+        if producto not in self.inventario:
+            print(f"❌ PRODUCTO NO DISPONIBLE: {producto}")
+            return False
+            
+        # Verificar stock suficiente
+        if self.inventario[producto] < cantidad:
+            print(f"❌ STOCK INSUFICIENTE: Solo quedan {self.inventario[producto]} unidades")
+            return False
+        
+        # Calcular precio y descuento
+        precios = {"laptop": 1000, "mouse": 25, "teclado": 75}
+        precio_unitario = precios[producto]
+        descuento = self.descuentos.get(tipo_cliente, 0)
+        
+        total = precio_unitario * cantidad * (1 - descuento)
+        
+        # Verificar fondos
+        if saldo_cliente >= total:
+            self.inventario[producto] -= cantidad
+            saldo_cliente -= total
+            print(f"✅ COMPRA EXITOSA!")
+            print(f"💰 Total: ${total:.2f} (Descuento: {descuento*100}%)")
+            print(f"💳 Saldo restante: ${saldo_cliente:.2f}")
+            print(f"📦 Stock actual de {producto}: {self.inventario[producto]}")
+            return True
+        else:
+            print(f"❌ FONDOS INSUFICIENTES")
+            print(f"💸 Necesitas: ${total:.2f}, Tienes: ${saldo_cliente:.2f}")
+            return False
+
+# ¡USO DEL SISTEMA!
+tienda = SistemaTienda()
+tienda.procesar_compra("laptop", 2, "VIP", 2000)
+tienda.procesar_compra("mouse", 15, "BASIC", 100)  # Stock insuficiente
+
+🎮 SISTEMA DE VIDEOJUEGO
+
+
+def sistema_de_juego(vida, energia, armas, enemigos_cerca):
+    print("\n🎮 ¡SISTEMA DE ESTADO DEL JUGADOR! 🎮")
+    
+    # Evaluar estado del jugador
+    if vida <= 0:
+        print("💀 ¡GAME OVER! - Vida agotada")
+        return "game_over"
+    
+    elif vida < 20:
+        print("🔴 ¡POCA VIDA! - Busca un kit de salud")
+        if enemigos_cerca:
+            print("⚠️ ¡ENEMIGOS CERCA! - Considera huir")
+    
+    elif vida < 50:
+        print("🟡 VIDA MEDIA - Ten cuidado")
+    
+    else:
+        print("🟢 VIDA ALTA - Estás en buena forma")
+    
+    # Evaluar energía
+    if energia < 10:
+        print("😴 ¡SIN ENERGÍA! - Descansa o busca comida")
+    elif energia < 30:
+        print("🟡 Energía baja - Limita acciones especiales")
+    
+    # Evaluar armas
+    if not armas:
+        print("👊 Sin armas - Solo combate cuerpo a cuerpo")
+        if enemigos_cerca:
+            print("🎯 ¡RECOMENDACIÓN! - Busca un arma rápido")
+    elif "escopeta" in armas or "rifle" in armas:
+        print("🔫 Bien armado - Puedes enfrentar múltiples enemigos")
+    else:
+        print("🔪 Arma básica - Eficaz a corta distancia")
+    
+    # Decisión final
+    if vida > 70 and len(armas) >= 2 and energia > 50:
+        print("🚀 ¡ESTADO ÓPTIMO! - Avanza con confianza")
+        return "avanzar"
+    elif vida < 30 and enemigos_cerca:
+        print("🏃 ¡RETIRADA RECOMENDADA! - Busca refuerzos")
+        return "retirar"
+    else:
+        print("🛡️ Estado estable - Procede con precaución")
+        return "explorar"
+
+# ¡SIMULACIÓN DE JUEGO!
+estado = sistema_de_juego(
+    vida=45, 
+    energia=25, 
+    armas=["pistola", "cuchillo"], 
+    enemigos_cerca=True
+)
+
+🎊 ¡RESUMEN FINAL DE IF-ELSE!
+
+¿QUÉ OBTIENES CON IF-ELSE EN PYTHON?
+
+    ✅ Control total sobre el flujo de tu programa
+
+    ✅ Decisiones inteligentes basadas en condiciones
+
+    ✅ Múltiples caminos para diferentes escenarios
+
+    ✅ Código adaptable que responde a situaciones variables
+
+    ✅ Lógica empresarial compleja implementada fácilmente
+
+¡ESTRUCTURAS PRINCIPALES!
+
+    🎯 if - Ejecuta código si la condición es True
+
+    🔄 else - Ejecuta código cuando if es False
+
+    🛣️ elif - Múltiples condiciones en secuencia
+
+    🏗️ Anidados - Decisiones dentro de decisiones
+
+    ⚡ Ternario - if-else en una sola línea
+
+¡OPERADORES CLAVE!
+
+    🔍 Comparación - ==, !=, >, <, >=, <=
+
+    🧠 Lógicos - and, or, not
+
+    🎯 Pertenencia - in, not in
+
+    🔄 Identidad - is, is not
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA IF-ELSE Y DA VIDA INTELIGENTE A TUS PROGRAMAS!
+
+
+# ¡TU PODER FINAL CON IF-ELSE!
+nivel_habilidad = "AVANZADO"
+mensaje = "🎉 ¡FELICIDADES! Ahora controlas el FLUJO de tus programas 🎉" if nivel_habilidad == "AVANZADO" else "💪 Sigue practicando, pronto serás un maestro"
+
+print(mensaje)
+print("🐍 El poder de la DECISIÓN está en tus manos")
+
+¡IF-ELSE ES EL CEREBRO DE PYTHON, Y AHORA PIENSA CONTIGO! 🧠🐍
