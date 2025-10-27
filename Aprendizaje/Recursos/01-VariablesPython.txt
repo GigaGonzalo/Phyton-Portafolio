@@ -1,0 +1,287 @@
+🐍 ¡VARIABLES PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN ALMACENAMIENTO DE DATOS!
+🎯 ¡VARIABLES EN PYTHON - EL PODER ESTÁ EN TUS MANOS!
+python
+
+# ⚡ ¡DECLARACIÓN DE VARIABLES INSTANTÁNEA! ⚡
+# ¡Sin tipos complicados, sin sintaxis enredada!
+
+print("🎊 ¡BIENVENIDO AL MUNDO DE LAS VARIABLES PYTHON! 🎊")
+print("¿Cansado de declarar tipos? ¿Aburrido de memoria complicada?")
+print("¡PYTHON lo hace TODO por ti! 💫")
+
+🚀 ¡CARACTERÍSTICAS QUE TE VOLARÁN LA MENTE!
+✨ ASIGNACIÓN DIRECTA - ¡SIN COMPLICACIONES!
+
+
+# ¡MIRA ESTA MARAVILLA!
+nombre = "Juan"                    # ¡Texto automático!
+edad = 25                         # ¡Número automático!
+altura = 1.75                     # ¡Decimal automático!
+es_programador = True             # ¡Verdadero/Falso automático!
+
+print(f"¡{nombre} tiene {edad} años y mide {altura}m! 🎉")
+
+📊 ¡TIPOS DE VARIABLES INCREÍBLES!
+🎯 TEXTO (STRINGS) - ¡MANEJA PALABRAS COMO NUNCA!
+
+
+# ¡F-STRINGS MÁGICOS!
+nombre = "María"
+profesion = "programadora"
+saludo = f"¡Hola {nombre}, eres una {profesion} excelente! 🌟"
+
+print(saludo)
+
+# ¡OPERACIONES CON TEXTO!
+texto = "Python es GENIAL"
+print(texto.upper())      # ¡TODO MAYÚSCULAS!
+print(texto.lower())      # ¡todo minúsculas!
+print(texto.replace("GENIAL", "INCREÍBLE"))  # ¡CAMBIA TEXTO!
+
+🔢 NÚMEROS - ¡CÁLCULOS SIN LÍMITES!
+
+
+# ¡ENTEROS PARA CONTAR!
+cantidad_productos = 100
+dias_desarrollo = 30
+
+# ¡DECIMALES PARA PRECISIÓN!
+precio = 29.99
+iva = 0.16
+
+# ¡CÁLCULOS AUTOMÁGICOS!
+total = cantidad_productos * precio
+print(f"¡TOTAL: ${total}! 💰")
+
+# ¡OPERACIONES MATEMÁTICAS!
+a = 10
+b = 3
+print(f"Suma: {a + b}")        # ➕
+print(f"Resta: {a - b}")       # ➖  
+print(f"Multiplicación: {a * b}")  # ✖️
+print(f"División: {a / b}")    # ➗
+print(f"Potencia: {a ** b}")   # ⚡
+
+✅ BOOLEANOS - ¡DECISIONES INTELIGENTES!
+
+
+# ¡CONTROL TOTAL DE VERDADERO Y FALSO!
+es_dia_laboral = True
+tiene_descuento = False
+puede_acceder = True
+
+print(f"¿Es día laboral? {es_dia_laboral} 📅")
+print(f"¿Tiene descuento? {tiene_descuento} 🏷️")
+
+# ¡COMPARACIONES PODEROSAS!
+edad = 18
+puede_votar = edad >= 18
+print(f"¿Puede votar? {puede_votar} 🗳️")
+
+🎪 ¡COLECCIONES ESPECTACULARES!
+📋 LISTAS - ¡ORGANIZA TODO EN ORDEN!
+
+
+# ¡LISTAS MUTABLES Y FLEXIBLES!
+frutas = ["manzana", "banana", "naranja"]
+numeros = [1, 2, 3, 4, 5]
+mezclado = [1, "texto", True, 3.14]
+
+print("¡LISTA DE FRUTAS:", frutas)
+
+# ¡AÑADE ELEMENTOS MÁGICAMENTE!
+frutas.append("uva")           # ➕ Añadir al final
+frutas.insert(1, "kiwi")       # 📍 Insertar en posición
+print("¡FRUTAS ACTUALIZADAS:", frutas)
+
+# ¡ACCESO DIRECTO!
+print(f"Primera fruta: {frutas[0]}")    # 🥇
+print(f"Última fruta: {frutas[-1]}")    # 🥉
+
+📚 TUPLAS - ¡DATOS INMUTABLES Y SEGUROS!
+pitón
+
+# ¡TUPLAS PARA DATOS FIJOS!
+coordenadas = (40.7128, -74.0060)
+colores_rgb = (255, 0, 0)
+configuracion = ("admin", 8080, True)
+
+print(f"Coordenadas NYC: {coordenadas} 🗽")
+print(f"Color rojo RGB: {colores_rgb} 🔴")
+
+# ¡DESEMPAQUETADO MÁGICO!
+latitud, longitud = coordenadas
+print(f"Latitud: {latitud}, Longitud: {longitud}")
+
+📖 DICCIONARIOS - ¡ORGANIZA POR NOMBRE!
+
+
+# ¡ALMACENA DATOS CON CLAVES!
+persona = {
+    "nombre": "Carlos",
+    "edad": 30,
+    "ciudad": "Madrid",
+    "es_programador": True
+}
+
+print("¡DICCIONARIO DE PERSONA:", persona)
+
+# ¡ACCESO POR CLAVE!
+print(f"Nombre: {persona['nombre']} 👤")
+print(f"Edad: {persona.get('edad')} 🎂")
+
+# ¡AÑADE NUEVAS PROPIEDADES!
+persona["email"] = "carlos@python.com"
+print("¡PERSONA ACTUALIZADA:", persona)
+
+🎭 SETS - ¡COLECCIONES SIN DUPLICADOS!
+
+
+# ¡ELIMINA DUPLICADOS AUTOMÁTICAMENTE!
+numeros_unicos = {1, 2, 3, 2, 1, 4, 5}
+colores = {"rojo", "verde", "azul", "verde"}
+
+print("Números únicos:", numeros_unicos)  # ¡SIN DUPLICADOS!
+print("Colores únicos:", colores)         # ¡SIN REPETICIONES!
+
+# ¡OPERACIONES CONJUNTAS!
+set_a = {1, 2, 3}
+set_b = {3, 4, 5}
+print("Unión:", set_a | set_b)        # 🔗
+print("Intersección:", set_a & set_b) # ⚡
+
+🔄 ¡CONVERSIÓN DE TIPOS MÁGICA!
+
+
+# ¡CONVIERTE ENTRE TIPOS FÁCILMENTE!
+numero_texto = "123"
+numero_entero = int(numero_texto)      # 📝 → 🔢
+numero_decimal = float(numero_texto)   # 📝 → 📊
+
+texto_desde_numero = str(456)          # 🔢 → 📝
+booleano_desde_numero = bool(1)        # 🔢 → ✅
+
+print(f"Conversión texto a número: {numero_entero}")
+print(f"Conversión número a texto: '{texto_desde_numero}'")
+
+# ¡CONVERSIÓN ENTRE COLECCIONES!
+lista = [1, 2, 3, 2]
+tupla = tuple(lista)                   # 📋 → 📚
+conjunto = set(lista)                  # 📋 → 🎭
+print(f"Lista: {lista} → Tupla: {tupla} → Set: {conjunto}")
+
+🎨 ¡VARIABLES EN ACCIÓN - EJEMPLOS REALES!
+💼 SISTEMA DE INVENTARIO
+
+
+# ¡VARIABLES PARA GESTIÓN DE TIENDA!
+nombre_producto = "Laptop Python 3000"
+precio = 999.99
+cantidad_stock = 50
+disponible = True
+caracteristicas = ["16GB RAM", "512GB SSD", "Python preinstalado"]
+
+print(f"🛒 PRODUCTO: {nombre_producto}")
+print(f"💰 PRECIO: ${precio}")
+print(f"📦 STOCK: {cantidad_stock} unidades")
+print(f"⭐ CARACTERÍSTICAS: {', '.join(caracteristicas)}")
+
+👤 SISTEMA DE USUARIOS
+
+
+# ¡VARIABLES PARA GESTIÓN DE USUARIOS!
+usuario = {
+    "username": "python_master",
+    "password": "seguro123",
+    "email": "master@python.com",
+    "activo": True,
+    "roles": ["admin", "editor", "usuario"]
+}
+
+print(f"👤 USUARIO: {usuario['username']}")
+print(f"📧 EMAIL: {usuario['email']}")
+print(f"🔑 ROLES: {', '.join(usuario['roles'])}")
+print(f"✅ ACTIVO: {'Sí' if usuario['activo'] else 'No'}")
+
+⚡ ¡BUENAS PRÁCTICAS PROFESIONALES!
+🏆 NOMBRES DESCRIPTIVOS
+
+
+# ✅ ¡NOMBRES CLAROS Y DESCRIPTIVOS!
+edad_usuario = 25                    # ✅ BIEN
+nombre_completo = "Ana García"       # ✅ BIEN
+es_empleado_activo = True           # ✅ BIEN
+
+# ❌ ¡EVITA ESTOS ERRORES!
+a = 25                              # ❌ MAL
+n = "Ana García"                    # ❌ MAL
+x = True                           # ❌ MAL
+
+🔄 REASIGNACIÓN FLEXIBLE
+
+
+# ¡PYTHON PERMITE CAMBIAR TIPOS!
+variable_dinamica = 10
+print(f"Tipo inicial: {type(variable_dinamica)}")  # 🔢
+
+variable_dinamica = "Ahora soy texto"
+print(f"Tipo cambiado: {type(variable_dinamica)}") # 📝
+
+variable_dinamica = [1, 2, 3]
+print(f"Tipo final: {type(variable_dinamica)}")    # 📋
+
+🎁 ¡BONUS: VARIABLES GLOBALES VS LOCALES!
+
+
+# ¡VARIABLE GLOBAL - ACCESIBLE EN TODOS LADOS!
+contador_global = 0
+
+def incrementar_contador():
+    # ¡VARIABLE LOCAL - SOLO EN ESTA FUNCIÓN!
+    contador_local = 0
+    global contador_global
+    
+    contador_local += 1
+    contador_global += 1
+    
+    print(f"Local: {contador_local}, Global: {contador_global}")
+
+# ¡PRUEBA LA DIFERENCIA!
+incrementar_contador()
+incrementar_contador()
+
+🎊 ¡RESUMEN FINAL!
+
+¿QUÉ OBTIENES CON VARIABLES PYTHON?
+
+    ✅ Sin declaración de tipos
+
+    ✅ Cambio dinámico de tipo
+
+    ✅ Múltiples estructuras de datos
+
+    ✅ Sintaxis intuitiva
+
+    ✅ Poder ilimitado
+
+¡CARACTERÍSTICAS ÚNICAS!
+
+    🐍 Tipado dinámico - ¡Python deduce los tipos!
+
+    🔄 Mutabilidad flexible - ¡Listas cambian, tuplas no!
+
+    🎯 Asignación múltiple - ¡Varias variables a la vez!
+
+    💫 Métodos incorporados - ¡Funciones listas para usar! 
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA LAS VARIABLES Y CONQUISTA PYTHON!
+
+
+# ¡TU PRIMER PROGRAMA CON VARIABLES!
+mensaje_final = "🎉 ¡FELICIDADES! Ahora eres un MAESTRO DE VARIABLES PYTHON 🎉"
+print(mensaje_final)
+
+¡LAS VARIABLES SON EL CORAZÓN DE PYTHON, Y AHORA LATEN EN TI! 💓🐍 

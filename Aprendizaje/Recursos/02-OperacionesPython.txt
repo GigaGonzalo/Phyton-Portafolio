@@ -1,0 +1,387 @@
+🐍 ¡OPERACIONES PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN CÁLCULOS Y MANIPULACIÓN DE DATOS!
+🎯 ¡OPERACIONES EN PYTHON - PODER MATEMÁTICO EN TUS MANOS!
+
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LAS OPERACIONES! ⚡
+print("🎊 ¡OPERACIONES PYTHON - HAZ CÁLCULOS COMO NUNCA! 🎊")
+print("¿Cansado de calculadoras limitadas? ¿Aburrido de matemáticas complicadas?")
+print("¡PYTHON lo resuelve TODO! 💫")
+
+🚀 ¡OPERACIONES ARITMÉTICAS QUE TE VOLARÁN LA MENTE!
+✨ OPERADORES BÁSICOS - ¡CÁLCULOS INSTANTÁNEOS!
+
+
+# ¡LAS CUATRO OPERACIONES FUNDAMENTALES!
+a = 15
+b = 4
+
+print("🔥 ¡OPERACIONES ARITMÉTICAS BÁSICAS! 🔥")
+print(f"Suma: {a} + {b} = {a + b}")           # ➕ ADICIÓN
+print(f"Resta: {a} - {b} = {a - b}")          # ➖ SUSTRACCIÓN  
+print(f"Multiplicación: {a} * {b} = {a * b}") # ✖️ MULTIPLICACIÓN
+print(f"División: {a} / {b} = {a / b}")       # ➗ DIVISIÓN NORMAL
+print(f"División entera: {a} // {b} = {a // b}") # 🎯 DIVISIÓN ENTERA
+print(f"Módulo: {a} % {b} = {a % b}")         # 📍 RESIDUO
+print(f"Potencia: {a} ** {b} = {a ** b}")     # ⚡ POTENCIACIÓN
+
+# ¡OPERACIONES CON DECIMALES!
+precio = 29.99
+iva = 0.16
+total = precio * (1 + iva)
+print(f"💰 CÁLCULO DE IVA: ${precio} + {iva*100}% = ${total:.2f}")
+
+🎪 OPERACIONES AVANZADAS - ¡MATEMÁTICAS COMPLEJAS!
+
+
+import math  # ¡IMPORTA PODER MATEMÁTICO!
+
+print("🎩 ¡OPERACIONES MATEMÁTICAS AVANZADAS! 🎩")
+print(f"Raíz cuadrada: math.sqrt(16) = {math.sqrt(16)}")        # 📐
+print(f"Valor absoluto: abs(-10) = {abs(-10)}")                 # 📊
+print(f"Redondeo: round(3.14159, 2) = {round(3.14159, 2)}")     # 🔵
+print(f"Potencia con math: math.pow(2, 3) = {math.pow(2, 3)}")  # ⚡
+print(f"Logaritmo natural: math.log(10) = {math.log(10):.2f}")  # 📈
+print(f"Seno de 90°: math.sin(math.radians(90)) = {math.sin(math.radians(90)):.2f}")  # 📐
+
+🔄 ¡OPERACIONES DE ASIGNACIÓN INTELIGENTES!
+💾 OPERADORES DE ASIGNACIÓN - ¡ACTUALIZA FÁCILMENTE!
+
+
+# ¡ACTUALIZA VARIABLES SIN REPETIR!
+contador = 10
+print(f"Contador inicial: {contador}")
+
+contador += 5   # ¡EQUIVALE A: contador = contador + 5!
+print(f"Después de += 5: {contador}")
+
+contador -= 3   # ¡RESTA Y ASIGNA!
+print(f"Después de -= 3: {contador}")
+
+contador *= 2   # ¡MULTIPLICA Y ASIGNA!
+print(f"Después de *= 2: {contador}")
+
+contador /= 4   # ¡DIVIDE Y ASIGNA!
+print(f"Después de /= 4: {contador}")
+
+contador **= 3  # ¡POTENCIA Y ASIGNA!
+print(f"Después de **= 3: {contador}")
+
+# ¡PERFECTO PARA CONTADORES!
+total_ventas = 0
+total_ventas += 150  # Primera venta
+total_ventas += 200  # Segunda venta  
+total_ventas += 75   # Tercera venta
+print(f"💰 TOTAL VENTAS: ${total_ventas}")
+
+⚖️ ¡OPERACIONES DE COMPARACIÓN - TOMA DECISIONES!
+🔍 COMPARACIONES - ¡ENCUENTRA LA VERDAD!
+
+
+x = 10
+y = 5
+
+print("🔎 ¡OPERACIONES DE COMPARACIÓN! 🔎")
+print(f"Igualdad: {x} == {y} → {x == y}")          # ❌
+print(f"Desigualdad: {x} != {y} → {x != y}")       # ✅  
+print(f"Mayor que: {x} > {y} → {x > y}")           # ✅
+print(f"Menor que: {x} < {y} → {x < y}")           # ❌
+print(f"Mayor o igual: {x} >= {y} → {x >= y}")     # ✅
+print(f"Menor o igual: {x} <= {y} → {x <= y}")     # ❌
+
+# ¡COMPARACIONES CON TEXTO!
+nombre1 = "Ana"
+nombre2 = "Juan"
+print(f"¿'{nombre1}' == '{nombre2}'? → {nombre1 == nombre2}")  # ❌
+print(f"¿'{nombre1}' != '{nombre2}'? → {nombre1 != nombre2}")  # ✅
+
+# ¡COMPARACIONES MÚLTIPLES!
+edad = 25
+tiene_licencia = True
+print(f"¿Puede conducir? {edad >= 18 and tiene_licencia}")  # ✅
+
+🎭 ¡OPERACIONES LÓGICAS - COMBINA CONDICIONES!
+🧠 OPERADORES LÓGICOS - ¡LÓGICA PODEROSA!
+
+
+es_fin_de_semana = True
+tiene_dinero = False
+hace_buen_tiempo = True
+
+print("🧠 ¡OPERACIONES LÓGICAS INTELIGENTES! 🧠")
+print(f"AND (Y): {es_fin_de_semana and tiene_dinero}")        # ❌
+print(f"OR (O): {es_fin_de_semana or tiene_dinero}")          # ✅
+print(f"NOT (NO): {not tiene_dinero}")                        # ✅
+
+# ¡DECISIONES COMPLEJAS!
+puede_salir = (es_fin_de_semana or not tiene_dinero) and hace_buen_tiempo
+print(f"¿Puede salir? {puede_salir}")  # ✅
+
+# ¡VALIDACIÓN DE DATOS!
+edad = 22
+tiene_identificacion = True
+es_mayor_de_edad = edad >= 18
+
+puede_entrar = es_mayor_de_edad and tiene_identificacion
+print(f"¿Puede entrar al club? {puede_entrar} 🎉")
+
+📝 ¡OPERACIONES CON TEXTO - MANIPULA PALABRAS!
+✂️ OPERACIONES CON STRINGS - ¡TEXTO INTELIGENTE!
+
+
+texto = "Python es INCREÍBLE"
+nombre = "María"
+apellido = "García"
+
+print("📝 ¡OPERACIONES CON TEXTO MÁGICAS! 📝")
+print(f"Concatenación: '{nombre}' + ' ' + '{apellido}' = '{nombre + ' ' + apellido}'")
+print(f"Repetición: '{nombre} ' * 3 = '{nombre * 3}'")
+print(f"Longitud: len('{texto}') = {len(texto)} caracteres")
+print(f"Mayúsculas: '{texto.upper()}'")
+print(f"Minúsculas: '{texto.lower()}'")
+print(f"Capitalizar: '{nombre.capitalize()}'")
+print(f"Reemplazar: '{texto.replace('INCREÍBLE', 'FANTÁSTICO')}'")
+print(f"Dividir: '{texto.split()}'")  # ➡️ ['Python', 'es', 'INCREÍBLE']
+
+# ¡F-STRINGS AVANZADOS!
+producto = "Laptop"
+precio = 999.99
+descuento = 0.15
+precio_final = precio * (1 - descuento)
+
+print(f"🛒 {producto}: ${precio} - {descuento*100}% = ${precio_final:.2f} 💰")
+
+📋 ¡OPERACIONES CON LISTAS - COLECCIONES PODEROSAS!
+🎪 OPERACIONES CON LISTAS - ¡MANIPULA COLECCIONES!
+
+
+frutas = ["manzana", "banana", "naranja"]
+numeros = [1, 2, 3, 4, 5]
+
+print("📋 ¡OPERACIONES CON LISTAS ESPECTACULARES! 📋")
+print(f"Lista original: {frutas}")
+
+# ¡AÑADIR ELEMENTOS!
+frutas.append("uva")              # ➕ Al final
+frutas.insert(1, "kiwi")          # 📍 En posición específica
+print(f"Después de añadir: {frutas}")
+
+# ¡ELIMINAR ELEMENTOS!
+fruta_eliminada = frutas.pop(2)   # 🗑️ Eliminar por índice
+print(f"Fruta eliminada: {fruta_eliminada}")
+print(f"Lista después de pop: {frutas}")
+
+frutas.remove("banana")           # 🎯 Eliminar por valor
+print(f"Lista después de remove: {frutas}")
+
+# ¡OPERACIONES AVANZADAS!
+print(f"Longitud de la lista: {len(frutas)}")
+print(f"¿Está 'manzana' en la lista? {'manzana' in frutas}")
+print(f"Índice de 'uva': {frutas.index('uva')}")
+
+# ¡SLICING (REBANADO)!
+print(f"Primeros 2 elementos: {numeros[:2]}")
+print(f"Últimos 2 elementos: {numeros[-2:]}")
+print(f"Elementos del 2 al 4: {numeros[1:4]}")
+
+🔄 OPERACIONES CON MÚLTIPLES LISTAS
+
+
+lista1 = [1, 2, 3]
+lista2 = [4, 5, 6]
+
+print("🔄 ¡OPERACIONES ENTRE LISTAS! 🔄")
+print(f"Concatenación: {lista1 + lista2}")
+print(f"Repetición: {lista1 * 2}")
+
+# ¡COMPARACIONES DE LISTAS!
+print(f"¿Listas iguales? {lista1 == lista2}")  # ❌
+print(f"¿Lista1 mayor que lista2? {lista1 > lista2}")  # ❌
+
+# ¡OPERACIONES MATEMÁTICAS CON LISTAS DE NÚMEROS!
+precios = [100, 200, 150]
+impuesto = 0.16
+
+precios_con_impuesto = [precio * (1 + impuesto) for precio in precios]
+print(f"Precios con impuesto: {precios_con_impuesto}")
+
+📖 ¡OPERACIONES CON DICCIONARIOS - DATOS ORGANIZADOS!
+🗂️ OPERACIONES CON DICCIONARIOS - ¡ACCESO RÁPIDO!
+
+
+persona = {
+    "nombre": "Carlos",
+    "edad": 30,
+    "ciudad": "Madrid",
+    "profesion": "Programador"
+}
+
+print("📖 ¡OPERACIONES CON DICCIONARIOS! 📖")
+print(f"Diccionario original: {persona}")
+
+# ¡ACCESO A VALORES!
+print(f"Nombre: {persona['nombre']}")           # 🎯 Acceso directo
+print(f"Edad: {persona.get('edad')}")           # 🔍 Acceso seguro
+print(f"¿Tiene email? {'email' in persona}")    # ❌
+
+# ¡MODIFICAR Y AÑADIR!
+persona["edad"] = 31                           # ✏️ Modificar
+persona["email"] = "carlos@python.com"         # ➕ Añadir nuevo
+print(f"Después de modificaciones: {persona}")
+
+# ¡ELIMINAR ELEMENTOS!
+email_eliminado = persona.pop("email")         # 🗑️ Eliminar y obtener
+print(f"Email eliminado: {email_eliminado}")
+print(f"Diccionario final: {persona}")
+
+# ¡ITERAR SOBRE DICCIONARIOS!
+print("🔑 CLAVES del diccionario:")
+for clave in persona.keys():
+    print(f"  - {clave}")
+
+print("📊 VALORES del diccionario:")
+for valor in persona.values():
+    print(f"  - {valor}")
+
+🎭 ¡OPERACIONES CON SETS - ELIMINA DUPLICADOS!
+✨ OPERACIONES CON SETS - ¡COLECCIONES ÚNICAS!
+
+
+set_a = {1, 2, 3, 4, 5}
+set_b = {4, 5, 6, 7, 8}
+
+print("🎭 ¡OPERACIONES CON SETS MÁGICOS! 🎭")
+print(f"Set A: {set_a}")
+print(f"Set B: {set_b}")
+
+# ¡OPERACIONES DE CONJUNTO!
+print(f"Unión (A | B): {set_a | set_b}")              # 🔗
+print(f"Intersección (A & B): {set_a & set_b}")       # ⚡
+print(f"Diferencia (A - B): {set_a - set_b}")         # ➖
+print(f"Diferencia simétrica (A ^ B): {set_a ^ set_b}") # 🔄
+
+# ¡OPERACIONES DE PERTENENCIA!
+print(f"¿Está 3 en Set A? {3 in set_a}")              # ✅
+print(f"¿Está 9 en Set A? {9 in set_a}")              # ❌
+
+# ¡ELIMINAR DUPLICADOS AUTOMÁTICAMENTE!
+lista_con_duplicados = [1, 2, 2, 3, 4, 4, 4, 5]
+set_sin_duplicados = set(lista_con_duplicados)
+print(f"Lista con duplicados: {lista_con_duplicados}")
+print(f"Set sin duplicados: {set_sin_duplicados}")
+
+🔧 ¡OPERACIONES DE PERTENENCIA E IDENTIDAD!
+🎯 OPERADORES DE PERTENENCIA - ¡ENCUENTRA ELEMENTOS!
+
+
+texto = "Python es genial"
+lista = [10, 20, 30, 40, 50]
+diccionario = {"a": 1, "b": 2, "c": 3}
+
+print("🎯 ¡OPERADORES DE PERTENENCIA! 🎯")
+print(f"¿'genial' está en el texto? {'genial' in texto}")           # ✅
+print(f"¿30 está en la lista? {30 in lista}")                       # ✅
+print(f"¿'b' está en las claves del diccionario? {'b' in diccionario}")  # ✅
+print(f"¿100 NO está en la lista? {100 not in lista}")              # ✅
+
+# ¡OPERADORES DE IDENTIDAD!
+x = [1, 2, 3]
+y = [1, 2, 3]
+z = x
+
+print(f"¿x es y? {x is y}")        # ❌ (diferentes objetos)
+print(f"¿x es z? {x is z}")        # ✅ (mismo objeto)
+print(f"¿x no es y? {x is not y}") # ✅
+
+💼 ¡OPERACIONES EN ACCIÓN - EJEMPLOS DEL MUNDO REAL!
+🛒 SISTEMA DE CARRITO DE COMPRAS
+
+
+class CarritoCompras:
+    def __init__(self):
+        self.productos = []
+        self.total = 0.0
+    
+    def agregar_producto(self, nombre, precio, cantidad=1):
+        self.productos.append({"nombre": nombre, "precio": precio, "cantidad": cantidad})
+        self.total += precio * cantidad
+        print(f"✅ {cantidad}x {nombre} agregado - Subtotal: ${precio * cantidad:.2f}")
+    
+    def calcular_descuento(self, porcentaje_descuento):
+        descuento = self.total * (porcentaje_descuento / 100)
+        total_con_descuento = self.total - descuento
+        print(f"🎁 Descuento del {porcentaje_descuento}%: -${descuento:.2f}")
+        print(f"💰 TOTAL FINAL: ${total_con_descuento:.2f}")
+        return total_con_descuento
+
+# ¡USO EN TIENDA REAL!
+carrito = CarritoCompras()
+carrito.agregar_producto("Laptop", 999.99, 1)
+carrito.agregar_producto("Mouse", 25.50, 2)
+carrito.agregar_producto("Teclado", 75.00, 1)
+carrito.calcular_descuento(10)
+
+📊 ANALIZADOR DE DATOS
+
+
+def analizar_datos(datos):
+    print("📊 ¡ANÁLISIS ESTADÍSTICO AVANZADO! 📊")
+    
+    # ¡OPERACIONES ESTADÍSTICAS BÁSICAS!
+    total = sum(datos)
+    promedio = total / len(datos)
+    maximo = max(datos)
+    minimo = min(datos)
+    
+    print(f"Suma total: {total}")
+    print(f"Promedio: {promedio:.2f}")
+    print(f"Valor máximo: {maximo}")
+    print(f"Valor mínimo: {minimo}")
+    print(f"Cantidad de datos: {len(datos)}")
+    
+    # ¡FILTRADO AVANZADO!
+    datos_altos = [d for d in datos if d > promedio]
+    print(f"Datos sobre el promedio: {datos_altos}")
+
+# ¡ANALIZA TUS DATOS!
+ventas = [150, 200, 175, 300, 125, 250, 180]
+analizar_datos(ventas)
+
+🎊 ¡RESUMEN FINAL DE OPERACIONES!
+
+¿QUÉ OBTIENES CON OPERACIONES PYTHON?
+
+    ✅ Aritméticas - Cálculos matemáticos poderosos
+
+    ✅ Comparación - Toma decisiones inteligentes
+
+    ✅ Lógicas - Combina condiciones complejas
+
+    ✅ Asignación - Actualiza variables eficientemente
+
+    ✅ Texto - Manipula strings como un profesional
+
+    ✅ Colecciones - Trabaja con listas, diccionarios y sets
+
+¡OPERADORES ESPECIALES!
+
+    🎯 in / not in - Verifica pertenencia
+
+    🔄 is / is not - Verifica identidad
+
+    ✂️ Slicing - Accede a porciones de datos
+
+    🎭 Set operations - Operaciones de conjuntos
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA LAS OPERACIONES Y CONQUISTA LA PROGRAMACIÓN!
+
+
+# ¡TU PODER FINAL CON OPERACIONES!
+mensaje_final = "🎉 ¡FELICIDADES! Ahora eres un MAESTRO DE OPERACIONES PYTHON 🎉"
+operaciones_aprendidas = ["Aritméticas", "Comparación", "Lógicas", "Texto", "Colecciones"]
+print(f"{mensaje_final}")
+print(f"📚 Operaciones dominadas: {', '.join(operaciones_aprendidas)}")
+
+¡LAS OPERACIONES SON EL PODER DE PYTHON, Y AHORA ESTÁ EN TUS MANOS! 💪🐍
