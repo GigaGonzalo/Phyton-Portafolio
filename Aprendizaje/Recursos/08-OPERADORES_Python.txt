@@ -1,0 +1,561 @@
+🐍 ¡OPERADORES PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN MANIPULACIÓN Y CÁLCULOS INTELIGENTES!
+🎯 ¡OPERADORES EN PYTHON - PODER DE MANIPULACIÓN TOTAL!
+
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LOS OPERADORES! ⚡
+print("🎊 ¡OPERADORES PYTHON - MANIPULA DATOS COMO NUNCA! 🎊")
+print("¿Cansado de cálculos complicados? ¿Confundido con comparaciones?")
+print("¡LOS OPERADORES lo simplifican TODO! 💫")
+
+🚀 ¡OPERADORES ARITMÉTICOS - PODER MATEMÁTICO!
+✨ OPERADORES BÁSICOS - ¡CÁLCULOS FUNDAMENTALES!
+
+
+# ¡LOS 7 OPERADORES ARITMÉTICOS ESENCIALES!
+a = 15
+b = 4
+
+print("🧮 ¡OPERADORES ARITMÉTICOS EN ACCIÓN! 🧮")
+print(f"➕ SUMA: {a} + {b} = {a + b}")
+print(f"➖ RESTA: {a} - {b} = {a - b}")
+print(f"✖️ MULTIPLICACIÓN: {a} * {b} = {a * b}")
+print(f"➗ DIVISIÓN: {a} / {b} = {a / b}")
+print(f"🎯 DIVISIÓN ENTERA: {a} // {b} = {a // b}")
+print(f"📍 MÓDULO (RESIDUO): {a} % {b} = {a % b}")
+print(f"⚡ POTENCIA: {a} ** {b} = {a ** b}")
+
+# ¡OPERACIONES CON DECIMALES!
+print("\n💰 ¡CÁLCULOS FINANCIEROS! 💰")
+precio = 29.99
+cantidad = 3
+iva = 0.16
+
+subtotal = precio * cantidad
+impuesto = subtotal * iva
+total = subtotal + impuesto
+
+print(f"🛒 Precio unitario: ${precio}")
+print(f"📦 Cantidad: {cantidad}")
+print(f"📊 Subtotal: ${subtotal:.2f}")
+print(f"🏷️ IVA (16%): ${impuesto:.2f}")
+print(f"💳 TOTAL: ${total:.2f}")
+
+🎪 OPERADORES CON STRINGS - ¡MAGIA CON TEXTO!
+
+
+# ¡OPERACIONES CON CADENAS DE TEXTO!
+nombre = "Python"
+version = "3.9"
+
+print("🔤 ¡OPERADORES CON STRINGS! 🔤")
+print(f"➕ CONCATENACIÓN: '{nombre}' + ' ' + '{version}' = '{nombre + ' ' + version}'")
+print(f"🔄 REPETICIÓN: '{nombre}' * 3 = '{nombre * 3}'")
+
+# ¡OPERACIONES AVANZADAS!
+lenguaje = "Python"
+print(f"\n🎩 ¡MÁS MAGIA CON TEXTO! 🎩")
+print(f"¿Está 'th' en '{lenguaje}'? {'th' in lenguaje}")  # ✅ True
+print(f"¿NO está 'xyz' en '{lenguaje}'? {'xyz' not in lenguaje}")  # ✅ True
+
+# ¡FORMATO AVANZADO CON F-STRINGS!
+producto = "Laptop Gamer"
+precio = 1299.99
+descuento = 0.15
+
+print(f"\n🛒 {producto}")
+print(f"💰 Precio original: ${precio}")
+print(f"🎁 Descuento: {descuento * 100}%")
+print(f"💸 Precio final: ${precio * (1 - descuento):.2f}")
+
+⚖️ ¡OPERADORES DE COMPARACIÓN - PODER DE DECISIÓN!
+🔍 COMPARACIONES - ¡ENCUENTRA LA VERDAD!
+
+
+x = 10
+y = 5
+z = 10
+
+print("🔎 ¡OPERADORES DE COMPARACIÓN! 🔎")
+print(f"IGUALDAD: {x} == {y} → {x == y}")          # ❌ False
+print(f"IGUALDAD: {x} == {z} → {x == z}")          # ✅ True
+print(f"DESIGUALDAD: {x} != {y} → {x != y}")       # ✅ True
+print(f"MAYOR QUE: {x} > {y} → {x > y}")           # ✅ True
+print(f"MENOR QUE: {x} < {y} → {x < y}")           # ❌ False
+print(f"MAYOR O IGUAL: {x} >= {z} → {x >= z}")     # ✅ True
+print(f"MENOR O IGUAL: {y} <= {x} → {y <= x}")     # ✅ True
+
+# ¡COMPARACIONES CON STRINGS!
+print("\n📝 ¡COMPARANDO TEXTO! 📝")
+nombre1 = "Ana"
+nombre2 = "ana"
+nombre3 = "Ana"
+
+print(f"¿'{nombre1}' == '{nombre2}'? {nombre1 == nombre2}")    # ❌ False (case sensitive)
+print(f"¿'{nombre1}' == '{nombre3}'? {nombre1 == nombre3}")    # ✅ True
+print(f"¿'{nombre1}' != '{nombre2}'? {nombre1 != nombre2}")    # ✅ True
+print(f"¿'Python' > 'Java'? {'Python' > 'Java'}")              # ✅ True (orden alfabético)
+
+# ¡COMPARACIONES MÚLTIPLES!
+edad = 25
+print(f"\n🎯 ¿Edad entre 18 y 30? {18 <= edad <= 30}")  # ✅ True
+print(f"🎯 ¿Edad menor de 18 o mayor de 65? {edad < 18 or edad > 65}")  # ❌ False
+
+🧠 ¡OPERADORES LÓGICOS - PODER DE LÓGICA!
+🎭 AND, OR, NOT - ¡COMBINA CONDICIONES!
+
+
+# ¡LOS 3 OPERADORES LÓGICOS FUNDAMENTALES!
+es_fin_de_semana = True
+tiene_dinero = False
+hace_buen_tiempo = True
+
+print("🧠 ¡OPERADORES LÓGICOS INTELIGENTES! 🧠")
+print(f"AND (Y): ¿Fin de semana Y tiene dinero? {es_fin_de_semana and tiene_dinero}")  # ❌
+print(f"OR (O): ¿Fin de semana O tiene dinero? {es_fin_de_semana or tiene_dinero}")    # ✅
+print(f"NOT (NO): ¿NO tiene dinero? {not tiene_dinero}")                              # ✅
+
+# ¡COMBINACIONES COMPLEJAS!
+print("\n🎪 ¡COMBINACIONES LÓGICAS AVANZADAS! 🎪")
+puede_salir = (es_fin_de_semana or not tiene_dinero) and hace_buen_tiempo
+print(f"¿Puede salir? {puede_salir}")  # ✅
+
+# ¡VALIDACIÓN DE DATOS DEL MUNDO REAL!
+edad = 22
+tiene_identificacion = True
+es_mayor_de_edad = edad >= 18
+
+puede_entrar = es_mayor_de_edad and tiene_identificacion
+print(f"\n🎟️ ¿Puede entrar al club? {puede_entrar}")  # ✅
+
+# ¡SISTEMA DE DESCUENTOS INTELIGENTE!
+es_vip = True
+compra_mayor_100 = True
+tiene_cupon = False
+
+descuento_aplicable = es_vip or (compra_mayor_100 and not tiene_cupon)
+print(f"🎁 ¿Aplica descuento? {descuento_aplicable}")  # ✅
+
+💾 ¡OPERADORES DE ASIGNACIÓN - PODER DE ACTUALIZACIÓN!
+🔄 ASIGNACIÓN - ¡ACTUALIZA VARIABLES INTELIGENTEMENTE!
+
+
+# ¡OPERADORES DE ASIGNACIÓN - ACTUALIZACIÓN EFICIENTE!
+contador = 10
+print("🔄 ¡OPERADORES DE ASIGNACIÓN! 🔄")
+print(f"Valor inicial: {contador}")
+
+contador += 5   # ¡contador = contador + 5!
+print(f"Después de += 5: {contador}")
+
+contador -= 3   # ¡contador = contador - 3!
+print(f"Después de -= 3: {contador}")
+
+contador *= 2   # ¡contador = contador * 2!
+print(f"Después de *= 2: {contador}")
+
+contador /= 4   # ¡contador = contador / 4!
+print(f"Después de /= 4: {contador}")
+
+contador **= 3  # ¡contador = contador ** 3!
+print(f"Después de **= 3: {contador}")
+
+contador //= 2  # ¡contador = contador // 2!
+print(f"Después de //= 2: {contador}")
+
+contador %= 3   # ¡contador = contador % 3!
+print(f"Después de %= 3: {contador}")
+
+# ¡SISTEMA DE INVENTARIO EN TIEMPO REAL!
+print("\n📦 ¡SISTEMA DE INVENTARIO! 📦")
+stock_laptop = 50
+stock_mouse = 100
+
+print(f"Stock inicial - Laptops: {stock_laptop}, Mouses: {stock_mouse}")
+
+# Simular ventas
+stock_laptop -= 3   # Se vendieron 3 laptops
+stock_mouse -= 10   # Se vendieron 10 mouses
+
+print(f"Stock después de ventas - Laptops: {stock_laptop}, Mouses: {stock_mouse}")
+
+# Simular reabastecimiento
+stock_laptop += 5   # Llegaron 5 laptops nuevas
+stock_mouse += 20   # Llegaron 20 mouses nuevos
+
+print(f"Stock final - Laptops: {stock_laptop}, Mouses: {stock_mouse}")
+
+🎪 ¡OPERADORES DE PERTENENCIA - PODER DE BÚSQUEDA!
+🔎 IN Y NOT IN - ¡ENCUENTRA ELEMENTOS!
+
+
+# ¡OPERADORES DE PERTENENCIA - BÚSQUEDA INTELIGENTE!
+frutas = ["manzana", "banana", "naranja", "uva"]
+texto = "Python es increíble"
+diccionario = {"a": 1, "b": 2, "c": 3}
+
+print("🎯 ¡OPERADORES DE PERTENENCIA! 🎯")
+print(f"¿'banana' está en la lista? {'banana' in frutas}")              # ✅
+print(f"¿'kiwi' NO está en la lista? {'kiwi' not in frutas}")          # ✅
+print(f"¿'es' está en el texto? {'es' in texto}")                      # ✅
+print(f"¿'a' es clave del diccionario? {'a' in diccionario}")          # ✅
+print(f"¿1 es valor del diccionario? {1 in diccionario.values()}")     # ✅
+
+# ¡SISTEMA DE BÚSQUEDA AVANZADO!
+print("\n🔍 ¡SISTEMA DE BÚSQUEDA INTELIGENTE! 🔍")
+productos_disponibles = ["laptop", "mouse", "teclado", "monitor"]
+producto_buscado = "mouse"
+
+if producto_buscado in productos_disponibles:
+    print(f"✅ ¡SÍ TENEMOS {producto_buscado.upper()}!")
+    print("🛒 Disponible para compra inmediata")
+else:
+    print(f"❌ No tenemos {producto_buscado} en stock")
+    print("📦 Próximo reabastecimiento: pronto")
+
+# ¡VALIDACIÓN DE EMAIL!
+print("\n📧 ¡VALIDACIÓN DE EMAIL! 📧")
+email = "usuario@dominio.com"
+
+if "@" in email and "." in email:
+    print(f"✅ Email válido: {email}")
+else:
+    print(f"❌ Email inválido: {email}")
+
+🔄 ¡OPERADORES DE IDENTIDAD - PODER DE COMPARACIÓN DE OBJETOS!
+🆔 IS Y IS NOT - ¡COMPARA IDENTIDAD!
+
+
+# ¡OPERADORES DE IDENTIDAD - ¿SON EL MISMO OBJETO?
+lista1 = [1, 2, 3]
+lista2 = [1, 2, 3]
+lista3 = lista1
+
+print("🆔 ¡OPERADORES DE IDENTIDAD! 🆔")
+print(f"lista1 is lista2: {lista1 is lista2}")      # ❌ False (diferentes objetos)
+print(f"lista1 is lista3: {lista1 is lista3}")      # ✅ True (mismo objeto)
+print(f"lista1 is not lista2: {lista1 is not lista2}")  # ✅ True
+
+# ¡CON VALORES PRIMITIVOS!
+a = 10
+b = 10
+c = 20
+
+print(f"\n🔢 Con enteros pequeños:")
+print(f"a is b: {a is b}")      # ✅ True (Python optimiza enteros pequeños)
+print(f"a is c: {a is c}")      # ❌ False
+
+# ¡CON NONE!
+valor = None
+print(f"\n❓ Con None:")
+print(f"valor is None: {valor is None}")            # ✅ True
+print(f"valor is not None: {valor is not None}")    # ❌ False
+
+# ¡USO PRÁCTICO EN FUNCIONES!
+def procesar_datos(datos):
+    if datos is None:
+        print("❌ No se proporcionaron datos")
+        return
+    
+    if datos is not None and len(datos) > 0:
+        print(f"✅ Procesando {len(datos)} elementos")
+    else:
+        print("⚠️ Datos vacíos")
+
+print("\n🎯 ¡USO PRÁCTICO! 🎯")
+procesar_datos([1, 2, 3])
+procesar_datos([])
+procesar_datos(None)
+
+🎭 ¡OPERADORES A NIVEL DE BITS - PODER BINARIO!
+🔢 OPERADORES BIT A BIT - ¡MANIPULA BITS DIRECTAMENTE!
+
+
+# ¡OPERADORES A NIVEL DE BITS - PODER DE BAJO NIVEL!
+a = 10  # Binario: 1010
+b = 4   # Binario: 0100
+
+print("🔢 ¡OPERADORES A NIVEL DE BITS! 🔢")
+print(f"a = {a} (binario: {bin(a)})")
+print(f"b = {b} (binario: {bin(b)})")
+
+print(f"\n🔷 AND a nivel de bits: {a} & {b} = {a & b}")      # 0 (1000 & 0100 = 0000)
+print(f"🔶 OR a nivel de bits: {a} | {b} = {a | b}")        # 14 (1010 | 0100 = 1110)
+print(f"🔷 XOR a nivel de bits: {a} ^ {b} = {a ^ b}")       # 14 (1010 ^ 0100 = 1110)
+print(f"🔶 NOT a nivel de bits: ~{a} = {~a}")               # -11 (~1010 = ...10101)
+print(f"🔷 Desplazamiento izquierda: {a} << 1 = {a << 1}")  # 20 (1010 << 1 = 10100)
+print(f"🔶 Desplazamiento derecha: {a} >> 1 = {a >> 1}")    # 5 (1010 >> 1 = 0101)
+
+# ¡APLICACIONES PRÁCTICAS!
+print("\n🎯 ¡APLICACIONES PRÁCTICAS! 🎯")
+
+# Verificar si un número es par usando bits
+def es_par(n):
+    return (n & 1) == 0
+
+print(f"¿{a} es par? {es_par(a)}")  # ✅ True
+print(f"¿{b} es par? {es_par(b)}")  # ✅ True
+
+# Intercambiar valores sin variable temporal
+x = 5
+y = 3
+print(f"\n🔄 Intercambio: x={x}, y={y}")
+x = x ^ y
+y = x ^ y
+x = x ^ y
+print(f"Después del intercambio: x={x}, y={y}")
+
+🎨 ¡OPERADORES DE CADENA - PODER DE MANIPULACIÓN DE TEXTO!
+✂️ OPERADORES ESPECIALES PARA STRINGS - ¡TEXTO INTELIGENTE!
+
+
+# ¡OPERADORES ESPECIALES PARA MANIPULAR TEXTO!
+texto = "Python Programming"
+nombre = "María"
+
+print("✂️ ¡OPERADORES DE CADENA! ✂️")
+print(f"Texto original: '{texto}'")
+print(f"Concatenación: '{nombre}' + ' aprende ' + '{texto}' = '{nombre + ' aprende ' + texto}'")
+print(f"Repetición: '{nombre} ' * 3 = '{nombre * 3}'")
+print(f"Indexación: texto[0] = '{texto[0]}'")           # P
+print(f"Slicing: texto[0:6] = '{texto[0:6]}'")          # Python
+print(f"Longitud: len(texto) = {len(texto)}")           # 18
+
+# ¡OPERACIONES AVANZADAS CON STRINGS!
+print("\n🎩 ¡OPERACIONES AVANZADAS! 🎩")
+frase = "Python es el mejor lenguaje de programación"
+
+# Búsqueda de subcadenas
+print(f"¿'mejor' está en la frase? {'mejor' in frase}")  # ✅
+print(f"¿'Java' NO está en la frase? {'Java' not in frase}")  # ✅
+
+# Formateo avanzado con %
+nombre = "Ana"
+edad = 25
+print("👤 %s tiene %d años" % (nombre, edad))
+
+# Formateo con .format()
+print("👤 {} tiene {} años".format(nombre, edad))
+
+# Formateo con f-strings (¡MODERNO!)
+print(f"👤 {nombre} tiene {edad} años")
+print(f"🔢 En binario: {edad} = {bin(edad)}")
+print(f"💰 Precio: ${1299.99:,.2f}")
+
+💻 ¡PRECEDENCIA DE OPERADORES - ORDEN DE EJECUCIÓN!
+📊 JERARQUÍA DE OPERADORES - ¡EVITA CONFUSIONES!
+
+
+# ¡PRECEDENCIA DE OPERADORES - EL ORDEN IMPORTA!
+print("📊 ¡PRECEDENCIA DE OPERADORES! 📊")
+
+# Expresión compleja - ¿Cómo se evalúa?
+resultado1 = 10 + 5 * 2 ** 3
+resultado2 = (10 + 5) * 2 ** 3
+resultado3 = 10 + (5 * 2) ** 3
+
+print(f"10 + 5 * 2 ** 3 = {resultado1}")    # 10 + (5 * (2³)) = 10 + 40 = 50
+print(f"(10 + 5) * 2 ** 3 = {resultado2}")  # 15 * 8 = 120
+print(f"10 + (5 * 2) ** 3 = {resultado3}")  # 10 + 10³ = 10 + 1000 = 1010
+
+# ¡TABLA DE PRECEDENCIA!
+print("\n🎯 ORDEN DE PRECEDENCIA (de mayor a menor):")
+precedencia = [
+    "1. ** (Exponenciación)",
+    "2. ~ + - (Operadores unarios)",
+    "3. * / // % (Multiplicación, división, módulo)",
+    "4. + - (Suma, resta)",
+    "5. << >> (Desplazamiento de bits)",
+    "6. & (AND bit a bit)",
+    "7. ^ | (XOR y OR bit a bit)",
+    "8. < <= > >= (Comparaciones)",
+    "9. == != (Igualdad)",
+    "10. = %= /= //= -= += *= **= (Asignación)",
+    "11. is, is not (Identidad)",
+    "12. in, not in (Pertenencia)",
+    "13. not, and, or (Lógicos)"
+]
+
+for item in precedencia:
+    print(f"   {item}")
+
+# ¡USO DE PARÉNTESIS PARA CLARIDAD!
+print("\n💡 ¡SIEMPRE USA PARÉNTESIS PARA CLARIDAD!")
+expresion_confusa = 5 + 3 * 2 ** 4 - 1
+expresion_clara = 5 + (3 * (2 ** 4)) - 1
+
+print(f"Expresión confusa: 5 + 3 * 2 ** 4 - 1 = {expresion_confusa}")
+print(f"Expresión clara: 5 + (3 * (2 ** 4)) - 1 = {expresion_clara}")
+
+🏆 ¡SISTEMA COMPLETO DEL MUNDO REAL!
+🛒 CALCULADORA AVANZADA CON TODOS LOS OPERADORES
+
+
+class CalculadoraAvanzada:
+    """Calculadora que demuestra todos los operadores de Python"""
+    
+    def __init__(self):
+        self.historial = []
+    
+    def operaciones_aritmeticas(self, a, b):
+        print("🧮 OPERACIONES ARITMÉTICAS:")
+        resultados = {
+            "Suma": a + b,
+            "Resta": a - b,
+            "Multiplicación": a * b,
+            "División": a / b if b != 0 else "Indefinido",
+            "División Entera": a // b if b != 0 else "Indefinido",
+            "Módulo": a % b if b != 0 else "Indefinido",
+            "Potencia": a ** b
+        }
+        
+        for operacion, resultado in resultados.items():
+            print(f"   {operacion}: {a} op {b} = {resultado}")
+        
+        return resultados
+    
+    def operaciones_comparacion(self, a, b):
+        print("\n🔎 OPERACIONES DE COMPARACIÓN:")
+        comparaciones = {
+            "Igualdad": a == b,
+            "Desigualdad": a != b,
+            "Mayor que": a > b,
+            "Menor que": a < b,
+            "Mayor o igual": a >= b,
+            "Menor o igual": a <= b
+        }
+        
+        for comparacion, resultado in comparaciones.items():
+            print(f"   {a} {comparacion.lower()} {b}? {resultado}")
+        
+        return comparaciones
+    
+    def operaciones_logicas(self, cond1, cond2):
+        print("\n🧠 OPERACIONES LÓGICAS:")
+        logicas = {
+            "AND": cond1 and cond2,
+            "OR": cond1 or cond2,
+            "NOT cond1": not cond1,
+            "NOT cond2": not cond2
+        }
+        
+        for operacion, resultado in logicas.items():
+            print(f"   {operacion}: {resultado}")
+        
+        return logicas
+    
+    def operaciones_bits(self, a, b):
+        print("\n🔢 OPERACIONES A NIVEL DE BITS:")
+        bits = {
+            "AND": a & b,
+            "OR": a | b,
+            "XOR": a ^ b,
+            "NOT a": ~a,
+            "Desplazamiento izquierda a << 1": a << 1,
+            "Desplazamiento derecha a >> 1": a >> 1
+        }
+        
+        for operacion, resultado in bits.items():
+            print(f"   {operacion}: {resultado} ({bin(resultado)})")
+        
+        return bits
+    
+    def demostrar_precedencia(self):
+        print("\n📊 DEMOSTRACIÓN DE PRECEDENCIA:")
+        ejemplos = [
+            ("5 + 3 * 2", 5 + 3 * 2),
+            ("(5 + 3) * 2", (5 + 3) * 2),
+            ("2 ** 3 * 4", 2 ** 3 * 4),
+            ("2 ** (3 * 4)", 2 ** (3 * 4)),
+            ("10 + 5 * 2 ** 3", 10 + 5 * 2 ** 3)
+        ]
+        
+        for expresion, resultado in ejemplos:
+            print(f"   {expresion} = {resultado}")
+
+# ¡CALCULADORA EN ACCIÓN!
+print("🚀 ¡CALCULADORA AVANZADA PYTHON-O-MATIC! 🚀")
+calc = CalculadoraAvanzada()
+
+# Demostrar todas las operaciones
+calc.operaciones_aritmeticas(15, 4)
+calc.operaciones_comparacion(10, 5)
+calc.operaciones_logicas(True, False)
+calc.operaciones_bits(10, 4)
+calc.demostrar_precedencia()
+
+🎊 ¡RESUMEN FINAL DE OPERADORES!
+
+¿QUÉ OBTIENES CON OPERADORES EN PYTHON?
+
+    ✅ Poder matemático - Cálculos complejos simplificados
+
+    ✅ Toma de decisiones - Comparaciones inteligentes
+
+    ✅ Manipulación de datos - Texto, números y estructuras
+
+    ✅ Lógica avanzada - Combinación de condiciones
+
+    ✅ Eficiencia - Código limpio y expresivo
+
+¡CATEGORÍAS DE OPERADORES!
+
+    🧮 Aritméticos - +, -, *, /, //, %, **
+
+    🔎 Comparación - ==, !=, >, <, >=, <=
+
+    🧠 Lógicos - and, or, not
+
+    💾 Asignación =, +=, -=, *=, /=, etc.
+
+    🎯 Pertenencia - in, not in
+
+    🆔 Identidad - is, is not
+
+    🔢 Bits - &, |, ^, ~, <<, >>
+
+¡REGLAS DE PRECEDENCIA CLAVE!
+
+    🥇 Paréntesis - Siempre primero: ()
+
+    🥈 Exponenciación - **
+
+    🥉 Multiplicación/División - *, /, //, %
+
+    4️⃣ Suma/Resta - +, -
+
+    5️⃣ Comparación - <, >, <=, >=, ==, !=
+
+    6️⃣ Lógicos - not, and, or
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA LOS OPERADORES Y CONVIÉRTETE EN UN MAGO DE PYTHON!
+
+
+def demostrar_poder_final():
+    """¡Función que demuestra todo tu poder con operadores!"""
+    
+    # Combinación de múltiples operadores
+    a, b, c = 15, 4, 2
+    resultado = (a + b) * c ** 2 - (a % b)
+    
+    print("🎉 ¡FELICIDADES! Ahora dominas:")
+    print(f"🐍 TODOS LOS OPERADORES DE PYTHON")
+    print(f"🧮 Expresión compleja: ({a} + {b}) * {c}² - ({a} % {b}) = {resultado}")
+    
+    # Operadores con diferentes tipos de datos
+    texto = "Python"
+    lista = [1, 2, 3]
+    
+    print(f"🔤 Operadores con texto: '{texto * 3}'")
+    print(f"📋 Operadores con lista: {2 in lista}")
+    print(f"🧠 Operadores lógicos: {True and not False}")
+    
+    return "🚀 ¡ERES UN MAESTRO DE LOS OPERADORES!"
+
+# ¡EJECUTA TU PODER!
+mensaje_final = demostrar_poder_final()
+print(f"\n{mensaje_final}")
+
+¡LOS OPERADORES SON LAS HERRAMIENTAS DE PYTHON, Y AHORA LAS MANEJAS CON MAESTRÍA! 🛠️🐍
