@@ -4,13 +4,8 @@
 "               Practica de conversion de valores                   "
 "*******************************************************************"
 #Inicializacion de variables globales
-usu_nombre = ""
-usu_apellido = ""
-usu_edad = 0
-usu_carrera = ""
-usu_altura = 0.0
-usu_peso = 0.0
-usu_esCasado = False
+from ast import While
+
 
 usuario_registro = {"nombre" : "", "apellido": "", "edad" : 0 , "carrera" : "", "altura" : 0 , 
                     "peso" : 0 , "casado?" : False }
@@ -62,7 +57,7 @@ def comp_Altura(alt):
     elif alt < 0:
         print("LA ALTURA NO PUEDE SER UN VALOR NEGATIVO!!")
     else:
-        print("ALTURA INVALIDA   --FUERA DE RANGO (1.10 - 2.50)")
+        print("ALTURA INVALIDA   --FUERA DE RANGO (1.10 mts - 2.50 mts)")
         return False
 #Funcion de comprobacion de Pesos Validos
 def comp_Peso(pe):
@@ -72,7 +67,7 @@ def comp_Peso(pe):
     elif pe < 0:
         print("EL PESO NO PUEDE SER UN VALOR NEGATIVO!!")
     else:
-        print("PESO INVALIDO   --FUERA DE RANGO (39 - 269)")
+        print("PESO INVALIDO   --FUERA DE RANGO (39 kg - 269 kg)")
         return False
 #Funciones de Peticiones de DATOS
 def peticionNombre():
@@ -94,15 +89,17 @@ def peticionApelllido():
             
         except ValueError:
             print("Ingrese un dato valido!!")
+
 def peticionEdad():
     while True: 
         try:
             var = input("Ingrese su Edad : ").strip()
             if comp_Vacio(var) == False and comp_Edad(var) == True:
-                return var
+                return int(var)
             
         except ValueError:
             print("Ingrese un dato valido!!")
+
 def peticionCarrera():
     while True: 
         try:
@@ -112,12 +109,13 @@ def peticionCarrera():
             
         except ValueError:
             print("Ingrese un dato valido!!")
+
 def peticionAltura():
     while True: 
         try:
             var = input("Ingrese su Altura : ").strip()
             if comp_Vacio(var) == False and comp_Altura(var) == True:
-                return var
+                return float(var)
         except ValueError:
             print("Ingrese un dato valido!!")
         
@@ -126,14 +124,14 @@ def peticionPeso():
         try:
             var = input("Ingrese su Peso : ").strip()
             if comp_Vacio(var) == False and comp_Peso(var) == True:
-                return var
+                return float(var)
             
         except ValueError:
             print("Ingrese un dato valido!!")
+
 def peticionEstadoCivil():
     while True: 
         try:
-
             var = input("Es usted Casado/a [S] o [N] : ").strip().upper()
             if comp_Vacio(var) == False :
                 if var == "S":
@@ -142,20 +140,74 @@ def peticionEstadoCivil():
                     return False
                 else:
                     print("Ingrese una LETRA VALIDA!!   (S/N)")
-                
         except Exception as e:
             print("Ingrese un dato VALIDO!!")
+
+#Funcion de resumen de datos de registro
+def resumen_Registro(registro):
+    print(f"DATOS DEL USUARIO REGISTRADO \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
+           f"\nEdad : {registro["edad"]} \nCarrera : {registro["carrera"]}\nAltura : {registro["altura"]}"+
+           f"\nPeso : {registro["peso"]} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
+    var = input("Los datos capturados son CORRECTOS? [S] o [N] : ").strip().upper()
+    if comp_Vacio(var) == False :
+        if var == "S":
+            print("DATOS DEL USUARIO ALMACENADOS!!!!! ")
+            exit()
+        elif var == "N":
+            modificar_Registro(registro)
+        else:
+            print("Ingrese una LETRA VALIDA!!   (S/N)")
+
+#Funcion tipo Menu de modificacion de datos individuales
+def modificar_Registro(registro):
+    opciones_menu = [1,2,3,4,5,6,7,8]
+    global usuario_registro
+    while True: 
+        try:
+            print("INGRESE EL NUMERO DE LA OPCCION CON EL DATO A MODIFICAR : ")
+            print("1. NOMBRE")
+            print("2. APELLIDO")
+            print("3. EDAD")
+            print("4. CARRERA")
+            print("5. ALTURA")
+            print("6. PESO")
+            print("7. ESTADO CIVIL")
+            print("8. CONFIRMAR DATOS")
+            op = input("Ingrese opcion deseada : ")
+            op = int(op)
+            if op in opciones_menu:
+                if op == 1:
+                    n_nombre = peticionNombre()
+                    usuario_registro["nombre"] = n_nombre
+                elif op == 2:
+                    n_apellido = peticionApelllido()
+                    usuario_registro["apellido"] = n_apellido
+                elif op == 3:
+                    n_edad = peticionEdad()
+                    usuario_registro["edad"] = n_edad
+                elif op == 4:
+                    n_carrera = peticionCarrera()
+                    usuario_registro["carrera"] = n_carrera
+                elif op == 5:
+                    n_altura = peticionAltura()
+                    usuario_registro["altura"] = n_altura
+                elif op == 6:
+                    n_peso = peticionPeso()
+                    usuario_registro["peso"] = n_peso
+                elif op == 7:
+                    n_estadoCivil = peticionEstadoCivil()
+                    usuario_registro["casado?"] = n_estadoCivil
+                elif op == 8:
+                    resumen_Registro(usuario_registro)
+            else:
+                print("INGRESE UNA OPCION VALIDA!")
+        except ValueError:
+            print("INGRESE UNA OPCION VALIDA!")
+
+
 #Funcion Principal de recoleccion de datos e impresion del registro
 def main():
-    global usu_nombre
-    global usu_apellido 
-    global usu_edad
-    global usu_carrera
-    global usu_altura 
-    global usu_peso 
-    global usu_esCasado
-    global usuario_registro
-
+    
     print("\nIngrese los datos del Usuario a Registrar, por favor!! \n")
 
     usu_nombre = peticionNombre()
@@ -169,9 +221,7 @@ def main():
     usuario_registro = {"nombre" : usu_nombre, "apellido": usu_apellido, "edad" : usu_edad , "carrera" : usu_carrera, "altura" : usu_altura , 
                     "peso" : usu_peso , "casado?" : usu_esCasado }
     
-    print(f"DATOS DEL USUARIO REGISTRADO \nNombre : {usuario_registro['nombre']} \nApelido : {usuario_registro['apellido']}" +
-           f"\nEdad : {usuario_registro["edad"]} \nCarrera : {usuario_registro["carrera"]}\nAltura : {usuario_registro["altura"]}"+
-           f"\nPeso : {usuario_registro["peso"]} \nCasado : " + ("Si" if usu_esCasado == True else "NO" ))
+    resumen_Registro(usuario_registro)
 
 #Funcion inicial
 if __name__ == "__main__":
