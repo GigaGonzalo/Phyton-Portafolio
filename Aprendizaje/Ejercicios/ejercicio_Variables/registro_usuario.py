@@ -4,9 +4,6 @@
 "               Practica de conversion de valores                   "
 "*******************************************************************"
 #Inicializacion de variables globales
-from ast import While
-
-
 usuario_registro = {"nombre" : "", "apellido": "", "edad" : 0 , "carrera" : "", "altura" : 0 , 
                     "peso" : 0 , "casado?" : False }
 
@@ -162,6 +159,7 @@ def resumen_Registro(registro):
 def modificar_Registro(registro):
     opciones_menu = [1,2,3,4,5,6,7,8]
     global usuario_registro
+    usuario_registro = registro
     while True: 
         try:
             print("INGRESE EL NUMERO DE LA OPCCION CON EL DATO A MODIFICAR : ")
