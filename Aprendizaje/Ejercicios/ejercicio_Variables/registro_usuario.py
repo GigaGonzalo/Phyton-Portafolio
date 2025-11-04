@@ -4,8 +4,10 @@
 "               Practica de conversion de valores                   "
 "*******************************************************************"
 #Inicializacion de variables globales
-usuario_registro = {"nombre" : "", "apellido": "", "edad" : 0 , "carrera" : "", "altura" : 0 , 
+usuario_registro = {"id" : 0 ,"nombre" : "", "apellido": "", "edad" : 0 , "carrera" : "", "altura" : 0 , 
                     "peso" : 0 , "casado?" : False }
+
+lista_Usuarios = []
 
 #Funcion de comprobacion de Vacios
 def comp_Vacio(txt):
@@ -139,17 +141,28 @@ def peticionEstadoCivil():
                     print("Ingrese una LETRA VALIDA!!   (S/N)")
         except Exception as e:
             print("Ingrese un dato VALIDO!!")
+#Funcion de generacion de ID
+def gen_ID():
+    global lista_Usuarios
+
+    id = len(lista_Usuarios) + 1
+
+    return id
 
 #Funcion de resumen de datos de registro
 def resumen_Registro(registro):
-    print(f"DATOS DEL USUARIO REGISTRADO \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
+    global lista_Usuarios
+    print(f"DATOS DEL USUARIO REGISTRADO \nID : {registro['id']} \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
            f"\nEdad : {registro["edad"]} \nCarrera : {registro["carrera"]}\nAltura : {registro["altura"]}"+
            f"\nPeso : {registro["peso"]} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
     var = input("Los datos capturados son CORRECTOS? [S] o [N] : ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
             print("DATOS DEL USUARIO ALMACENADOS!!!!! ")
-            exit()
+            lista_Usuarios.append(registro)
+            #usuario_registro.clear
+            print(lista_Usuarios)
+            main()
         elif var == "N":
             modificar_Registro(registro)
         else:
@@ -201,13 +214,11 @@ def modificar_Registro(registro):
                 print("INGRESE UNA OPCION VALIDA!")
         except ValueError:
             print("INGRESE UNA OPCION VALIDA!")
-
-
-#Funcion Principal de recoleccion de datos e impresion del registro
-def main():
-    
+#Funcion de registro de Usuario
+def registro_Usuario():
     print("\nIngrese los datos del Usuario a Registrar, por favor!! \n")
 
+    usu_id = gen_ID()
     usu_nombre = peticionNombre()
     usu_apellido = peticionApelllido()
     usu_edad = peticionEdad()
@@ -216,10 +227,74 @@ def main():
     usu_peso = peticionPeso()
     usu_esCasado = peticionEstadoCivil()
 
-    usuario_registro = {"nombre" : usu_nombre, "apellido": usu_apellido, "edad" : usu_edad , "carrera" : usu_carrera, "altura" : usu_altura , 
+    usuario_registro = {"id" : usu_id ,"nombre" : usu_nombre, "apellido": usu_apellido, "edad" : usu_edad , "carrera" : usu_carrera, "altura" : usu_altura , 
                     "peso" : usu_peso , "casado?" : usu_esCasado }
     
     resumen_Registro(usuario_registro)
+
+#Funcion tipo Menu de modificacion de datos individuales
+def eliminar_Registro(id):
+    global lista_Usuarios
+    var = input(f"LOS DATOS DEL USUARIO CON EL ID {id.get("id")} SERAN ELIMINADOS PERMANENTEMENTE? [S] o [N] : ").strip().upper()
+    if comp_Vacio(var) == False :
+        if var == "S":
+            print("DATOS DEL USUARIO ELIMINADOS!!!!! ")
+            del lista_Usuarios[id.get("id")-1]
+            #usuario_registro.clear
+            print(lista_Usuarios)
+            main()
+        elif var == "N":
+            main()
+        else:
+            print("Ingrese una LETRA VALIDA!!   (S/N)")
+
+#Funcion de Busqueda por ID
+def busqueda_Usuario():
+    id_usu = input("Ingrese el ID del usuario : ")
+    id_usu = int(id_usu)
+    for iter in lista_Usuarios:
+        print(iter)
+        if iter.get('id') == id_usu:
+            print(iter)
+            return iter
+
+#Funcion Principal de recoleccion de datos e impresion del registro
+def main():
+    
+    print("*"*10 + "BIENVENIDOS AL REGISTRO DE USUARIOS v1" + "*"*10 + "\n") #58
+    print("*"*23 + "     MENU     " + "*"*23 + "\n")
+    opciones_menu = [1,2,3,4,5]
+    while True: 
+        try:
+            print("INGRESE LA OPCCION DE LA OPERACION : ")
+            print("1. REGISTAR USUARIO")
+            print("2. ELIMINAR USUARIO")
+            print("3. MODIFICAR USUARIO")
+            print("4. CONSULTAR USUARIO")
+            print("5. SALIDA")
+            op = input("Ingrese opcion deseada : ")
+            op = int(op)
+            if op in opciones_menu:
+                if op == 1:
+                    registro_Usuario()
+                elif op == 2:
+                    usu = busqueda_Usuario()
+                    eliminar_Registro(usu)
+                elif op == 3:
+                    usu = busqueda_Usuario()
+                    modificar_Registro(usu)
+                elif op == 4:
+                    usu = busqueda_Usuario()
+                    resumen_Registro(usu)
+                elif op == 5:
+                    exit()
+            else:
+                print("INGRESE UNA OPCION VALIDA!")
+        except ValueError:
+            print("INGRESE UNA OPCION VALIDA!")
+
+
+    
 
 #Funcion inicial
 if __name__ == "__main__":
