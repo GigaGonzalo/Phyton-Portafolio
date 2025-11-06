@@ -19,18 +19,7 @@ def comp_Vacio(txt):
     
 #Funcion de Formato: Primera letra mayuscula
 def format_Mayus(txt):
-    mayus = []
-    cont = 1
-    for c in txt:
-        if cont == 1:
-            mayus.append(str(c).upper())
-            cont += 1
-        else:
-            mayus.append(str(c).lower())
-            cont += 1
-    formato =  "".join(mayus)
-    print(formato)
-    return formato 
+    return str(txt).capitalize()
 
 
         
