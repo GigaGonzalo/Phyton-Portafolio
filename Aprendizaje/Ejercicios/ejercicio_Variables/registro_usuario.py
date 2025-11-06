@@ -10,6 +10,7 @@ import os
 from datetime import datetime
 from typing import Any, Dict
 from weakref import ref
+from colorama import Fore, Back, Style, init
 
 #Inicializacion de variables globales
 usuario_registro = {"id" : 0 ,"nombre" : "", "apellido": "", "edad" : 0 , "carrera" : "", "altura" : 0 , 
@@ -35,7 +36,7 @@ def cargarRegistro() -> Any:
         else:
             return []
     except (json.JSONDecodeError, Exception) as e:
-        print("ERROR AL CARGAR EL HISTORIAL")
+        print(Fore.RED +"ERROR AL CARGAR EL HISTORIAL")
 
 def guardarRegistro(datos_usuario: dict):
     """
@@ -60,10 +61,10 @@ def guardarRegistro(datos_usuario: dict):
         with open(url_archivo_usuarios, "w" ) as archivo:
             json.dump(registro, archivo, ensure_ascii=False, indent=2)
 
-        print("DATOS GUARDADOS EXITOSAMENTE")
+        print(Fore.GREEN +"✅ DATOS GUARDADOS EXITOSAMENTE")
     
     except Exception as e:
-        print(f"ERROR AL GUARDAR EL REGISTRO:  {e}")
+        print(Fore.RED + f"❌ ERROR AL GUARDAR EL REGISTRO:  {e}")
         return False
 
 def guardarXEliminacion(registro_act: list):
@@ -109,7 +110,7 @@ def comp_Vacio(txt: str) -> bool:
         bool: La existencia o no de espacios en blanco
     """
     if len(txt) <= 0:
-        print("EL CAMPO NO PUEDE QUEDAR VACIO!!!")
+        print(Fore.YELLOW +"⚠️ EL CAMPO NO PUEDE QUEDAR VACIO!!!")
         return True
     else:
         return False
@@ -141,12 +142,12 @@ def comp_Edad(num : int):
     if 18 <= num < 120:
         return True
     elif num < 0:
-        print("LA EDAD NO PUEDE SER UN VALOR NEGATIVO!!")
+        print(Fore.YELLOW +"⚠️ LA EDAD NO PUEDE SER UN VALOR NEGATIVO!!")
     elif num < 18:
-        print("MENOR DE EDAD!! ACCESO DENEGADO!! ")
+        print(Fore.YELLOW +"⚠️ MENOR DE EDAD!! ACCESO DENEGADO!! ")
         return False
     elif num >= 120:
-        print("EDAD INVALIDA --FUERA DE RANGO (18-119) ")
+        print(Fore.YELLOW +"⚠️ EDAD INVALIDA --FUERA DE RANGO (18-119) ")
         return False
     
 #Funcion de comprobacion de Altura Validas
@@ -163,9 +164,9 @@ def comp_Altura(alt: float):
     if 1.10 < alt < 2.51:
         return True
     elif alt < 0:
-        print("LA ALTURA NO PUEDE SER UN VALOR NEGATIVO!!")
+        print(Fore.YELLOW +"⚠️ LA ALTURA NO PUEDE SER UN VALOR NEGATIVO!!")
     else:
-        print("ALTURA INVALIDA   --FUERA DE RANGO (1.10 mts - 2.50 mts)")
+        print(Fore.YELLOW +"⚠️ ALTURA INVALIDA   --FUERA DE RANGO (1.10 mts - 2.50 mts)")
         return False
 #Funcion de comprobacion de Pesos Validos
 def comp_Peso(pe : float):
@@ -181,9 +182,9 @@ def comp_Peso(pe : float):
     if 39 < pe < 269:
         return True
     elif pe < 0:
-        print("EL PESO NO PUEDE SER UN VALOR NEGATIVO!!")
+        print(Fore.YELLOW +"⚠️ EL PESO NO PUEDE SER UN VALOR NEGATIVO!!")
     else:
-        print("PESO INVALIDO   --FUERA DE RANGO (39 kg - 269 kg)")
+        print(Fore.YELLOW +"⚠️ PESO INVALIDO   --FUERA DE RANGO (39 kg - 269 kg)")
         return False
 #Funciones de Peticiones de DATOS
 def peticionNombre() -> str:
@@ -202,7 +203,7 @@ def peticionNombre() -> str:
                 return format_Mayus(var)
                 
         except ValueError:
-            print("Ingrese un dato valido!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato valido!!")
     
 def peticionApelllido() -> str:
     """
@@ -220,7 +221,7 @@ def peticionApelllido() -> str:
                 return format_Mayus(var)
             
         except ValueError:
-            print("Ingrese un dato valido!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato valido!!")
 
 def peticionEdad() -> int:
     """
@@ -238,7 +239,7 @@ def peticionEdad() -> int:
                 return int(var)
             
         except ValueError:
-            print("Ingrese un dato valido!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato valido!!")
 
 def peticionCarrera() -> str:
     """
@@ -256,7 +257,7 @@ def peticionCarrera() -> str:
                 return format_Mayus(var)
             
         except ValueError:
-            print("Ingrese un dato valido!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato valido!!")
 
 def peticionAltura() -> float:
     """
@@ -273,7 +274,7 @@ def peticionAltura() -> float:
             if comp_Vacio(var) == False and comp_Altura(float(var)) == True:
                 return float(var)
         except ValueError:
-            print("Ingrese un dato valido!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato valido!!")
         
 def peticionPeso() -> float:
     """
@@ -291,7 +292,7 @@ def peticionPeso() -> float:
                 return float(var)
             
         except ValueError:
-            print("Ingrese un dato valido!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato valido!!")
 
 def peticionEstadoCivil() -> bool:
     """
@@ -311,9 +312,9 @@ def peticionEstadoCivil() -> bool:
                 elif var == "N":
                     return False
                 else:
-                    print("Ingrese una LETRA VALIDA!!   (S/N)")
+                    print(Fore.YELLOW +"⚠️ Ingrese una LETRA VALIDA!!   (S/N)")
         except Exception as e:
-            print("Ingrese un dato VALIDO!!")
+            print(Fore.YELLOW +"⚠️ Ingrese un dato VALIDO!!")
 #Funcion de generacion de ID
 def gen_ID() -> int:
     """
@@ -341,22 +342,22 @@ def resumen_Registro(registro : Any):
 
     """
     global lista_Usuarios
-    print(f"DATOS DEL USUARIO A REGISTRAR \nID : {registro['id']} \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
-           f"\nEdad : {registro["edad"]} \nCarrera : {registro["carrera"]}\nAltura : {registro["altura"]}"+
-           f"\nPeso : {registro["peso"]} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
+    print(f"DATOS DEL USUARIO A REGISTRAR \nID : {Style.BRIGHT}{registro['id']}{Style.NORMAL} \nNombre : {Style.BRIGHT}{registro['nombre']}{Style.NORMAL} \nApelido : {Style.BRIGHT}{registro['apellido']}{Style.NORMAL}" +
+           f"\nEdad : {Style.BRIGHT}{registro["edad"]}{Style.NORMAL} \nCarrera : {Style.BRIGHT}{registro["carrera"]}{Style.NORMAL}\nAltura : {Style.BRIGHT}{registro["altura"]}{Style.NORMAL}"+
+           f"\nPeso : {Style.BRIGHT}{registro["peso"]}{Style.NORMAL} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
     var = input("Los datos capturados son CORRECTOS? [S] o [N] : ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
             print(registro)
             lista_Usuarios.append(registro)
             guardarRegistro(registro)
-            print("DATOS DEL USUARIO ALMACENADOS!!!!! ")
+            print(Fore.GREEN +"✅ DATOS DEL USUARIO ALMACENADOS!!!!! ")
             print(registro)
             main()
         elif var == "N":
             modificar_Registro(registro)
         else:
-            print("Ingrese una LETRA VALIDA!!   (S/N)")
+            print(Fore.YELLOW +"⚠️ Ingrese una LETRA VALIDA!!   (S/N)")
             
 def resumen_Usuario(registro : Any):
     """
@@ -368,16 +369,16 @@ def resumen_Usuario(registro : Any):
     Returns:
 
     """
-    print(f"DATOS DEL USUARIO REGISTRADO \nID : {registro['id']} \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
-           f"\nEdad : {registro["edad"]} \nCarrera : {registro["carrera"]}\nAltura : {registro["altura"]}"+
-           f"\nPeso : {registro["peso"]} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
+    print(f"DATOS DEL USUARIO REGISTRADO \nID : {Style.BRIGHT}{registro['id']}{Style.NORMAL} \nNombre : {Style.BRIGHT}{registro['nombre']}{Style.NORMAL} \nApelido : {Style.BRIGHT}{registro['apellido']}{Style.NORMAL}" +
+           f"\nEdad : {Style.BRIGHT}{registro["edad"]}{Style.NORMAL} \nCarrera : {Style.BRIGHT}{registro["carrera"]}{Style.NORMAL}\nAltura : {Style.BRIGHT}{registro["altura"]}{Style.NORMAL}"+
+           f"\nPeso : {Style.BRIGHT}{registro["peso"]}{Style.NORMAL} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
     var = input("Presione S para regresar al MENU [S] : ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
             main()
        
         else:
-            print("Ingrese una LETRA VALIDA!!   (S)")
+            print(Fore.YELLOW +"⚠️ Ingrese una LETRA VALIDA!!   (S)")
 
 #Funcion tipo Menu de modificacion de datos individuales
 def modificar_Registro(registro):
@@ -431,9 +432,9 @@ def modificar_Registro(registro):
                     print(registro)
                     resumen_Registro(registro)
             else:
-                print("INGRESE UNA OPCION VALIDA!")
+                print(Fore.YELLOW +"⚠️ INGRESE UNA OPCION VALIDA!")
         except ValueError:
-            print("INGRESE UNA OPCION VALIDA!")
+            print(Fore.YELLOW +"⚠️ INGRESE UNA OPCION VALIDA!")
 #Funcion de registro de Usuario
 def registro_Usuario():
     """
@@ -472,7 +473,7 @@ def eliminar_Registro(dic_usuario):
         list: El registro de usuarios actualizado
     """
     print(dic_usuario)
-    var = input(f"LOS DATOS DEL USUARIO CON EL ID {dic_usuario.get("id")} SERAN ELIMINADOS PERMANENTEMENTE? [S] o [N] : ").strip().upper()
+    var = input(Fore.RED + f"⚠️ LOS DATOS DEL USUARIO CON EL ID {dic_usuario.get("id")} SERAN ELIMINADOS PERMANENTEMENTE? [S] o [N] : ⚠️ ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
             
@@ -482,12 +483,12 @@ def eliminar_Registro(dic_usuario):
             print(registro)
             registro = ordenamientoXEliminacion(registro)
             guardarXEliminacion(registro)
-            print("DATOS DEL USUARIO ELIMINADOS!!!!! ")
+            print(Fore.RED + "✅ DATOS DEL USUARIO ELIMINADOS!!!!! ")
             main()
         elif var == "N":
             main()
     else:
-            print("Ingrese una LETRA VALIDA!!   (S/N)")
+            print(Fore.YELLOW +"⚠️ Ingrese una LETRA VALIDA!!   (S/N)")
 
 #Funcion de Busqueda por ID
 def busqueda_Usuario():
@@ -514,7 +515,8 @@ def main():
     
     """
     
-    print("*"*10 + "BIENVENIDOS AL REGISTRO DE USUARIOS v1" + "*"*10 + "\n") #58
+    print(Back.GREEN +"*"*10 + "BIENVENIDOS AL REGISTRO DE USUARIOS v1" + "*"*10 + "\n") #58
+    print(" "*58)
     print("*"*23 + "     MENU     " + "*"*23 + "\n")
     opciones_menu = [1,2,3,4,5]
     while True: 
@@ -542,9 +544,9 @@ def main():
                 elif op == 5:
                     exit()
             else:
-                print("INGRESE UNA OPCION VALIDA!")
+                print("⚠️ INGRESE UNA OPCION VALIDA!")
         except ValueError:
-            print("INGRESE UNA OPCION VALIDA!")
+            print("⚠️ INGRESE UNA OPCION VALIDA!")
 
 #Funcion inicial
 if __name__ == "__main__":
@@ -552,4 +554,5 @@ if __name__ == "__main__":
     Inicia el programa
     
     """
+    init(autoreset=True)
     main()

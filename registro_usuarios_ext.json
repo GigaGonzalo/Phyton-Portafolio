@@ -9,5 +9,16 @@
     "peso": 83.0,
     "casado?": true,
     "fecha_registro": "2025-11-06 02:33:46"
+  },
+  {
+    "id": 2,
+    "nombre": "Gonzalo",
+    "apellido": "Barajas",
+    "edad": 30,
+    "carrera": "Python",
+    "altura": 1.25,
+    "peso": 42.0,
+    "casado?": true,
+    "fecha_registro": "2025-11-06 03:19:18"
   }
 ]

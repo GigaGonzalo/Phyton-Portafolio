@@ -1,0 +1,13 @@
+[
+  {
+    "id": 1,
+    "nombre": "As",
+    "apellido": "Asd",
+    "edad": 30,
+    "carrera": "Aasdad",
+    "altura": 1.5,
+    "peso": 50.0,
+    "casado?": true,
+    "fecha_registro": "2025-11-06 02:56:35"
+  }
+]
