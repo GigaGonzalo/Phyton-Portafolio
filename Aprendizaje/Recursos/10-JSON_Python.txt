@@ -1,0 +1,882 @@
+🐍 ¡JSON PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN INTERCAMBIO DE DATOS UNIVERSAL!
+🎯 ¡JSON EN PYTHON - PODER DE DATOS PORTÁBLES!
+python
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE JSON! ⚡
+import json
+
+print("🎊 ¡JSON PYTHON - COMUNICA DATOS COMO NUNCA! 🎊")
+print("¿Cansado de formatos complicados? ¿Necesitas intercambiar datos entre sistemas?")
+print("¡JSON lo simplifica TODO! 💫")
+
+🚀 ¡JSON BÁSICO - TU PRIMER INTERCAMBIO!
+✨ QUÉ ES JSON - ¡EL LENGUAJE UNIVERSAL!
+
+
+# ¡JSON ES EL IDIOMA UNIVERSAL DE LOS DATOS!
+"""
+JSON (JavaScript Object Notation) es:
+✅ Formato de texto ligero
+✅ Fácil de leer y escribir
+✅ Independiente del lenguaje
+✅ Perfecto para APIs y configuraciones
+"""
+
+# ¡EJEMPLO DE JSON - DATOS ESTRUCTURADOS!
+ejemplo_json = """
+{
+    "usuario": {
+        "nombre": "Ana García",
+        "edad": 28,
+        "es_estudiante": true,
+        "hobbies": ["programar", "leer", "viajar"],
+        "direccion": {
+            "calle": "Calle Python 123",
+            "ciudad": "Madrid",
+            "codigo_postal": "28001"
+        }
+    },
+    "configuracion": {
+        "tema": "oscuro",
+        "notificaciones": true,
+        "idioma": "es"
+    }
+}
+"""
+
+print("📋 ¡ESTRUCTURA JSON TÍPICA! 📋")
+print("🔹 Objetos: { } - Como diccionarios en Python")
+print("🔹 Arrays: [ ] - Como listas en Python") 
+print("🔹 Strings: \"texto\" - Como strings en Python")
+print("🔹 Números: 123 - Como int/float en Python")
+print("🔹 Booleanos: true/false - Como True/False en Python")
+print("🔹 Null: null - Como None en Python")
+
+🔄 CONVERSIÓN BÁSICA - ¡PYTHON ↔ JSON!
+
+
+import json
+
+# ¡DATOS EN PYTHON - LISTOS PARA CONVERTIR!
+datos_python = {
+    "nombre": "Carlos López",
+    "edad": 32,
+    "activo": True,
+    "salario": 45000.50,
+    "hijos": None,
+    "habilidades": ["Python", "JavaScript", "SQL"],
+    "contacto": {
+        "email": "carlos@python.com",
+        "telefono": "+34 600 123 456"
+    }
+}
+
+print("🔄 ¡CONVERSIÓN PYTHON → JSON! 🔄")
+
+# CONVERTIR PYTHON A JSON (SERIALIZACIÓN)
+json_string = json.dumps(datos_python, indent=2, ensure_ascii=False)
+print("📤 Python a JSON (string):")
+print(json_string)
+
+# CONVERTIR JSON A PYTHON (DESERIALIZACIÓN)
+python_objeto = json.loads(json_string)
+print(f"\n📥 JSON a Python:")
+print(f"   Tipo: {type(python_objeto)}")
+print(f"   Nombre: {python_objeto['nombre']}")
+print(f"   Edad: {python_objeto['edad']}")
+
+# ¡VERIFICACIÓN DE EQUIVALENCIA!
+print(f"\n✅ ¿Son equivalentes? {datos_python == python_objeto}")
+
+🎪 ¡SERIALIZACIÓN AVANZADA - CONFIGURACIÓN PROFESIONAL!
+⚡ JSON.DUMPS() - PERSONALIZA TU SALIDA!
+
+
+# ¡DATOS COMPLEJOS PARA SERIALIZAR!
+datos_complejos = {
+    "empresa": "Tech Solutions",
+    "fundacion": 2010,
+    "empleados": [
+        {
+            "id": 1,
+            "nombre": "Ana Ruiz",
+            "departamento": "Desarrollo",
+            "salario": 55000,
+            "activo": True,
+            "habilidades": {"Python", "Django", "PostgreSQL"}
+        },
+        {
+            "id": 2, 
+            "nombre": "Pedro Martínez",
+            "departamento": "Diseño",
+            "salario": 48000,
+            "activo": False,
+            "habilidades": {"Figma", "Photoshop", "Illustrator"}
+        }
+    ],
+    "proyectos_activos": 15,
+    "presupuesto_anual": 2500000.75
+}
+
+print("🎨 ¡SERIALIZACIÓN AVANZADA CON OPCIONES! 🎨")
+
+# SERIALIZACIÓN BÁSICA
+json_basico = json.dumps(datos_complejos)
+print("📤 Serialización básica:")
+print(f"   Longitud: {len(json_basico)} caracteres")
+print(f"   Primeros 100 chars: {json_basico[:100]}...")
+
+# SERIALIZACIÓN CON FORMATO BONITO
+json_formateado = json.dumps(
+    datos_complejos,
+    indent=4,               # 📍 Sangrado para legibilidad
+    ensure_ascii=False,     # 🔤 Permite caracteres no-ASCII
+    sort_keys=True          # 🔠 Ordena las claves alfabéticamente
+)
+print(f"\n📝 Serialización formateada:")
+print(json_formateado[:200] + "...")
+
+# SERIALIZACIÓN CON SEPARADORES PERSONALIZADOS
+json_compacto = json.dumps(
+    datos_complejos,
+    separators=(',', ':'),  # 🎯 Sin espacios, más compacto
+    sort_keys=True
+)
+print(f"\n📦 Serialización compacta:")
+print(f"   Longitud: {len(json_compacto)} caracteres")
+print(f"   Primeros 100 chars: {json_compacto[:100]}...")
+
+# ¡MANEJO DE TIPOS ESPECIALES!
+print(f"\n⚠️ Problemas con tipos no serializables:")
+datos_problematicos = {
+    "fecha_actual": "2024-01-15",  # datetime no es serializable por defecto
+    "conjunto": {1, 2, 3},         # set no es serializable
+    "decimal": 3.14159
+}
+
+try:
+    json_problematico = json.dumps(datos_problematicos)
+except TypeError as e:
+    print(f"   ❌ Error: {e}")
+
+🎯 MANEJO DE TIPOS ESPECIALES - ¡SERIALIZACIÓN PERSONALIZADA!
+
+
+import json
+from datetime import datetime, date
+from decimal import Decimal
+
+# ¡CLASE PERSONALIZADA PARA DEMOSTRAR SERIALIZACIÓN!
+class Producto:
+    def __init__(self, id, nombre, precio, fecha_creacion):
+        self.id = id
+        self.nombre = nombre
+        self.precio = precio
+        self.fecha_creacion = fecha_creacion
+        self.en_stock = True
+    
+    def __repr__(self):
+        return f"Producto({self.id}, '{self.nombre}', ${self.precio})"
+
+# ¡FUNCIÓN PERSONALIZADA PARA SERIALIZACIÓN!
+def serializador_personalizado(obj):
+    """Convierte objetos Python personalizados a JSON serializable"""
+    
+    if isinstance(obj, (datetime, date)):
+        return obj.isoformat()  # 📅 Convertir fechas a string ISO
+    
+    elif isinstance(obj, Decimal):
+        return float(obj)  # 💰 Convertir Decimal a float
+    
+    elif isinstance(obj, set):
+        return list(obj)  # 🎭 Convertir set a lista
+    
+    elif isinstance(obj, Producto):
+        # 🏷️ Convertir objeto Producto a diccionario
+        return {
+            "id": obj.id,
+            "nombre": obj.nombre,
+            "precio": float(obj.precio),
+            "fecha_creacion": obj.fecha_creacion.isoformat(),
+            "en_stock": obj.en_stock,
+            "_tipo": "Producto"  # 🔍 Marcar tipo para deserialización
+        }
+    
+    elif hasattr(obj, '__dict__'):
+        # 🔧 Convertir cualquier objeto con __dict__
+        return obj.__dict__
+    
+    else:
+        raise TypeError(f"Objeto {obj} no es serializable")
+
+print("🎯 ¡SERIALIZACIÓN DE TIPOS ESPECIALES! 🎯")
+
+# Datos con tipos complejos
+datos_especiales = {
+    "producto": Producto(101, "Laptop Gaming", Decimal("1299.99"), datetime(2024, 1, 15)),
+    "fecha_actual": datetime.now(),
+    "tags": {"gaming", "tecnologia", "portatil"},
+    "precio_decimal": Decimal("99.50"),
+    "cantidad": 50
+}
+
+# Serializar con el serializador personalizado
+json_especial = json.dumps(
+    datos_especiales,
+    default=serializador_personalizado,
+    indent=2,
+    ensure_ascii=False
+)
+
+print("📤 Datos especiales serializados:")
+print(json_especial)
+
+# ¡DESERIALIZACIÓN PERSONALIZADA!
+def deserializador_personalizado(dct):
+    """Reconvierte objetos personalizados desde JSON"""
+    if "_tipo" in dct and dct["_tipo"] == "Producto":
+        # 🏷️ Reconstruir objeto Producto
+        return Producto(
+            id=dct["id"],
+            nombre=dct["nombre"],
+            precio=Decimal(str(dct["precio"])),
+            fecha_creacion=datetime.fromisoformat(dct["fecha_creacion"])
+        )
+    return dct
+
+# Probar round-trip (serializar → deserializar)
+datos_recuperados = json.loads(json_especial, object_hook=deserializador_personalizado)
+print(f"\n📥 Producto recuperado: {datos_recuperados['producto']}")
+print(f"📅 Fecha recuperada: {datos_recuperados['fecha_actual']}")
+
+💾 ¡TRABAJO CON ARCHIVOS JSON - PERSISTENCIA DE DATOS!
+📁 LECTURA Y ESCRITURA DE ARCHIVOS JSON
+
+
+import json
+import os
+
+print("💾 ¡TRABAJANDO CON ARCHIVOS JSON! 💾")
+
+# DATOS PARA GUARDAR
+datos_usuarios = {
+    "usuarios": [
+        {
+            "id": 1,
+            "username": "ana_dev",
+            "email": "ana@python.com",
+            "preferencias": {
+                "tema": "oscuro",
+                "idioma": "es",
+                "notificaciones": True
+            },
+            "fecha_registro": "2024-01-10T10:30:00"
+        },
+        {
+            "id": 2,
+            "username": "carlos_data",
+            "email": "carlos@python.com", 
+            "preferencias": {
+                "tema": "claro",
+                "idioma": "en",
+                "notificaciones": False
+            },
+            "fecha_registro": "2024-01-12T14:45:00"
+        }
+    ],
+    "total_usuarios": 2,
+    "ultima_actualizacion": "2024-01-15T09:00:00"
+}
+
+# ¡ESCRIBIR A ARCHIVO JSON!
+nombre_archivo = "usuarios.json"
+
+try:
+    with open(nombre_archivo, 'w', encoding='utf-8') as archivo:
+        json.dump(
+            datos_usuarios, 
+            archivo, 
+            indent=2, 
+            ensure_ascii=False,
+            sort_keys=True
+        )
+    print(f"✅ Datos guardados en '{nombre_archivo}'")
+    
+except IOError as e:
+    print(f"❌ Error al guardar archivo: {e}")
+
+# ¡LEER DESDE ARCHIVO JSON!
+try:
+    with open(nombre_archivo, 'r', encoding='utf-8') as archivo:
+        datos_cargados = json.load(archivo)
+    
+    print(f"\n📥 Datos cargados desde '{nombre_archivo}':")
+    print(f"   Total usuarios: {datos_cargados['total_usuarios']}")
+    
+    for usuario in datos_cargados['usuarios']:
+        print(f"   👤 {usuario['username']} - {usuario['email']}")
+    
+    # VERIFICAR INTEGRIDAD
+    print(f"\n🔍 ¿Datos idénticos? {datos_usuarios == datos_cargados}")
+    
+except (IOError, json.JSONDecodeError) as e:
+    print(f"❌ Error al cargar archivo: {e}")
+
+# ¡ACTUALIZACIÓN DE ARCHIVO JSON!
+def agregar_usuario(archivo_json, nuevo_usuario):
+    """Agrega un nuevo usuario al archivo JSON"""
+    try:
+        # Cargar datos existentes
+        with open(archivo_json, 'r', encoding='utf-8') as archivo:
+            datos = json.load(archivo)
+        
+        # Agregar nuevo usuario
+        nuevo_usuario['id'] = len(datos['usuarios']) + 1
+        datos['usuarios'].append(nuevo_usuario)
+        datos['total_usuarios'] = len(datos['usuarios'])
+        datos['ultima_actualizacion'] = datetime.now().isoformat()
+        
+        # Guardar datos actualizados
+        with open(archivo_json, 'w', encoding='utf-8') as archivo:
+            json.dump(datos, archivo, indent=2, ensure_ascii=False)
+        
+        print(f"✅ Usuario '{nuevo_usuario['username']}' agregado exitosamente")
+        return True
+        
+    except Exception as e:
+        print(f"❌ Error al agregar usuario: {e}")
+        return False
+
+# Agregar un nuevo usuario
+nuevo_usuario = {
+    "username": "maria_ai",
+    "email": "maria@python.com",
+    "preferencias": {
+        "tema": "auto",
+        "idioma": "es", 
+        "notificaciones": True
+    }
+}
+
+agregar_usuario(nombre_archivo, nuevo_usuario)
+
+# Limpieza (opcional)
+if os.path.exists(nombre_archivo):
+    os.remove(nombre_archivo)
+    print(f"\n🧹 Archivo '{nombre_archivo}' eliminado")
+
+🌐 ¡JSON Y APIS - COMUNICACIÓN WEB!
+🔗 TRABAJANDO CON APIs REST
+
+
+import json
+import requests  # ¡Necesitarás: pip install requests
+
+print("🌐 ¡JSON Y APIS WEB! 🌐")
+
+# ¡SIMULACIÓN DE API REST (sin dependencias externas)!
+class APISimulada:
+    """Simula una API REST para demostrar JSON"""
+    
+    def __init__(self):
+        self.datos = {
+            "posts": [
+                {
+                    "id": 1,
+                    "titulo": "Introducción a Python",
+                    "autor": "Ana García",
+                    "fecha": "2024-01-10",
+                    "contenido": "Python es un lenguaje poderoso...",
+                    "tags": ["python", "programacion", "tutorial"],
+                    "likes": 45
+                },
+                {
+                    "id": 2,
+                    "titulo": "JSON para Principiantes", 
+                    "autor": "Carlos López",
+                    "fecha": "2024-01-12",
+                    "contenido": "JSON es el formato universal...",
+                    "tags": ["json", "datos", "api"],
+                    "likes": 32
+                }
+            ]
+        }
+    
+    def obtener_posts(self):
+        """GET /posts - Obtener todos los posts"""
+        return {
+            "status": "success",
+            "data": self.datos["posts"],
+            "total": len(self.datos["posts"]),
+            "timestamp": "2024-01-15T10:00:00Z"
+        }
+    
+    def crear_post(self, nuevo_post):
+        """POST /posts - Crear nuevo post"""
+        nuevo_post["id"] = len(self.datos["posts"]) + 1
+        self.datos["posts"].append(nuevo_post)
+        
+        return {
+            "status": "success", 
+            "message": "Post creado exitosamente",
+            "data": nuevo_post
+        }
+    
+    def buscar_posts(self, tag):
+        """GET /posts?tag=python - Buscar posts por tag"""
+        posts_filtrados = [
+            post for post in self.datos["posts"] 
+            if tag in post["tags"]
+        ]
+        
+        return {
+            "status": "success",
+            "data": posts_filtrados,
+            "filtro": tag,
+            "encontrados": len(posts_filtrados)
+        }
+
+# ¡USO DE LA API SIMULADA!
+api = APISimulada()
+
+print("🔹 OBTENER TODOS LOS POSTS:")
+respuesta_posts = api.obtener_posts()
+print(json.dumps(respuesta_posts, indent=2, ensure_ascii=False))
+
+print(f"\n📊 Estadísticas:")
+print(f"   Total posts: {respuesta_posts['total']}")
+print(f"   Primer post: {respuesta_posts['data'][0]['titulo']}")
+
+print("\n🔹 CREAR NUEVO POST:")
+nuevo_post = {
+    "titulo": "APIs REST con Python",
+    "autor": "María Rodríguez", 
+    "fecha": "2024-01-15",
+    "contenido": "Las APIs REST son esenciales...",
+    "tags": ["api", "rest", "python", "web"],
+    "likes": 0
+}
+
+respuesta_crear = api.crear_post(nuevo_post)
+print(json.dumps(respuesta_crear, indent=2, ensure_ascii=False))
+
+print("\n🔹 BUSCAR POSTS POR TAG:")
+respuesta_busqueda = api.buscar_posts("python")
+print(f"   Posts con tag 'python': {respuesta_busqueda['encontrados']}")
+for post in respuesta_busqueda['data']:
+    print(f"   - {post['titulo']} (Likes: {post['likes']})")
+
+# ¡MANEJO DE ERRORES EN APIs!
+print("\n🚨 MANEJO DE ERRORES EN APIs:")
+respuesta_error = {
+    "status": "error",
+    "message": "Recurso no encontrado",
+    "code": 404,
+    "timestamp": "2024-01-15T10:05:00Z"
+}
+
+print("❌ Respuesta de error típica:")
+print(json.dumps(respuesta_error, indent=2))
+
+🎨 ¡VALIDACIÓN Y ESQUEMAS JSON - DATOS CONFIABLES!
+🛡️ VALIDACIÓN DE ESTRUCTURA JSON
+
+
+import json
+
+print("🛡️ ¡VALIDACIÓN DE JSON! 🛡️")
+
+# ESQUEMA PARA VALIDACIÓN
+ESQUEMA_USUARIO = {
+    "type": "object",
+    "required": ["nombre", "email", "edad"],
+    "properties": {
+        "nombre": {"type": "string", "minLength": 2},
+        "email": {"type": "string", "format": "email"},
+        "edad": {"type": "integer", "minimum": 18, "maximum": 120},
+        "activo": {"type": "boolean"},
+        "habilidades": {
+            "type": "array", 
+            "items": {"type": "string"}
+        }
+    }
+}
+
+def validar_usuario_simple(datos):
+    """Valida datos de usuario de forma simple"""
+    errores = []
+    
+    # Validar campos requeridos
+    for campo in ["nombre", "email", "edad"]:
+        if campo not in datos:
+            errores.append(f"❌ Campo requerido faltante: {campo}")
+    
+    # Validar tipos
+    if "nombre" in datos and not isinstance(datos["nombre"], str):
+        errores.append("❌ 'nombre' debe ser string")
+    
+    if "edad" in datos and not isinstance(datos["edad"], int):
+        errores.append("❌ 'edad' debe ser integer")
+    
+    if "email" in datos and "@" not in datos["email"]:
+        errores.append("❌ 'email' debe ser válido")
+    
+    if "edad" in datos and isinstance(datos["edad"], int):
+        if datos["edad"] < 18:
+            errores.append("❌ 'edad' debe ser >= 18")
+        if datos["edad"] > 120:
+            errores.append("❌ 'edad' debe ser <= 120")
+    
+    return errores
+
+print("🔍 VALIDACIÓN MANUAL DE DATOS:")
+
+# Datos de prueba
+usuarios_prueba = [
+    {
+        "nombre": "Ana",
+        "email": "ana@python.com",
+        "edad": 25,
+        "activo": True,
+        "habilidades": ["Python", "SQL"]
+    },
+    {
+        "nombre": "L",  # Nombre muy corto
+        "email": "email_invalido",
+        "edad": 15,     # Edad muy baja
+        "habilidades": "no es array"  # Tipo incorrecto
+    },
+    {
+        "email": "carlos@python.com",  # Falta nombre
+        "edad": 30
+    }
+]
+
+for i, usuario in enumerate(usuarios_prueba, 1):
+    print(f"\n👤 Usuario {i}:")
+    errores = validar_usuario_simple(usuario)
+    
+    if not errores:
+        print("   ✅ Datos válidos!")
+        print(f"   📊 {usuario['nombre']} - {usuario['email']}")
+    else:
+        print("   ❌ Errores encontrados:")
+        for error in errores:
+            print(f"      {error}")
+
+# ¡VALIDACIÓN CON JSONSCHEMA (OPCIONAL)!
+print("\n🎯 VALIDACIÓN CON JSONSCHEMA (conceptual):")
+"""
+Para validación avanzada, puedes usar la biblioteca jsonschema:
+
+pip install jsonschema
+
+from jsonschema import validate, ValidationError
+
+try:
+    validate(instance=datos_usuario, schema=ESQUEMA_USUARIO)
+    print("✅ JSON válido según esquema!")
+except ValidationError as e:
+    print(f"❌ Error de validación: {e.message}")
+"""
+
+🏆 ¡SISTEMA COMPLETO DEL MUNDO REAL!
+🛒 SISTEMA DE INVENTARIO CON JSON
+
+
+import json
+import os
+from datetime import datetime
+from typing import Dict, List, Optional
+
+class SistemaInventarioJSON:
+    """Sistema completo de inventario usando JSON para persistencia"""
+    
+    def __init__(self, archivo_json: str = "inventario.json"):
+        self.archivo_json = archivo_json
+        self.inventario = self._cargar_inventario()
+    
+    def _cargar_inventario(self) -> Dict:
+        """Carga el inventario desde archivo JSON o crea uno nuevo"""
+        if os.path.exists(self.archivo_json):
+            try:
+                with open(self.archivo_json, 'r', encoding='utf-8') as archivo:
+                    datos = json.load(archivo)
+                print(f"✅ Inventario cargado desde '{self.archivo_json}'")
+                return datos
+            except (json.JSONDecodeError, IOError) as e:
+                print(f"❌ Error al cargar inventario: {e}. Creando nuevo...")
+        
+        # Inventario por defecto
+        return {
+            "productos": [],
+            "categorias": ["electrónica", "hogar", "oficina", "deportes"],
+            "ultima_actualizacion": datetime.now().isoformat(),
+            "total_productos": 0,
+            "valor_total_inventario": 0.0
+        }
+    
+    def _guardar_inventario(self):
+        """Guarda el inventario en archivo JSON"""
+        try:
+            with open(self.archivo_json, 'w', encoding='utf-8') as archivo:
+                json.dump(
+                    self.inventario,
+                    archivo,
+                    indent=2,
+                    ensure_ascii=False,
+                    sort_keys=True
+                )
+            print(f"💾 Inventario guardado en '{self.archivo_json}'")
+        except IOError as e:
+            print(f"❌ Error al guardar inventario: {e}")
+    
+    def agregar_producto(self, nombre: str, precio: float, cantidad: int, categoria: str, proveedor: str = ""):
+        """Agrega un nuevo producto al inventario"""
+        
+        # Validaciones
+        if precio <= 0:
+            print("❌ El precio debe ser positivo")
+            return False
+        
+        if cantidad < 0:
+            print("❌ La cantidad no puede ser negativa")
+            return False
+        
+        if categoria not in self.inventario["categorias"]:
+            print(f"❌ Categoría '{categoria}' no válida. Categorías disponibles: {self.inventario['categorias']}")
+            return False
+        
+        # Crear producto
+        nuevo_producto = {
+            "id": len(self.inventario["productos"]) + 1,
+            "nombre": nombre,
+            "precio": precio,
+            "cantidad": cantidad,
+            "categoria": categoria,
+            "proveedor": proveedor,
+            "fecha_agregado": datetime.now().isoformat(),
+            "activo": True
+        }
+        
+        # Agregar al inventario
+        self.inventario["productos"].append(nuevo_producto)
+        self.inventario["total_productos"] = len(self.inventario["productos"])
+        self.inventario["valor_total_inventario"] = self._calcular_valor_total()
+        self.inventario["ultima_actualizacion"] = datetime.now().isoformat()
+        
+        # Guardar cambios
+        self._guardar_inventario()
+        
+        print(f"✅ Producto '{nombre}' agregado exitosamente (ID: {nuevo_producto['id']})")
+        return True
+    
+    def buscar_producto(self, criterio: str, valor: str):
+        """Busca productos por diferentes criterios"""
+        resultados = []
+        
+        for producto in self.inventario["productos"]:
+            if criterio == "nombre" and valor.lower() in producto["nombre"].lower():
+                resultados.append(producto)
+            elif criterio == "categoria" and producto["categoria"] == valor:
+                resultados.append(producto)
+            elif criterio == "id" and producto["id"] == int(valor):
+                resultados.append(producto)
+        
+        return resultados
+    
+    def actualizar_stock(self, producto_id: int, nueva_cantidad: int):
+        """Actualiza el stock de un producto"""
+        for producto in self.inventario["productos"]:
+            if producto["id"] == producto_id:
+                if nueva_cantidad >= 0:
+                    producto["cantidad"] = nueva_cantidad
+                    producto["ultima_actualizacion"] = datetime.now().isoformat()
+                    self.inventario["valor_total_inventario"] = self._calcular_valor_total()
+                    self.inventario["ultima_actualizacion"] = datetime.now().isoformat()
+                    self._guardar_inventario()
+                    print(f"✅ Stock de '{producto['nombre']}' actualizado a {nueva_cantidad}")
+                    return True
+                else:
+                    print("❌ La cantidad no puede ser negativa")
+                    return False
+        
+        print(f"❌ Producto con ID {producto_id} no encontrado")
+        return False
+    
+    def generar_reporte(self):
+        """Genera un reporte completo del inventario"""
+        print("\n📊 REPORTE DE INVENTARIO:")
+        print(f"   Total productos: {self.inventario['total_productos']}")
+        print(f"   Valor total: ${self.inventario['valor_total_inventario']:.2f}")
+        print(f"   Última actualización: {self.inventario['ultima_actualizacion']}")
+        
+        # Productos por categoría
+        print("\n📦 PRODUCTOS POR CATEGORÍA:")
+        for categoria in self.inventario["categorias"]:
+            productos_categoria = self.buscar_producto("categoria", categoria)
+            if productos_categoria:
+                print(f"   {categoria.title()}: {len(productos_categoria)} productos")
+        
+        # Productos con stock bajo
+        print("\n⚠️  PRODUCTOS CON STOCK BAJO:")
+        stock_bajo = [p for p in self.inventario["productos"] if p["cantidad"] < 5 and p["cantidad"] > 0]
+        for producto in stock_bajo:
+            print(f"   {producto['nombre']}: {producto['cantidad']} unidades")
+        
+        # Productos agotados
+        print("\n❌ PRODUCTOS AGOTADOS:")
+        agotados = [p for p in self.inventario["productos"] if p["cantidad"] == 0]
+        for producto in agotados:
+            print(f"   {producto['nombre']} (ID: {producto['id']})")
+    
+    def _calcular_valor_total(self) -> float:
+        """Calcula el valor total del inventario"""
+        total = 0.0
+        for producto in self.inventario["productos"]:
+            total += producto["precio"] * producto["cantidad"]
+        return total
+    
+    def exportar_backup(self, archivo_backup: str = None):
+        """Crea una copia de seguridad del inventario"""
+        if not archivo_backup:
+            timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+            archivo_backup = f"inventario_backup_{timestamp}.json"
+        
+        try:
+            with open(archivo_backup, 'w', encoding='utf-8') as archivo:
+                json.dump(self.inventario, archivo, indent=2, ensure_ascii=False)
+            print(f"💾 Copia de seguridad creada: '{archivo_backup}'")
+            return True
+        except IOError as e:
+            print(f"❌ Error al crear backup: {e}")
+            return False
+
+# ¡DEMOSTRACIÓN DEL SISTEMA!
+print("🏪 ¡SISTEMA DE INVENTARIO CON JSON! 🏪")
+
+# Crear sistema
+inventario = SistemaInventarioJSON()
+
+# Agregar productos
+print("\n📥 AGREGANDO PRODUCTOS:")
+inventario.agregar_producto("Laptop Gaming", 1299.99, 10, "electrónica", "TechCorp")
+inventario.agregar_producto("Mouse Inalámbrico", 25.50, 50, "electrónica", "Peripherals Inc")
+inventario.agregar_producto("Silla Oficina", 199.99, 5, "oficina", "ComfortWorks")
+inventario.agregar_producto("Balón Fútbol", 29.99, 2, "deportes", "SportsPro")
+
+# Buscar productos
+print("\n🔍 BUSCANDO PRODUCTOS:")
+resultados = inventario.buscar_producto("categoria", "electrónica")
+print(f"   Productos en electrónica: {len(resultados)}")
+for producto in resultados:
+    print(f"   - {producto['nombre']} (${producto['precio']})")
+
+# Actualizar stock
+print("\n🔄 ACTUALIZANDO STOCK:")
+inventario.actualizar_stock(4, 0)  # Agotar balón de fútbol
+
+# Generar reporte
+inventario.generar_reporte()
+
+# Crear backup
+inventario.exportar_backup()
+
+# Limpieza
+for archivo in ["inventario.json", "inventario_backup_*.json"]:
+    for f in [f for f in os.listdir('.') if f.startswith('inventario')]:
+        try:
+            os.remove(f)
+            print(f"🧹 Archivo '{f}' eliminado")
+        except:
+            pass
+
+🎊 ¡RESUMEN FINAL DE JSON!
+
+¿QUÉ OBTIENES CON JSON EN PYTHON?
+
+    ✅ Interoperabilidad - Comunica entre sistemas diferentes
+
+    ✅ Simplicidad - Formato fácil de leer y escribir
+
+    ✅ Estandarización - Formato universalmente aceptado
+
+    ✅ Eficiencia - Texto ligero y rápido de procesar
+
+    ✅ Flexibilidad - Estructuras de datos complejas
+
+¡FUNCIONES PRINCIPALES!
+
+    📤 json.dumps() - Python → JSON string
+
+    📥 json.loads() - JSON string → Python
+
+    💾 json.dump() - Python → JSON file
+
+    📁 json.load() - JSON file → Python
+
+¡CONVERSIONES AUTOMÁTICAS!
+
+    🐍 dict ↔ 🎯 JSON object
+
+    🐍 list ↔ 🎯 JSON array
+
+    🐍 str ↔ 🎯 JSON string
+
+    🐍 int/float ↔ 🎯 JSON number
+
+    🐍 True/False ↔ 🎯 JSON true/false
+
+    🐍 None ↔ 🎯 JSON null
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA JSON Y CONQUISTA EL INTERCAMBIO DE DATOS!
+
+
+import json
+
+def demostrar_poder_json():
+    """¡Función final que demuestra todo tu poder con JSON!"""
+    
+    # Datos complejos
+    datos_maestro = {
+        "nombre": "Experto JSON",
+        "habilidades": [
+            "Serialización Python → JSON",
+            "Deserialización JSON → Python", 
+            "Trabajo con archivos JSON",
+            "APIs y comunicación web",
+            "Validación y esquemas",
+            "Manejo de tipos especiales"
+        ],
+        "estadisticas": {
+            "proyectos_completados": 15,
+            "datos_procesados": "2.5 GB",
+            "eficiencia": 99.9
+        },
+        "certificaciones": ["JSON Pro", "Python Master", "API Specialist"],
+        "fecha_maestria": "2024-01-15"
+    }
+    
+    # Serialización avanzada
+    json_perfecto = json.dumps(
+        datos_maestro,
+        indent=2,
+        ensure_ascii=False,
+        sort_keys=True
+    )
+    
+    print("🎉 ¡FELICIDADES! Ahora dominas:")
+    print("🐍 JSON EN PYTHON - EL FORMATO UNIVERSAL")
+    print(f"\n📊 Tu perfil de experto:")
+    print(json_perfecto)
+    
+    return "🚀 ¡Estás listo para integrar sistemas y crear APIs!"
+
+# ¡EJECUTA TU PODER!
+mensaje_final = demostrar_poder_json()
+print(f"\n{mensaje_final}")
+
+¡JSON ES EL IDIOMA UNIVERSAL DE LOS DATOS, Y AHORA LO HABLAS CON FLUIDEZ! 🌍🐍

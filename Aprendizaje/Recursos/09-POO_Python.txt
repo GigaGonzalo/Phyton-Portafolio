@@ -1,0 +1,774 @@
+🐍 ¡PROGRAMACIÓN ORIENTADA A OBJETOS PYTHON-O-MATIC! 🐍
+
+¡LLEGÓ LA REVOLUCIÓN EN ORGANIZACIÓN Y REUTILIZACIÓN DE CÓDIGO!
+🎯 ¡POO EN PYTHON - PODER DE ORGANIZACIÓN EXTREMA!
+python
+
+# ⚡ ¡BIENVENIDO AL MUNDO DE LA POO! ⚡
+print("🎊 ¡POO PYTHON - ORGANIZA COMO UN ARQUITECTO! 🎊")
+print("¿Cansado de código desorganizado? ¿Confundido con datos dispersos?")
+print("¡LA POO lo estructura TODO! 💫")
+
+🚀 ¡CLASES Y OBJETOS - LOS CIMIENTOS DE LA POO!
+✨ CLASE BÁSICA - ¡TU PRIMER MOLDE!
+
+
+# ¡DEFINIENDO TU PRIMERA CLASE!
+class Perro:
+    """Clase que representa a un perro - ¡Tu primer molde!"""
+    
+    # ¡ATRIBUTO DE CLASE - Compartido por todos!
+    especie = "Canis lupus familiaris"
+    
+    def __init__(self, nombre, edad, raza):
+        """Método constructor - ¡Inicializa el objeto!"""
+        # ¡ATRIBUTOS DE INSTANCIA - Únicos para cada objeto!
+        self.nombre = nombre
+        self.edad = edad
+        self.raza = raza
+        self.energia = 100
+        print(f"🐕 ¡Nuevo perro creado: {self.nombre}!")
+    
+    def ladrar(self):
+        """Método - ¡Acción que puede realizar el objeto!"""
+        return f"¡{self.nombre} dice: Guau Guau! 🐾"
+    
+    def comer(self, comida):
+        """Método con parámetros"""
+        self.energia += 20
+        return f"🍖 {self.nombre} está comiendo {comida}. Energía: {self.energia}"
+    
+    def correr(self, distancia):
+        """Método que modifica estado interno"""
+        if self.energia >= distancia * 5:
+            self.energia -= distancia * 5
+            return f"🏃 {self.nombre} corrió {distancia} km. Energía restante: {self.energia}"
+        else:
+            return f"😴 {self.nombre} está muy cansado para correr"
+
+# ¡CREANDO OBJETOS (INSTANCIAS)!
+print("🐕 ¡CREANDO PERROS DESDE LA CLASE! 🐕")
+
+# Instancia 1
+mi_perro = Perro("Max", 3, "Labrador")
+print(mi_perro.ladrar())
+print(mi_perro.comer("croquetas"))
+print(mi_perro.correr(5))
+
+# Instancia 2
+tu_perro = Perro("Luna", 2, "Pastor Alemán")
+print(f"\n{tu_perro.ladrar()}")
+print(tu_perro.comer("carne"))
+print(tu_perro.correr(10))
+
+# ¡ACCEDIENDO A ATRIBUTOS!
+print(f"\n📊 INFORMACIÓN DE LOS PERROS:")
+print(f"🔹 {mi_perro.nombre}: {mi_perro.edad} años, {mi_perro.raza}")
+print(f"🔸 {tu_perro.nombre}: {tu_perro.edad} años, {tu_perro.raza}")
+print(f"🎯 Especie de ambos: {Perro.especie}")
+
+🏗️ ¡ENCAPSULAMIENTO - PROTECCIÓN DE DATOS!
+🛡️ ATRIBUTOS PRIVADOS Y PÚBLICOS - ¡CONTROL TOTAL!
+
+
+class CuentaBancaria:
+    """Clase que demuestra encapsulamiento - ¡Protege tus datos!"""
+    
+    def __init__(self, titular, saldo_inicial=0):
+        # Atributos públicos
+        self.titular = titular
+        
+        # ¡Atributos privados (con __) - No accesibles directamente!
+        self.__saldo = saldo_inicial
+        self.__pin = 1234  # Muy privado
+        
+        # Atributo protegido (con _) - Para uso interno
+        self._activa = True
+        
+        print(f"🏦 Cuenta creada para {self.titular}")
+    
+    # ¡MÉTODOS PÚBLICOS - Interfaz controlada!
+    def depositar(self, monto):
+        """Método público para depositar"""
+        if monto > 0 and self._activa:
+            self.__saldo += monto
+            return f"💰 Depósito exitoso: +${monto}. Saldo: ${self.__saldo}"
+        return "❌ Depósito fallido"
+    
+    def retirar(self, monto, pin):
+        """Método público para retirar con validación"""
+        if not self._verificar_pin(pin):
+            return "❌ PIN incorrecto"
+        
+        if monto <= 0:
+            return "❌ Monto debe ser positivo"
+        
+        if not self._activa:
+            return "❌ Cuenta inactiva"
+        
+        if self.__saldo >= monto:
+            self.__saldo -= monto
+            return f"💸 Retiro exitoso: -${monto}. Saldo: ${self.__saldo}"
+        else:
+            return "❌ Fondos insuficientes"
+    
+    def consultar_saldo(self, pin):
+        """Método público para consultar saldo"""
+        if self._verificar_pin(pin):
+            return f"📊 Saldo actual: ${self.__saldo}"
+        return "❌ PIN incorrecto"
+    
+    # ¡MÉTODOS PRIVADOS - Solo uso interno!
+    def _verificar_pin(self, pin):
+        """Método privado - Solo se usa dentro de la clase"""
+        return pin == self.__pin
+    
+    def __generar_reporte(self):
+        """Método muy privado - Solo para la clase"""
+        return f"Reporte interno - {self.titular}: ${self.__saldo}"
+    
+    # ¡PROPIEDADES - Acceso controlado a atributos!
+    @property
+    def saldo(self):
+        """Propiedad de solo lectura para saldo"""
+        return f"Saldo disponible: ${self.__saldo}"
+    
+    @property
+    def estado(self):
+        """Propiedad para estado de la cuenta"""
+        return "Activa" if self._activa else "Inactiva"
+    
+    @estado.setter
+    def estado(self, nuevo_estado):
+        """Setter para cambiar estado con validación"""
+        if isinstance(nuevo_estado, bool):
+            self._activa = nuevo_estado
+            print("✅ Estado de cuenta actualizado")
+        else:
+            print("❌ Estado debe ser True o False")
+
+# ¡DEMOSTRACIÓN DE ENCAPSULAMIENTO!
+print("🏦 ¡CUENTA BANCARIA CON ENCAPSULAMIENTO! 🏦")
+cuenta = CuentaBancaria("Ana García", 1000)
+
+# Uso correcto a través de métodos públicos
+print(cuenta.depositar(500))
+print(cuenta.retirar(200, 1234))
+print(cuenta.consultar_saldo(1234))
+
+# ¡Intentando acceso directo a atributos privados (NO RECOMENDADO)!
+print(f"\n⚠️ Intentando acceso directo:")
+print(f"   Titular (público): {cuenta.titular}")
+# print(f"   Saldo (privado): {cuenta.__saldo}")  # ¡ERROR! AttributeError
+
+# Uso de propiedades
+print(f"\n🎯 Usando propiedades:")
+print(f"   {cuenta.saldo}")
+print(f"   Estado: {cuenta.estado}")
+
+# Cambiando estado a través del setter
+cuenta.estado = False
+print(f"   Nuevo estado: {cuenta.estado}")
+
+🔄 ¡HERENCIA - REUTILIZACIÓN INTELIGENTE!
+👨‍👩‍👧‍👦 HERENCIA SIMPLE - ¡EXTIENDE Y ESPECIALIZA!
+
+
+# ¡CLASE PADRE (SUPERCLASE)!
+class Vehiculo:
+    """Clase padre que representa un vehículo genérico"""
+    
+    def __init__(self, marca, modelo, año):
+        self.marca = marca
+        self.modelo = modelo
+        self.año = año
+        self.velocidad = 0
+        self.encendido = False
+    
+    def encender(self):
+        """Método de la clase padre"""
+        if not self.encendido:
+            self.encendido = True
+            return f"🔑 {self.marca} {self.modelo} encendido"
+        return "⚠️ El vehículo ya está encendido"
+    
+    def apagar(self):
+        """Método de la clase padre"""
+        if self.encendido and self.velocidad == 0:
+            self.encendido = False
+            return f"🔒 {self.marca} {self.modelo} apagado"
+        return "❌ No se puede apagar en movimiento"
+    
+    def acelerar(self, incremento):
+        """Método de la clase padre"""
+        if self.encendido:
+            self.velocidad += incremento
+            return f"🚗 Acelerando a {self.velocidad} km/h"
+        return "❌ Enciende el vehículo primero"
+    
+    def info_vehiculo(self):
+        """Método que muestra información"""
+        return f"🚗 {self.marca} {self.modelo} ({self.año}) - Velocidad: {self.velocidad} km/h"
+
+# ¡CLASE HIJA QUE HEREDA DE VEHICULO!
+class Coche(Vehiculo):
+    """Clase hija que especializa la clase Vehiculo"""
+    
+    def __init__(self, marca, modelo, año, num_puertas, tipo_combustible):
+        # ¡LLAMAR AL CONSTRUCTOR DEL PADRE!
+        super().__init__(marca, modelo, año)
+        
+        # ¡ATRIBUTOS ESPECÍFICOS DEL COCHE!
+        self.num_puertas = num_puertas
+        self.tipo_combustible = tipo_combustible
+        self.aire_acondicionado = False
+    
+    # ¡MÉTODOS ESPECÍFICOS DEL COCHE!
+    def abrir_maletero(self):
+        return f"📦 Maletero del {self.modelo} abierto"
+    
+    def encender_aire(self):
+        if self.encendido:
+            self.aire_acondicionado = True
+            return "❄️ Aire acondicionado encendido"
+        return "❌ Enciende el coche primero"
+    
+    # ¡SOBREESCRITURA DE MÉTODOS!
+    def info_vehiculo(self):
+        """Sobreescribe el método del padre con info específica"""
+        info_base = super().info_vehiculo()
+        return f"{info_base} - Puertas: {self.num_puertas} - Combustible: {self.tipo_combustible}"
+
+# ¡OTRA CLASE HIJA!
+class Motocicleta(Vehiculo):
+    """Otra clase hija especializada"""
+    
+    def __init__(self, marca, modelo, año, tipo_manillar, cilindrada):
+        super().__init__(marca, modelo, año)
+        self.tipo_manillar = tipo_manillar
+        self.cilindrada = cilindrada
+        self.casco_puesto = False
+    
+    def poner_casco(self):
+        self.casco_puesto = True
+        return "🪖 Casco puesto - Listo para rodar"
+    
+    def hacer_caballito(self):
+        if self.encendido and self.casco_puesto:
+            return "🎪 ¡Haciendo caballito con la moto!"
+        return "❌ Ponte el casco y enciende la moto primero"
+    
+    def info_vehiculo(self):
+        info_base = super().info_vehiculo()
+        return f"{info_base} - Cilindrada: {self.cilindrada}cc - Manillar: {self.tipo_manillar}"
+
+# ¡DEMOSTRACIÓN DE HERENCIA!
+print("🚗 ¡DEMOSTRACIÓN DE HERENCIA! 🚗")
+
+# Creando objetos de las clases hijas
+mi_coche = Coche("Toyota", "Corolla", 2023, 4, "Gasolina")
+mi_moto = Motocicleta("Yamaha", "MT-07", 2022, "Deportivo", 689)
+
+print("🔹 COCHE:")
+print(mi_coche.encender())
+print(mi_coche.acelerar(50))
+print(mi_coche.encender_aire())
+print(mi_coche.abrir_maletero())
+print(mi_coche.info_vehiculo())
+
+print("\n🔸 MOTOCICLETA:")
+print(mi_moto.encender())
+print(mi_moto.poner_casco())
+print(mi_moto.hacer_caballito())
+print(mi_moto.acelerar(80))
+print(mi_moto.info_vehiculo())
+
+# ¡VERIFICANDO RELACIONES!
+print(f"\n🔍 RELACIONES DE HERENCIA:")
+print(f"   ¿mi_coche es instancia de Coche? {isinstance(mi_coche, Coche)}")  # ✅
+print(f"   ¿mi_coche es instancia de Vehiculo? {isinstance(mi_coche, Vehiculo)}")  # ✅
+print(f"   ¿Coche es subclase de Vehiculo? {issubclass(Coche, Vehiculo)}")  # ✅
+
+🎭 ¡POLIMORFISMO - FLEXIBILIDAD EXTREMA!
+🔀 MÚLTIPLES FORMAS - ¡MISMO NOMBRE, DIFERENTE COMPORTAMIENTO!
+
+
+# ¡POLIMORFISMO - DIFERENTES CLASES, MISMA INTERFAZ!
+class Animal:
+    """Clase base para demostrar polimorfismo"""
+    
+    def __init__(self, nombre):
+        self.nombre = nombre
+    
+    def hacer_sonido(self):
+        """Método que será sobreescrito por las subclases"""
+        raise NotImplementedError("Las subclases deben implementar este método")
+    
+    def moverse(self):
+        """Método que puede ser sobreescrito"""
+        return f"{self.nombre} se está moviendo"
+
+class Perro(Animal):
+    def hacer_sonido(self):
+        return f"🐕 {self.nombre} dice: ¡Guau Guau!"
+    
+    def moverse(self):
+        return f"🐕 {self.nombre} está corriendo alegremente"
+
+class Gato(Animal):
+    def hacer_sonido(self):
+        return f"🐱 {self.nombre} dice: ¡Miau Miau!"
+    
+    def moverse(self):
+        return f"🐱 {self.nombre} está caminando sigilosamente"
+
+class Pajaro(Animal):
+    def hacer_sonido(self):
+        return f"🐦 {self.nombre} dice: ¡Pío Pío!"
+    
+    def moverse(self):
+        return f"🐦 {self.nombre} está volando en el cielo"
+
+class Vaca(Animal):
+    def hacer_sonido(self):
+        return f"🐄 {self.nombre} dice: ¡Muuu Muuu!"
+    
+    def moverse(self):
+        return f"🐄 {self.nombre} está caminando lentamente"
+
+# ¡FUNCIÓN POLIMÓRFICA!
+def concierto_animales(animales):
+    """Función que trabaja con cualquier animal - ¡POLIMORFISMO!"""
+    print("🎪 ¡CONCIERTO DE ANIMALES! 🎪")
+    for animal in animales:
+        print(f"   {animal.hacer_sonido()}")
+        print(f"   {animal.moverse()}")
+        print()
+
+# ¡DEMOSTRACIÓN DEL POLIMORFISMO!
+print("🎭 ¡DEMOSTRACIÓN DE POLIMORFISMO! 🎭")
+
+# Creando diferentes animales
+animales = [
+    Perro("Max"),
+    Gato("Luna"), 
+    Pajaro("Piolín"),
+    Vaca("Margarita")
+]
+
+# ¡Misma función, diferentes comportamientos!
+concierto_animales(animales)
+
+# ¡POLIMORFISMO CON MÉTODOS INTEGRADOS!
+print("🔧 POLIMORFISMO CON MÉTODOS INTEGRADOS:")
+
+class Libro:
+    def __init__(self, titulo, autor, paginas):
+        self.titulo = titulo
+        self.autor = autor
+        self.paginas = paginas
+    
+    def __str__(self):
+        """Método especial para representación en string"""
+        return f"'{self.titulo}' por {self.autor}"
+    
+    def __len__(self):
+        """Método especial para la función len()"""
+        return self.paginas
+    
+    def __add__(self, otro_libro):
+        """Método especial para suma (+)"""
+        return f"Colección: {self.titulo} + {otro_libro.titulo}"
+
+class Pelicula:
+    def __init__(self, titulo, director, duracion):
+        self.titulo = titulo
+        self.director = director
+        self.duracion = duracion
+    
+    def __str__(self):
+        return f"'{self.titulo}' dirigida por {self.director}"
+    
+    def __len__(self):
+        return self.duracion
+
+# ¡USANDO LOS MÉTODOS ESPECIALES!
+libro1 = Libro("Python Master", "Ana García", 350)
+libro2 = Libro("POO Avanzada", "Carlos López", 280)
+pelicula = Pelicula("El Viaje Python", "María Rodríguez", 120)
+
+print(f"\n📚 Libro: {libro1}")  # Usa __str__
+print(f"   Páginas: {len(libro1)}")  # Usa __len__
+
+print(f"🎬 Película: {pelicula}")  # Usa __str__
+print(f"   Duración: {len(pelicula)} minutos")  # Usa __len__
+
+print(f"➕ Combinación: {libro1 + libro2}")  # Usa __add__
+
+⚡ ¡MÉTODOS ESPECIALES (MAGIC METHODS) - PODER OCULTO!
+🎩 MÉTODOS MÁGICOS - ¡SOBRECARGA DE OPERADORES!
+
+
+class Vector:
+    """Clase que demuestra métodos mágicos para operaciones vectoriales"""
+    
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+    
+    # ¡MÉTODOS DE REPRESENTACIÓN!
+    def __str__(self):
+        return f"Vector({self.x}, {self.y})"
+    
+    def __repr__(self):
+        return f"Vector(x={self.x}, y={self.y})"
+    
+    # ¡MÉTODOS ARITMÉTICOS!
+    def __add__(self, otro):
+        """Sobrecarga del operador +"""
+        return Vector(self.x + otro.x, self.y + otro.y)
+    
+    def __sub__(self, otro):
+        """Sobrecarga del operador -"""
+        return Vector(self.x - otro.x, self.y - otro.y)
+    
+    def __mul__(self, escalar):
+        """Sobrecarga del operador * (multiplicación por escalar)"""
+        return Vector(self.x * escalar, self.y * escalar)
+    
+    def __truediv__(self, escalar):
+        """Sobrecarga del operador / (división por escalar)"""
+        if escalar != 0:
+            return Vector(self.x / escalar, self.y / escalar)
+        raise ValueError("No se puede dividir por cero")
+    
+    # ¡MÉTODOS DE COMPARACIÓN!
+    def __eq__(self, otro):
+        """Sobrecarga del operador =="""
+        return self.x == otro.x and self.y == otro.y
+    
+    def __lt__(self, otro):
+        """Sobrecarga del operador < (comparación por magnitud)"""
+        return self.magnitud() < otro.magnitud()
+    
+    def __gt__(self, otro):
+        """Sobrecarga del operador > (comparación por magnitud)"""
+        return self.magnitud() > otro.magnitud()
+    
+    # ¡MÉTODOS ÚTILES!
+    def magnitud(self):
+        """Calcula la magnitud del vector"""
+        return (self.x**2 + self.y**2)**0.5
+    
+    def punto(self, otro):
+        """Producto punto entre dos vectores"""
+        return self.x * otro.x + self.y * otro.y
+    
+    # ¡MÉTODOS DE CONVERSIÓN!
+    def __bool__(self):
+        """Conversión a booleano (False si es vector cero)"""
+        return self.x != 0 or self.y != 0
+    
+    def __len__(self):
+        """'Longitud' como magnitud entera"""
+        return int(self.magnitud())
+
+# ¡DEMOSTRACIÓN DE MÉTODOS MÁGICOS!
+print("🎩 ¡MÉTODOS MÁGICOS EN ACCIÓN! 🎩")
+
+v1 = Vector(3, 4)
+v2 = Vector(1, 2)
+v3 = Vector(0, 0)
+
+print(f"🔹 Vectores creados:")
+print(f"   v1 = {v1}")
+print(f"   v2 = {v2}")
+print(f"   v3 = {v3}")
+
+print(f"\n🧮 OPERACIONES ARITMÉTICAS:")
+print(f"   v1 + v2 = {v1 + v2}")
+print(f"   v1 - v2 = {v1 - v2}")
+print(f"   v1 * 2 = {v1 * 2}")
+print(f"   v1 / 2 = {v1 / 2}")
+
+print(f"\n🔍 OPERACIONES DE COMPARACIÓN:")
+print(f"   v1 == v2? {v1 == v2}")
+print(f"   v1 < v2? {v1 < v2}")
+print(f"   v1 > v2? {v1 > v2}")
+
+print(f"\n📊 PROPIEDADES:")
+print(f"   Magnitud de v1: {v1.magnitud():.2f}")
+print(f"   Producto punto v1·v2: {v1.punto(v2)}")
+print(f"   ¿v1 es verdadero? {bool(v1)}")
+print(f"   ¿v3 es verdadero? {bool(v3)}")
+print(f"   'Longitud' de v1: {len(v1)}")
+
+🏆 ¡SISTEMA COMPLETO DEL MUNDO REAL!
+🎮 SISTEMA DE VIDEOJUEGO CON POO
+
+
+import random
+
+# ¡SISTEMA DE VIDEOJUEGO CON POO AVANZADA!
+class Personaje:
+    """Clase base para todos los personajes del juego"""
+    
+    def __init__(self, nombre, nivel, vida):
+        self.nombre = nombre
+        self.nivel = nivel
+        self.vida = vida
+        self.vida_maxima = vida
+        self.esta_vivo = True
+    
+    def atacar(self):
+        """Método base para atacar"""
+        daño_base = self.nivel * 2
+        return random.randint(daño_base - 2, daño_base + 2)
+    
+    def recibir_daño(self, daño):
+        """Método para recibir daño"""
+        self.vida -= daño
+        if self.vida <= 0:
+            self.vida = 0
+            self.esta_vivo = False
+            return f"💀 {self.nombre} ha sido derrotado!"
+        return f"❤️ {self.nombre} vida restante: {self.vida}/{self.vida_maxima}"
+    
+    def curar(self, cantidad):
+        """Método para curarse"""
+        if self.esta_vivo:
+            self.vida = min(self.vida_maxima, self.vida + cantidad)
+            return f"💚 {self.nombre} curado. Vida: {self.vida}/{self.vida_maxima}"
+        return f"❌ {self.nombre} no puede ser curado (está muerto)"
+    
+    def __str__(self):
+        return f"{self.nombre} (Nvl {self.nivel}) - Vida: {self.vida}/{self.vida_maxima}"
+
+class Guerrero(Personaje):
+    """Clase especializada - Guerrero con alto daño físico"""
+    
+    def __init__(self, nombre, nivel):
+        vida_base = 100 + (nivel * 20)
+        super().__init__(nombre, nivel, vida_base)
+        self.fuerza = nivel * 3
+    
+    def atacar(self):
+        """Sobreescribe el ataque con bonus de fuerza"""
+        daño_base = super().atacar()
+        daño_total = daño_base + self.fuerza
+        return daño_total
+    
+    def habilidad_especial(self):
+        """Habilidad única del Guerrero"""
+        if self.esta_vivo:
+            daño = self.fuerza * 2
+            self.vida -= 10  # Cuesta vida usar la habilidad
+            return f"⚔️ {self.nombre} usa 'Golpe Poderoso'! Daño: {daño}"
+        return "❌ No puede usar habilidades (está muerto)"
+
+class Mago(Personaje):
+    """Clase especializada - Mago con magia poderosa"""
+    
+    def __init__(self, nombre, nivel):
+        vida_base = 60 + (nivel * 15)
+        super().__init__(nombre, nivel, vida_base)
+        self.mana = 100 + (nivel * 10)
+        self.inteligencia = nivel * 4
+    
+    def atacar(self):
+        """Ataque mágico del Mago"""
+        if self.mana >= 10:
+            self.mana -= 10
+            daño = self.inteligencia + random.randint(5, 15)
+            return daño
+        else:
+            # Ataque físico si no hay mana
+            return super().atacar()
+    
+    def lanzar_hechizo(self, hechizo):
+        """Habilidad única del Mago"""
+        if self.esta_vivo and self.mana >= 20:
+            self.mana -= 20
+            daño = self.inteligencia * 2
+            return f"🔮 {self.nombre} lanza '{hechizo}'! Daño: {daño} - Mana: {self.mana}"
+        return "❌ No hay suficiente mana o está muerto"
+    
+    def meditar(self):
+        """Recupera mana"""
+        if self.esta_vivo:
+            self.mana = min(200, self.mana + 30)
+            return f"🧘 {self.nombre} medita. Mana: {self.mana}"
+        return "❌ No puede meditar (está muerto)"
+
+class Arquero(Personaje):
+    """Clase especializada - Arquero con ataques a distancia"""
+    
+    def __init__(self, nombre, nivel):
+        vida_base = 80 + (nivel * 18)
+        super().__init__(nombre, nivel, vida_base)
+        self.agilidad = nivel * 3
+        self.flechas = 20 + (nivel * 5)
+    
+    def atacar(self):
+        """Ataque con flechas"""
+        if self.flechas > 0:
+            self.flechas -= 1
+            daño = super().atacar() + self.agilidad
+            return daño
+        else:
+            return 0  # Sin flechas
+    
+    def disparo_preciso(self):
+        """Habilidad única del Arquero"""
+        if self.esta_vivo and self.flechas >= 3:
+            self.flechas -= 3
+            daño = (super().atacar() + self.agilidad) * 2
+            return f"🎯 {self.nombre} usa 'Disparo Preciso'! Daño: {daño} - Flechas: {self.flechas}"
+        return "❌ No hay suficientes flechas o está muerto"
+    
+    def recargar_flechas(self, cantidad):
+        """Recarga flechas"""
+        if self.esta_vivo:
+            self.flechas += cantidad
+            return f"🏹 {self.nombre} recarga {cantidad} flechas. Total: {self.flechas}"
+        return "❌ No puede recargar (está muerto)"
+
+# ¡SISTEMA DE BATALLA!
+def simular_batalla(jugador1, jugador2):
+    """Función que simula una batalla entre dos personajes"""
+    print(f"🎮 ¡COMIENZA LA BATALLA! 🎮")
+    print(f"⚔️ {jugador1.nombre} vs {jugador2.nombre}")
+    print(f"📍 {jugador1}")
+    print(f"📍 {jugador2}")
+    print("-" * 50)
+    
+    turno = 1
+    while jugador1.esta_vivo and jugador2.esta_vivo and turno <= 10:
+        print(f"\n🔄 TURNO {turno}:")
+        
+        # Jugador 1 ataca a Jugador 2
+        daño1 = jugador1.atacar()
+        print(f"   {jugador1.nombre} ataca → {jugador2.recibir_daño(daño1)}")
+        
+        if not jugador2.esta_vivo:
+            print(f"\n🎉 ¡{jugador1.nombre} GANA LA BATALLA!")
+            break
+        
+        # Jugador 2 ataca a Jugador 1
+        daño2 = jugador2.atacar()
+        print(f"   {jugador2.nombre} ataca → {jugador1.recibir_daño(daño2)}")
+        
+        if not jugador1.esta_vivo:
+            print(f"\n🎉 ¡{jugador2.nombre} GANA LA BATALLA!")
+            break
+        
+        turno += 1
+    
+    if jugador1.esta_vivo and jugador2.esta_vivo:
+        print(f"\n🤝 ¡EMPATE! La batalla fue muy reñida")
+
+# ¡DEMOSTRACIÓN DEL SISTEMA DE JUEGO!
+print("🎮 ¡SISTEMA DE VIDEOJUEGO CON POO! 🎮")
+
+# Creando personajes
+guerrero = Guerrero("Thor", 5)
+mago = Mago("Merlín", 5)
+arquero = Arquero("Legolas", 5)
+
+# Mostrando habilidades especiales
+print("✨ HABILIDADES ESPECIALES:")
+print(f"   {guerrero.habilidad_especial()}")
+print(f"   {mago.lanzar_hechizo('Bola de Fuego')}")
+print(f"   {arquero.disparo_preciso()}")
+
+# Simulando batallas
+print("\n" + "="*60)
+simular_batalla(guerrero, mago)
+
+# Recuperando personajes para otra batalla
+guerrero.vida = guerrero.vida_maxima
+guerrero.esta_vivo = True
+arquero.vida = arquero.vida_maxima
+arquero.esta_vivo = True
+
+print("\n" + "="*60)
+simular_batalla(guerrero, arquero)
+
+🎊 ¡RESUMEN FINAL DE POO!
+
+¿QUÉ OBTIENES CON POO EN PYTHON?
+
+    ✅ Organización - Código estructurado y mantenible
+
+    ✅ Reutilización - Herencia y composición
+
+    ✅ Encapsulamiento - Protección de datos internos
+
+    ✅ Polimorfismo - Flexibilidad y extensibilidad
+
+    ✅ Abstracción - Oculta complejidad
+
+¡LOS 4 PILARES DE LA POO!
+
+    🏗️ Encapsulamiento - Ocultar datos internos
+
+    👨‍👩‍👧‍👦 Herencia - Extender funcionalidad
+
+    🎭 Polimorfismo - Mismo interfaz, diferentes implementaciones
+
+    🎯 Abstracción - Ocultar detalles complejos
+
+¡CONCEPTOS CLAVE!
+
+    🐕 Clase - Molde o plantilla (class Perro:)
+
+    🐶 Objeto - Instancia específica (mi_perro = Perro())
+
+    🔧 Método - Función dentro de una clase (def ladrar():)
+
+    📊 Atributo - Variable dentro de una clase (self.nombre)
+
+    🛡️ Atributos privados - self.__dato (no accesible externamente)
+
+    🎩 Métodos mágicos - init, str, add, etc.
+
+¡NO ESPERES MÁS! ⏰
+¡DOMINA LA POO Y CONVIÉRTETE EN ARQUITECTO DE SOFTWARE!
+
+
+class MaestroPOO:
+    """¡Clase final que demuestra todo tu poder con POO!"""
+    
+    def __init__(self, nombre):
+        self.nombre = nombre
+        self.habilidades = []
+    
+    def agregar_habilidad(self, habilidad):
+        self.habilidades.append(habilidad)
+    
+    def __str__(self):
+        return f"🎓 {self.nombre} - Maestro de POO en Python"
+    
+    def mostrar_poder(self):
+        print(f"\n🎉 ¡FELICIDADES {self.nombre.upper()}!")
+        print("🐍 Ahora dominas la PROGRAMACIÓN ORIENTADA A OBJETOS:")
+        
+        for i, habilidad in enumerate(self.habilidades, 1):
+            print(f"   {i}. ✅ {habilidad}")
+        
+        return "🚀 ¡Estás listo para crear aplicaciones empresariales!"
+
+# ¡CREANDO TU PODER FINAL!
+tu_poder = MaestroPOO("Programador Python")
+tu_poder.agregar_habilidad("Clases y Objetos")
+tu_poder.agregar_habilidad("Encapsulamiento")
+tu_poder.agregar_habilidad("Herencia")
+tu_poder.agregar_habilidad("Polimorfismo")
+tu_poder.agregar_habilidad("Métodos Mágicos")
+tu_poder.agregar_habilidad("Sistemas Complejos con POO")
+
+print(tu_poder)
+resultado_final = tu_poder.mostrar_poder()
+print(f"\n{resultado_final}")
+
+¡LA POO ES EL CORAZÓN DE PYTHON PROFESIONAL, Y AHORA LATIENDO EN TU CÓDIGO! 💓🐍
