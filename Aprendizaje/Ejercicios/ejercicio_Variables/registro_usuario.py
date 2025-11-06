@@ -3,14 +3,81 @@
 "                                                                   "
 "               Practica de conversion de valores                   "
 "*******************************************************************"
+
+
+import json
+import os
+from datetime import datetime
+from typing import Any, Dict
+from weakref import ref
+
 #Inicializacion de variables globales
 usuario_registro = {"id" : 0 ,"nombre" : "", "apellido": "", "edad" : 0 , "carrera" : "", "altura" : 0 , 
                     "peso" : 0 , "casado?" : False }
 
 lista_Usuarios = []
 
+url_archivo_usuarios = "registro_usuarios_ext.json"
+
+def cargarRegistro() -> Any:
+    """
+    Carga el registro de usuarios desde el archivo JSON
+    
+    Args:
+        
+    Returns:
+        list: Diccionarios de los usuarios
+    """
+    try:
+        if os.path.exists(url_archivo_usuarios):
+            with open(url_archivo_usuarios, "r") as archivo:
+                return json.load(archivo)
+        else:
+            return []
+    except (json.JSONDecodeError, Exception) as e:
+        print("ERROR AL CARGAR EL HISTORIAL")
+
+def guardarRegistro(datos_usuario):
+    """
+    Guarda los datos en el archivo JSON
+    
+    Args:
+        
+    Returns:
+
+    """
+    try:
+        registro = cargarRegistro()
+        datos_usuario["fecha_registro"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        print(datos_usuario)
+        for id_usu in registro:
+            if id_usu.get("id") == datos_usuario.get("id"):
+                id_usu.update(datos_usuario)
+                break
+        else:
+            registro.append(datos_usuario)
+
+        with open(url_archivo_usuarios, "w" ) as archivo:
+            json.dump(registro, archivo, ensure_ascii=False, indent=2)
+
+        print("DATOS GUARDADOS EXITOSAMENTE")
+    
+    except Exception as e:
+        print(f"ERROR AL GUARDAR EL REGISTRO:  {e}")
+        return False
+
+
 #Funcion de comprobacion de Vacios
-def comp_Vacio(txt):
+def comp_Vacio(txt: str) -> bool:
+    """
+    Verifica la existencia de espacios en blanco en entradas
+    
+    Args:
+        txt (str): Entradas de string
+        
+    Returns:
+        bool: La existencia o no de espacios en blanco
+    """
     if len(txt) <= 0:
         print("EL CAMPO NO PUEDE QUEDAR VACIO!!!")
         return True
@@ -18,14 +85,29 @@ def comp_Vacio(txt):
         return False
     
 #Funcion de Formato: Primera letra mayuscula
-def format_Mayus(txt):
+def format_Mayus(txt: str) -> str:
+    """
+    Formato de primer letra mayuscula
+    
+    Args:
+        txt (str): Entrada de string
+        
+    Returns:
+        str: Texto con formato capital
+    """
     return str(txt).capitalize()
 
-
-        
 #Funcion de comprobacion de Edades Validas
-def comp_Edad(num):
-    num = int(num)
+def comp_Edad(num : int):
+    """
+    Valida la edad ingresada
+    
+    Args:
+        num (int): Edad en años
+        
+    Returns:
+        bool: Si es valida o no
+    """
     if 18 <= num < 120:
         return True
     elif num < 0:
@@ -38,8 +120,16 @@ def comp_Edad(num):
         return False
     
 #Funcion de comprobacion de Altura Validas
-def comp_Altura(alt):
-    alt = float(alt)
+def comp_Altura(alt: float):
+    """
+    Valida la altura ingresada
+    
+    Args:
+        alt (float): Altura en metros
+        
+    Returns:
+        bool: Si es valida o no
+    """
     if 1.10 < alt < 2.51:
         return True
     elif alt < 0:
@@ -48,8 +138,16 @@ def comp_Altura(alt):
         print("ALTURA INVALIDA   --FUERA DE RANGO (1.10 mts - 2.50 mts)")
         return False
 #Funcion de comprobacion de Pesos Validos
-def comp_Peso(pe):
-    pe = float(pe)
+def comp_Peso(pe : float):
+    """
+    Valida el peso ingresado
+    
+    Args:
+        pe (float): Peso en kilogramos
+        
+    Returns:
+        bool: Si es valida o no
+    """
     if 39 < pe < 269:
         return True
     elif pe < 0:
@@ -58,7 +156,15 @@ def comp_Peso(pe):
         print("PESO INVALIDO   --FUERA DE RANGO (39 kg - 269 kg)")
         return False
 #Funciones de Peticiones de DATOS
-def peticionNombre():
+def peticionNombre() -> str:
+    """
+    Solicita el nombre del usuario
+    
+    Args:
+        
+    Returns:
+        str: El nombre del usuario
+    """
     while True: 
         try: 
             var = input("Ingrese su NOMBRE : ").strip()
@@ -68,7 +174,15 @@ def peticionNombre():
         except ValueError:
             print("Ingrese un dato valido!!")
     
-def peticionApelllido():
+def peticionApelllido() -> str:
+    """
+    Solicita el apellido del usuario
+    
+    Args:
+        
+    Returns:
+        str: El apellido del usuario
+    """
     while True: 
         try:
             var = input("Ingrese su Apellido : ").strip()
@@ -78,17 +192,33 @@ def peticionApelllido():
         except ValueError:
             print("Ingrese un dato valido!!")
 
-def peticionEdad():
+def peticionEdad() -> int:
+    """
+    Solicita la edad del usuario
+    
+    Args:
+        
+    Returns:
+        int: La edad del usuario
+    """
     while True: 
         try:
             var = input("Ingrese su Edad : ").strip()
-            if comp_Vacio(var) == False and comp_Edad(var) == True:
+            if comp_Vacio(var) == False and comp_Edad(int(var)) == True:
                 return int(var)
             
         except ValueError:
             print("Ingrese un dato valido!!")
 
-def peticionCarrera():
+def peticionCarrera() -> str:
+    """
+    Solicita la carrera del usuario
+    
+    Args:
+        
+    Returns:
+        str: La carrera del usuario
+    """
     while True: 
         try:
             var = input("Ingrese su Carrera : ").strip()
@@ -98,26 +228,50 @@ def peticionCarrera():
         except ValueError:
             print("Ingrese un dato valido!!")
 
-def peticionAltura():
+def peticionAltura() -> float:
+    """
+    Solicita la altura del usuario
+    
+    Args:
+        
+    Returns:
+        float: La altura del usuario
+    """
     while True: 
         try:
             var = input("Ingrese su Altura : ").strip()
-            if comp_Vacio(var) == False and comp_Altura(var) == True:
+            if comp_Vacio(var) == False and comp_Altura(float(var)) == True:
                 return float(var)
         except ValueError:
             print("Ingrese un dato valido!!")
         
-def peticionPeso():
+def peticionPeso() -> float:
+    """
+    Solicita el peso del usuario
+    
+    Args:
+        
+    Returns:
+        float: El peso del usuario
+    """
     while True: 
         try:
             var = input("Ingrese su Peso : ").strip()
-            if comp_Vacio(var) == False and comp_Peso(var) == True:
+            if comp_Vacio(var) == False and comp_Peso(float(var)) == True:
                 return float(var)
             
         except ValueError:
             print("Ingrese un dato valido!!")
 
-def peticionEstadoCivil():
+def peticionEstadoCivil() -> bool:
+    """
+    Solicita el estado civil del usuario
+    
+    Args:
+        
+    Returns:
+        bool: El estado civil del usuario
+    """
     while True: 
         try:
             var = input("Es usted Casado/a [S] o [N] : ").strip().upper()
@@ -131,37 +285,83 @@ def peticionEstadoCivil():
         except Exception as e:
             print("Ingrese un dato VALIDO!!")
 #Funcion de generacion de ID
-def gen_ID():
-    global lista_Usuarios
-
-    id = len(lista_Usuarios) + 1
-
+def gen_ID() -> int:
+    """
+    Genera el ID del usuario
+    
+    Args:
+        
+    Returns:
+        int: El ID del usuario
+    """
+    registro = cargarRegistro()
+    print(len(registro))
+    id = len(registro)+1
     return id
 
 #Funcion de resumen de datos de registro
-def resumen_Registro(registro):
+def resumen_Registro(registro : Any):
+    """
+    Muestra los datos del usuario para confirmacion y los almacena
+    
+    Args:
+        dict: Los datos del usuario
+        
+    Returns:
+
+    """
     global lista_Usuarios
-    print(f"DATOS DEL USUARIO REGISTRADO \nID : {registro['id']} \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
+    print(f"DATOS DEL USUARIO A REGISTRAR \nID : {registro['id']} \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
            f"\nEdad : {registro["edad"]} \nCarrera : {registro["carrera"]}\nAltura : {registro["altura"]}"+
            f"\nPeso : {registro["peso"]} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
     var = input("Los datos capturados son CORRECTOS? [S] o [N] : ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
-            print("DATOS DEL USUARIO ALMACENADOS!!!!! ")
+            print(registro)
             lista_Usuarios.append(registro)
-            #usuario_registro.clear
-            print(lista_Usuarios)
+            guardarRegistro(registro)
+            print("DATOS DEL USUARIO ALMACENADOS!!!!! ")
+            print(registro)
             main()
         elif var == "N":
             modificar_Registro(registro)
         else:
             print("Ingrese una LETRA VALIDA!!   (S/N)")
+            
+def resumen_Usuario(registro : Any):
+    """
+    Muestra solo los datos del usuario 
+    
+    Args:
+        dict: Los datos del usuario
+        
+    Returns:
+
+    """
+    print(f"DATOS DEL USUARIO REGISTRADO \nID : {registro['id']} \nNombre : {registro['nombre']} \nApelido : {registro['apellido']}" +
+           f"\nEdad : {registro["edad"]} \nCarrera : {registro["carrera"]}\nAltura : {registro["altura"]}"+
+           f"\nPeso : {registro["peso"]} \nCasado : " + ("Si" if registro.get("casado?") == True else "NO" ))
+    var = input("Presione S para regresar al MENU [S] : ").strip().upper()
+    if comp_Vacio(var) == False :
+        if var == "S":
+            main()
+       
+        else:
+            print("Ingrese una LETRA VALIDA!!   (S)")
 
 #Funcion tipo Menu de modificacion de datos individuales
 def modificar_Registro(registro):
+    """
+    Modifica los datos del usuario 
+    
+    Args:
+        dict: Los datos del usuario
+        
+    Returns:
+        dict: Los datos del usuario para validacion
+    """
     opciones_menu = [1,2,3,4,5,6,7,8]
-    global usuario_registro
-    usuario_registro = registro
+    
     while True: 
         try:
             print("INGRESE EL NUMERO DE LA OPCCION CON EL DATO A MODIFICAR : ")
@@ -178,33 +378,42 @@ def modificar_Registro(registro):
             if op in opciones_menu:
                 if op == 1:
                     n_nombre = peticionNombre()
-                    usuario_registro["nombre"] = n_nombre
+                    registro["nombre"] = n_nombre
                 elif op == 2:
                     n_apellido = peticionApelllido()
-                    usuario_registro["apellido"] = n_apellido
+                    registro["apellido"] = n_apellido
                 elif op == 3:
                     n_edad = peticionEdad()
-                    usuario_registro["edad"] = n_edad
+                    registro["edad"] = n_edad
                 elif op == 4:
                     n_carrera = peticionCarrera()
-                    usuario_registro["carrera"] = n_carrera
+                    registro["carrera"] = n_carrera
                 elif op == 5:
                     n_altura = peticionAltura()
-                    usuario_registro["altura"] = n_altura
+                    registro["altura"] = n_altura
                 elif op == 6:
                     n_peso = peticionPeso()
-                    usuario_registro["peso"] = n_peso
+                    registro["peso"] = n_peso
                 elif op == 7:
                     n_estadoCivil = peticionEstadoCivil()
-                    usuario_registro["casado?"] = n_estadoCivil
+                    registro["casado?"] = n_estadoCivil
                 elif op == 8:
-                    resumen_Registro(usuario_registro)
+                    print(registro)
+                    resumen_Registro(registro)
             else:
                 print("INGRESE UNA OPCION VALIDA!")
         except ValueError:
             print("INGRESE UNA OPCION VALIDA!")
 #Funcion de registro de Usuario
 def registro_Usuario():
+    """
+    Solicita los datos del usuario para confirmacion y almacenamiento
+    
+    Args:
+        
+    Returns:
+        dict: Los datos del usuario recabados
+    """
     print("\nIngrese los datos del Usuario a Registrar, por favor!! \n")
 
     usu_id = gen_ID()
@@ -222,14 +431,25 @@ def registro_Usuario():
     resumen_Registro(usuario_registro)
 
 #Funcion tipo Menu de modificacion de datos individuales
-def eliminar_Registro(id):
+def eliminar_Registro(dic_usuario):
+    """
+    Elimina el registro del usuario seleccionado por ID
+    
+    Args:
+        dict: Los datos del usuario
+        
+    Returns:
+        list: El registro de usuarios actualizado
+    """
     global lista_Usuarios
-    var = input(f"LOS DATOS DEL USUARIO CON EL ID {id.get("id")} SERAN ELIMINADOS PERMANENTEMENTE? [S] o [N] : ").strip().upper()
+    var = input(f"LOS DATOS DEL USUARIO CON EL ID {dic_usuario.get("id")} SERAN ELIMINADOS PERMANENTEMENTE? [S] o [N] : ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
             print("DATOS DEL USUARIO ELIMINADOS!!!!! ")
-            del lista_Usuarios[id.get("id")-1]
-            #usuario_registro.clear
+            del lista_Usuarios[dic_usuario.get("id")-1]
+            registro = cargarRegistro()
+            del registro[dic_usuario.get("id")-1]
+            guardarRegistro(registro)
             print(lista_Usuarios)
             main()
         elif var == "N":
@@ -239,9 +459,19 @@ def eliminar_Registro(id):
 
 #Funcion de Busqueda por ID
 def busqueda_Usuario():
+    """
+    Busca los datos del usuario en el registro por medio del ID
+    
+    Args:
+        
+    Returns:
+        dict: El registro del usuario buscado
+
+    """
     id_usu = input("Ingrese el ID del usuario : ")
     id_usu = int(id_usu)
-    for iter in lista_Usuarios:
+    registro = cargarRegistro()
+    for iter in registro:
         print(iter)
         if iter.get('id') == id_usu:
             print(iter)
@@ -249,6 +479,10 @@ def busqueda_Usuario():
 
 #Funcion Principal de recoleccion de datos e impresion del registro
 def main():
+    """
+    Muestra el menu principal
+    
+    """
     
     print("*"*10 + "BIENVENIDOS AL REGISTRO DE USUARIOS v1" + "*"*10 + "\n") #58
     print("*"*23 + "     MENU     " + "*"*23 + "\n")
@@ -274,7 +508,7 @@ def main():
                     modificar_Registro(usu)
                 elif op == 4:
                     usu = busqueda_Usuario()
-                    resumen_Registro(usu)
+                    resumen_Usuario(usu)
                 elif op == 5:
                     exit()
             else:
@@ -282,9 +516,12 @@ def main():
         except ValueError:
             print("INGRESE UNA OPCION VALIDA!")
 
-
-    
-
 #Funcion inicial
 if __name__ == "__main__":
+    """
+    Inicia el programa
+    
+    """
+
+    cargarRegistro()
     main()

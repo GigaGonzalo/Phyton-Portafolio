@@ -1,0 +1,24 @@
+[
+  {
+    "id": 1,
+    "nombre": "Gonzalo",
+    "apellido": "Barajas",
+    "edad": 30,
+    "carrera": "Python",
+    "altura": 1.89,
+    "peso": 83.0,
+    "casado?": true,
+    "fecha_registro": "2025-11-05 23:41:12"
+  },
+  {
+    "id": 2,
+    "nombre": "Lilia",
+    "apellido": "Geron",
+    "edad": 31,
+    "carrera": "Java",
+    "altura": 1.54,
+    "peso": 80.0,
+    "casado?": true,
+    "fecha_registro": "2025-11-05 23:41:55"
+  }
+]
