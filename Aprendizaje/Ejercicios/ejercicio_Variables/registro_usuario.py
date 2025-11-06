@@ -37,7 +37,7 @@ def cargarRegistro() -> Any:
     except (json.JSONDecodeError, Exception) as e:
         print("ERROR AL CARGAR EL HISTORIAL")
 
-def guardarRegistro(datos_usuario):
+def guardarRegistro(datos_usuario: dict):
     """
     Guarda los datos en el archivo JSON
     
@@ -49,7 +49,6 @@ def guardarRegistro(datos_usuario):
     try:
         registro = cargarRegistro()
         datos_usuario["fecha_registro"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-        print(datos_usuario)
         for id_usu in registro:
             if id_usu.get("id") == datos_usuario.get("id"):
                 id_usu.update(datos_usuario)
@@ -66,6 +65,36 @@ def guardarRegistro(datos_usuario):
         print(f"ERROR AL GUARDAR EL REGISTRO:  {e}")
         return False
 
+def guardarXEliminacion(registro_act: list):
+    """
+    Guarda el registro pos-eliminacion de usuario
+    
+    Args:
+        registro_act (list): Registro actualizado para almacenamiento
+        
+    Returns:
+        
+    """
+    with open(url_archivo_usuarios, "w" ) as archivo:
+            json.dump(registro_act, archivo, ensure_ascii=False, indent=2)
+
+def ordenamientoXEliminacion(reg: list) -> list:
+    """
+    Ordena la lista con usuario eliminado y reindexa
+    
+    Args:
+        reg (list): Lista con "hueco" de usuarios
+        
+    Returns:
+        list: Lista acomodada y reindexada
+    """
+    reg.sort(key=lambda x: x["id"])
+    index = 1
+    print(reg)
+    for usu in reg:
+        usu["id"] = index
+        index += 1
+    return reg
 
 #Funcion de comprobacion de Vacios
 def comp_Vacio(txt: str) -> bool:
@@ -441,20 +470,22 @@ def eliminar_Registro(dic_usuario):
     Returns:
         list: El registro de usuarios actualizado
     """
-    global lista_Usuarios
+    print(dic_usuario)
     var = input(f"LOS DATOS DEL USUARIO CON EL ID {dic_usuario.get("id")} SERAN ELIMINADOS PERMANENTEMENTE? [S] o [N] : ").strip().upper()
     if comp_Vacio(var) == False :
         if var == "S":
-            print("DATOS DEL USUARIO ELIMINADOS!!!!! ")
-            del lista_Usuarios[dic_usuario.get("id")-1]
+            
             registro = cargarRegistro()
-            del registro[dic_usuario.get("id")-1]
-            guardarRegistro(registro)
-            print(lista_Usuarios)
+            print(registro)
+            registro.pop(dic_usuario.get("id")-1)
+            print(registro)
+            registro = ordenamientoXEliminacion(registro)
+            guardarXEliminacion(registro)
+            print("DATOS DEL USUARIO ELIMINADOS!!!!! ")
             main()
         elif var == "N":
             main()
-        else:
+    else:
             print("Ingrese una LETRA VALIDA!!   (S/N)")
 
 #Funcion de Busqueda por ID
@@ -472,9 +503,7 @@ def busqueda_Usuario():
     id_usu = int(id_usu)
     registro = cargarRegistro()
     for iter in registro:
-        print(iter)
         if iter.get('id') == id_usu:
-            print(iter)
             return iter
 
 #Funcion Principal de recoleccion de datos e impresion del registro
@@ -522,6 +551,4 @@ if __name__ == "__main__":
     Inicia el programa
     
     """
-
-    cargarRegistro()
     main()
