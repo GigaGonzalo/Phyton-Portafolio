@@ -48,12 +48,13 @@ def guardarRegistro(datos_usuario: dict):
     """
     try:
         registro = cargarRegistro()
-        datos_usuario["fecha_registro"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         for id_usu in registro:
             if id_usu.get("id") == datos_usuario.get("id"):
+                datos_usuario["id"] = id_usu["id"]
                 id_usu.update(datos_usuario)
                 break
         else:
+            datos_usuario["fecha_registro"] = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
             registro.append(datos_usuario)
 
         with open(url_archivo_usuarios, "w" ) as archivo:

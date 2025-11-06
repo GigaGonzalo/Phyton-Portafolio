@@ -1,24 +1,13 @@
 [
   {
-    "id": 0,
-    "nombre": "Guadalupita",
-    "apellido": "Geron",
-    "edad": 31,
-    "carrera": "Asl",
-    "altura": 1.54,
-    "peso": 80.0,
-    "casado?": true,
-    "fecha_registro": "2025-11-06 00:44:16"
-  },
-  {
     "id": 1,
-    "nombre": "Asjda",
-    "apellido": "Asdaf",
-    "edad": 50,
-    "carrera": "Asdasfs",
-    "altura": 1.85,
-    "peso": 120.0,
-    "casado?": false,
-    "fecha_registro": "2025-11-06 00:45:02"
+    "nombre": "Jesus",
+    "apellido": "Barajas",
+    "edad": 30,
+    "carrera": "Python",
+    "altura": 1.79,
+    "peso": 83.0,
+    "casado?": true,
+    "fecha_registro": "2025-11-06 02:33:46"
   }
 ]
