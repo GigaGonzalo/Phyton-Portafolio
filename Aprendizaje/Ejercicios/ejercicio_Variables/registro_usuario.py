@@ -515,19 +515,20 @@ def main():
     
     """
     
-    print(Back.GREEN +"*"*10 + "BIENVENIDOS AL REGISTRO DE USUARIOS v1" + "*"*10 + "\n") #58
-    print(" "*58)
-    print("*"*23 + "     MENU     " + "*"*23 + "\n")
+    print(Back.GREEN +"*"*11 + "BIENVENIDOS AL REGISTRO DE USUARIOS v1" + "*"*11 + Back.RESET) #58
+    print(Back.GREEN +"-"*60+ Back.RESET)
+    print(Back.GREEN +"*"*23 + "     MENU     " + "*"*23+ Back.RESET)
+    print(Back.GREEN +"-"*60)
     opciones_menu = [1,2,3,4,5]
     while True: 
         try:
-            print("INGRESE LA OPCCION DE LA OPERACION : ")
-            print("1. REGISTAR USUARIO")
-            print("2. ELIMINAR USUARIO")
-            print("3. MODIFICAR USUARIO")
-            print("4. CONSULTAR USUARIO")
-            print("5. SALIDA")
-            op = input("Ingrese opcion deseada : ")
+            print(Back.GREEN +"INGRESE LA OPCCION DE LA OPERACION                         :")
+            print(Back.GREEN +"1. REGISTAR USUARIO                                        :")
+            print(Back.GREEN +"2. ELIMINAR USUARIO                                        :")
+            print(Back.GREEN +"3. MODIFICAR USUARIO                                       :")
+            print(Back.GREEN +"4. CONSULTAR USUARIO                                       :")
+            print(Back.GREEN +"5. SALIDA                                                  :")
+            op = input(Back.GREEN +"Ingrese opcion deseada : ")
             op = int(op)
             if op in opciones_menu:
                 if op == 1:
